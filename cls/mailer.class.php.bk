@@ -1,0 +1,506 @@
+<?php
+
+	define('MAILER_ERROR', 'error');
+	define('MAILER_SUCCESS', 'success');
+
+	class Mailer {
+		static public $version		= '5.6';
+		private $vars		= array ();
+		private $items		= null;
+		private $files		= null;
+		private $result		= null;
+		private $message	= null;
+		private $field		= '';
+		private $input		= '';
+		private $warning	= '';
+		// mail header
+		public $subject		= null;
+		public $from		= null;
+		public $to			= null;
+		public $copy		= null;
+		public $hidden		= null;
+		// options
+		public $json		= true;
+		public $bound		= 'mailerclassphpbound';
+		public $formats		= array (
+			'success'			=> '<div class="success">$s</div>',
+			'error'				=> '<div class="error">$s</div>',
+			'null'				=> 'Отсутствует обязательное поле <b>$s</b>',
+			'empty'				=> 'Пустое поле <b>$s</b>',
+			'filter'			=> 'Поле <b>$s</b> не соответствует заданному формату',
+			'param'				=> 'Параметр № $s: ',
+		);
+		public $templates	= array (
+			'subject'			=> 'Не задана тема письма! <br> Обратитесь к администратору сайта.',
+			'from'				=> 'Не задана почта-источник! <br> Обратитесь к администратору сайта.',
+			'to'				=> 'Не задана почта-кому! <br> Обратитесь к администратору сайта.',
+			'send'				=> 'Ошибка отправки почты! <br> Обратитесь к администратору сайта.',
+			'success'			=> 'Спасибо!<br> Ваша заявка принята, мы свяжемся с Вами в ближайшее время',
+		);
+		public $text		= false;
+		public $min_file_size	= 0;
+		public $max_file_size	= 31457280; // 30 Mb
+
+		function __construct() {
+			$this->from = 'no-reply@' . $_SERVER['HTTP_HOST'];
+			$this->subject = 'Заявка с сайта ' . $_SERVER['HTTP_HOST'];
+		}
+
+		private function clear () {
+			$this->result	= null;
+			$this->message	= null;
+			$this->field	= '';
+			$this->input	= '';
+			$this->warning	= '';
+		}
+
+		private function format ($message, $format) {
+			if (preg_match('/\$s/i', $format) === 1) {
+				return preg_replace('/\$s/i', $message, $format);
+			} else {
+				return $message;
+			}
+		}
+
+		private function set_error ($message, $callback = null) {
+			if (isset($callback) && is_callable($callback)) {
+				$result = call_user_func($callback, array (
+					'status'	=> MAILER_ERROR,
+					'message'	=> $message,
+					'warning'	=> $this->warning,
+				), $this->items);
+				if (isset($result)) {
+					$message = $result['message'];
+					$this->warning = $result['warning'];
+				}
+			}
+			if ($this->json) {
+				$this->result = json_encode(array(
+					'status'	=> MAILER_ERROR,
+					'message'	=> $message,
+					'field'		=> $this->field,
+					'input'		=> $this->input,
+					'warning'	=> $this->warning,
+				));
+			} else {
+				$this->result = $this->format($message, $this->formats['error']);
+			}
+		}
+
+		public function add_item ($item) {
+			if (gettype($item) != 'array') return false;
+			if (!isset($item['name']) || trim($item['name']) == '') return false;
+			if (isset($item['method'])) {
+				$method = strtolower(trim($item['method']));
+				$method = ($method == 'post' || $method == 'get' || $method == 'file') ? $method : 'post';
+			} else $method = 'post';
+			if ($method == 'file') {
+				return $this->add_file($item);
+			}
+			$field = array ();
+			$field['method'] = $method;
+			$field['name'] = $item['name'];
+			$field['desc'] = (isset($item['desc']) && $item['desc'] != '') ? $item['desc'] : $this->format(count($this->items), $this->formats['param']);
+			$field['require'] = (isset($item['require']) && (strtolower(trim($item['require'])) == 'yes' || strtolower(trim($item['require'])) == 'all' || strtolower(trim($item['require'])) == 'phone')) ? strtolower(trim($item['require'])) : 'no';
+			$field['filter'] = (isset($item['filter']) && trim($item['filter']) != '') ? trim($item['filter']) : null;
+			$field['err_null'] = (isset($item['err_null']) && $item['err_null'] != '') ? $item['err_null'] : $this->format($item['name'], $this->formats['null']);
+			$field['err_empty'] = (isset($item['err_empty']) && $item['err_empty'] != '') ? $item['err_empty'] : $this->format($item['name'], $this->formats['empty']);
+			$field['err_filter'] = (isset($item['err_filter']) && $item['err_filter'] != '') ? $item['err_filter'] : $this->format($item['name'], $this->formats['filter']);
+			$field['send'] = isset($item['send']) ? $item['send'] : true;
+			$field['html'] = empty($item['html']) ? false : true;
+			$this->items[$item['name']] = $field;
+			return true;
+		}
+
+		public function add_file ($item) {
+			if (gettype($item) != 'array') return false;
+			if (!isset($item['name']) || trim($item['name']) == '') return false;
+			$field = array ();
+			$field['name'] = $item['name'];
+			$field['desc'] = (isset($item['desc']) && $item['desc'] != '') ? $item['desc'] : $this->format(count($this->items), $this->formats['param']);
+			$field['require'] = (isset($item['require']) && (strtolower(trim($item['require'])) == 'yes')) ? strtolower(trim($item['require'])) : 'no';
+			$field['filter'] = (isset($item['filter']) && trim($item['filter']) != '') ? trim($item['filter']) : null;
+			$field['err_null'] = (isset($item['err_null']) && $item['err_null'] != '') ? $item['err_null'] : $this->format($item['name'], $this->formats['null']);
+			$field['err_filter'] = (isset($item['err_filter']) && $item['err_filter'] != '') ? $item['err_filter'] : $this->format($item['name'], $this->formats['filter']);
+			$field['send'] = isset($item['send']) ? $item['send'] : true;
+			$field['minsize'] = isset($item['minsize']) ? $item['minsize'] : $this->min_file_size;
+			$field['maxsize'] = isset($item['maxsize']) ? $item['maxsize'] : $this->max_file_size;
+			$this->files[$item['name']] = $field;
+			return true;
+		}
+
+		public function add_var ($name, $val) {
+			$this->vars[$name] = $val;
+		}
+
+		private function human_filesize($bytes, $decimals = 2) {
+			$size = array('B','kB','MB','GB','TB','PB','EB','ZB','YB');
+			$factor = floor((strlen($bytes) - 1) / 3);
+			return sprintf("%.{$decimals}f", $bytes / pow(1024, $factor)) . @$size[$factor];
+		}
+
+		private function prepare ($callback) {
+			$this->clear();
+			if (!isset($this->subject) || $this->subject == '') {
+				$this->set_error($this->templates['subject'], $callback);
+				return false;
+			}
+			if (!isset($this->from) || $this->from == '') {
+				$this->set_error($this->templates['from'], $callback);
+				return false;
+			}
+			if (!isset($this->to) || $this->to == '') {
+				$this->set_error($this->templates['to'], $callback);
+				return false;
+			}
+			return true;
+		}
+
+		private function check_items ($callback) {
+			if (isset($this->items)) {
+				foreach ($this->items as &$item) {
+					if (!isset($this->result)) {
+						if ($item['method'] == 'post') {
+							$val = $_POST[$item['name']];
+						} elseif ($item['method'] == 'get') {
+							$val = $_GET[$item['name']];
+						} else continue;
+
+						if ($item['require'] == 'yes') {
+							if (isset($val)) {
+								if (trim($val) == '') {
+									$this->field = $item['name'];
+									$this->input = '[name=' . $item['name'] . ']';
+									$this->set_error($item['err_empty'], $callback);
+								} elseif (isset($item['filter']) && preg_match($item['filter'], $val) == 0) {
+									$this->field = $item['name'];
+									$this->input = '[name=' . $item['name'] . ']';
+									$this->set_error($item['err_filter'], $callback);
+								} else {
+									$item['value'] = $item['html'] ? trim($val) : htmlspecialchars(trim($val));
+								}
+							} else {
+								$item['value'] = '';
+							}
+						} elseif ($item['require'] == 'phone') {
+							if (isset($val)) {
+								if (trim($val) == '') {
+									$this->field = $item['name'];
+									$this->input = '[name=' . $item['name'] . ']';
+									$this->set_error($item['err_empty'], $callback);
+								} else {
+									$phone = htmlspecialchars(trim($val));
+									$phone = preg_replace('/\D+/', '', $phone);
+									if (strlen($phone) >= $item['filter']) {
+										$item['value'] = $item['html'] ? trim($val) : htmlspecialchars(trim($val));
+									} else {
+										$this->field = $item['name'];
+										$this->input = '[name=' . $item['name'] . ']';
+										$this->set_error($item['err_filter'], $callback);
+									}
+								}
+							} else {
+								$item['value'] = '';
+							}
+						} elseif ($item['require'] == 'all') {
+							if (!isset($val)) {
+								$this->field = $item['name'];
+								$this->input = '[name=' . $item['name'] . ']';
+								$this->set_error($item['err_null'], $callback);
+							} elseif (trim($val) == '') {
+								$this->field = $item['name'];
+								$this->input = '[name=' . $item['name'] . ']';
+								$this->set_error($item['err_empty'], $callback);
+							} elseif (isset($item['filter']) && preg_match($item['filter'], $val) == 0) {
+								$this->field = $item['name'];
+								$this->input = '[name=' . $item['name'] . ']';
+								$this->set_error($item['err_filter'], $callback);
+							} else {
+								$item['value'] = $item['html'] ? trim($val) : htmlspecialchars(trim($val));
+							}
+						} else {
+							if (isset($val)) {
+								$item['value'] = $item['html'] ? trim($val) : htmlspecialchars(trim($val));
+							} else {
+								$item['value'] = '';
+							}
+						}
+					}
+				}
+			}
+			if (isset($this->files)) {
+				foreach ($this->files as &$item) {
+					$val = $_FILES[$item['name']];
+					if ($item['require'] == 'yes') {
+						if (!isset($val)) {
+							$this->field = $item['name'];
+							$this->input = '[name=' . $item['name'] . ']';
+							$this->set_error($item['err_null'], $callback);
+						} else {
+							if ($val['error'] == UPLOAD_ERR_OK) {
+								if ($val['size'] < $item['minsize']) {
+									$this->set_error('Слишком маленький файл в поле "' . $item['desc'] . '". <br>Минимальный размер файла: ' . $this->human_filesize($item['minsize']), $callback);
+								} elseif ($val['size'] > $item['maxsize']) {
+									$this->set_error('Слишком большой файл в поле "' . $item['desc'] . '". <br>Максимальный размер файла: ' . $this->human_filesize($item['maxsize']), $callback);
+								} else {
+									$item['value'] = $val['tmp_name'];
+									$item['fname'] = $val['name'];
+									$item['ftype'] = $val['type'];
+									$item['fsize'] = $val['size'];
+								}
+							} else {
+								switch ($val['error']) {
+									case UPLOAD_ERR_NO_FILE:
+										$error = 'Не найден файл';
+									case UPLOAD_ERR_INI_SIZE:
+									case UPLOAD_ERR_FORM_SIZE:
+										$error = 'Файл слишком большой';
+									default:
+										$error = 'Неизвестная ошибка';
+								}
+								$this->field = $item['name'];
+								$this->input = '[name=' . $item['name'] . ']';
+								$this->set_error('Ошибка загрузки файла (' . $item['desc'] . '): ' . $error, $callback);
+							}
+						}
+					} else {
+						if (isset($val)) {
+							if ($val['error'] == UPLOAD_ERR_OK) {
+								if ($val['size'] < $item['minsize']) {
+									$this->set_error('Слишком маленький файл в поле "' . $item['desc'] . '". <br>Минимальный размер файла: ' . $this->human_filesize($item['minsize']), $callback);
+								} elseif ($val['size'] > $item['maxsize']) {
+									$this->set_error('Слишком большой файл в поле "' . $item['desc'] . '". <br>Максимальный размер файла: ' . $this->human_filesize($item['maxsize']), $callback);
+								} else {
+									$item['value'] = $val['tmp_name'];
+									$item['fname'] = $val['name'];
+									$item['ftype'] = $val['type'];
+									$item['fsize'] = $val['size'];
+								}
+							} else {
+								switch ($val['error']) {
+									case UPLOAD_ERR_NO_FILE:
+										$error = 'Не найден файл';
+									case UPLOAD_ERR_INI_SIZE:
+									case UPLOAD_ERR_FORM_SIZE:
+										$error = 'Файл слишком большой';
+									default:
+										$error = 'Неизвестная ошибка';
+								}
+								$this->field = $item['name'];
+								$this->input = '[name=' . $item['name'] . ']';
+								$this->set_error('Ошибка загрузки файла (' . $item['desc'] . '): ' . $error, $callback);
+							}
+						}
+					}
+				}
+			}
+			return !isset($this->result);
+		}
+
+		private function make_message () {
+			if ($this->text) {
+				if (file_exists($this->text)) {
+					$this->text = file_get_contents($this->text);
+				}
+				if (isset($this->items)) {
+					foreach ($this->items as $item) {
+						if ($item['send'] === true && $item['value'] != '') $this->text = str_replace('%' . $item['name'] . '%', $item['value'], $this->text);
+					}
+				}
+				$this->text = str_replace('%main_page%', 'http://' . $_SERVER['HTTP_HOST'] . '/', $this->text);
+				$this->text = str_replace('%host%', $_SERVER['HTTP_HOST'], $this->text);
+				$this->text = str_replace('%site%', 'http://' . $_SERVER['HTTP_HOST'], $this->text);
+				$this->text = str_replace('%subject%', $this->subject, $this->text);
+				$this->text = str_replace('%date%', date('d.m.Y'), $this->text);
+				$this->text = str_replace('%time%', date('H:j:s'), $this->text);
+				$this->text = str_replace('%timezone%', date('P'), $this->text);
+				$this->text = str_replace('%ip%', $_SERVER['REMOTE_ADDR'], $this->text);
+				foreach ($this->vars as $name => $var) {
+					if (gettype($var) == 'array') {
+						$s = explode('{%' . $name . '%}', $this->text);
+						if (count($s) == 3) {
+							$this->text = $s[0];
+							$i = 1;
+							foreach ($var as $par => $item) {
+								$tmpl = $s[1];
+								$tmpl = str_replace('%#%', $i, $tmpl);
+								if (gettype($item) == 'array') {
+									foreach ($item as $key => $val) {
+										$tmpl = str_replace('%' . $name . '->' . $key . '%', $val, $tmpl);
+									}
+								} else {
+									$tmpl .= str_replace('%' . $name . '->' . $par . '%', $item, $tmpl);
+								}
+								$this->text .= $tmpl;
+								$i++;
+							}
+							$this->text .= $s[2];
+						}
+					} else {
+						$this->text = str_replace('%' . $name . '%', $var, $this->text);
+					}
+				}
+				$this->message = $this->text;
+			} else {
+				$this->message = '<h1>' . $this->subject . '</h1><hr>';
+				if (isset($this->items)) {
+					foreach ($this->items as $item) {
+						if ($item['send'] === true && $item['value'] != '') $this->message .= '<div><b>' . $item['desc'] . '</b>: ' . $item['value'] . '</div>';
+					}
+				}
+				$this->message .= '<b>Дата отправки заявки</b>: ' . date('d.m.Y H:i:s') . ' (UTC ' . date('P'). ')<hr>';
+				$this->message .= '<hr>';
+				foreach ($this->vars as $name => $var) {
+					if (gettype($var) == 'array') {
+						$i = 1;
+						$this->message .= '<div><b>' . $name . '</b>: </div><table border="1">';
+						foreach ($var as $par => $item) {
+							$this->message .= '<tr>';
+							$this->message .= '<td>' . $i . '</td>';
+							if (gettype($item) == 'array') {
+								foreach ($item as $key => $val) {
+									$this->message .= '<td>' . $val . '</td>';
+								}
+							} else {
+								$this->message .= '<td>' . $item . '</td>';
+							}
+							$this->message .= '</tr>';
+							$i++;
+						}
+						$this->message .= '</table>';
+					} else {
+						$this->message .= '<div><b>' . $name . '</b>: ' . $var . '</div>';
+					}
+				}
+			}
+		}
+
+		private function utf8_encode ($str) {
+			return '?UTF-8?B?' . base64_encode($str) . '?=';
+		}
+
+		private function check_ref () {
+			$ref = $_SERVER['HTTP_REFERER'];
+			$ref_host = parse_url($ref, PHP_URL_HOST);
+			if ($ref_host != $_SERVER['HTTP_HOST']) {
+				$this->result = json_encode(array (
+					'status'	=> MAILER_ERROR,
+					'message'	=> 'Проблема с отправкой сообщения! Попытка внешнего доступа.',
+					'field'		=> $this->field,
+					'input'		=> $this->input,
+					'warning'	=> $this->warning,
+					'from'		=> $this->from,
+					'to'		=> $this->to,
+				));
+				return false;
+			}
+			return true;
+		}
+
+		private function check_sid () {
+			$sid_hash = empty($_SESSION['FSID']) ? '' : $_SESSION['FSID'];
+			$sid = $_POST['FSID'];
+			if (empty($sid_hash) || empty($sid) || $sid_hash != md5($sid)) {
+				$this->result = json_encode(array (
+					'status'	=> MAILER_ERROR,
+					'message'	=> 'Проблема с отправкой сообщения! Попытка внешнего доступа.',
+					'field'		=> $this->field,
+					'input'		=> $this->input,
+					'warning'	=> $this->warning,
+					'from'		=> $this->from,
+					'to'		=> $this->to,
+				));
+				return false;
+			}
+			return true;
+		}
+
+		public function send ($callback = null) {
+			if (!$this->check_ref()) return $this->result;
+			if (!$this->check_sid()) return $this->result;
+
+			//var_dump($_FILES['file']);
+			//var_dump($this->list);
+			if (!$this->prepare($callback)) return $this->result;
+			if (!$this->check_items($callback)) return $this->result;
+			$this->make_message();
+
+			$message = $this->templates['success'];
+			if (isset($callback) && is_callable($callback)) {
+				$result = call_user_func($callback, array(
+					'status'	=> MAILER_SUCCESS,
+					'message'	=> $message,
+					'warning'	=> $this->warning,
+					'from'		=> $this->from,
+					'to'		=> $this->to,
+				), $this->items);
+				if (isset($result)) {
+					if ($result['status'] == MAILER_ERROR) {
+						$this->set_error($result['message']);
+						return $this->result;
+					}
+					$message = $result['message'];
+					$this->warning = $result['warning'];
+				}
+			}
+
+			if (isset($this->files)) {
+				$boundary = "---";
+				$this->subject = '=?UTF-8?B?' . base64_encode($this->subject) . '?=';
+				$headers = "MIME-Version: 1.0\r\n";
+				$headers .= "Content-Type: multipart/mixed; boundary=\"" . $this->bound . "\"\r\n";
+				$headers .= "From: " . $this->from . "\r\n";
+				if (isset($this->copy) && $this->copy != '') $headers .= "Cc: " . $this->copy . "\r\n";
+				if (isset($this->hidden) && $this->hidden != '') $headers .= "Bcc: " . $this->hidden . "\r\n";
+
+				$body = "--" . $this->bound . "\r\n";
+				$body .= "Content-type: text/html; charset=\"utf-8\"\r\n";
+				$body .= "Content-Transfer-Encoding: Quot-Printed\r\n\r\n";
+				$body .= $this->message . "\r\n\r\n";
+
+				foreach ($this->files as $item) {
+					$file = fopen($item['value'], "rb");
+					$cont = fread($file, filesize($item['value']));
+					fclose($file);
+					$body .= "--" . $this->bound . "\r\n";
+					$body .= "Content-Type: application/octet-stream;name==?UTF-8?B?" . base64_encode($item['fname']) . "?=\r\n";
+					$body .= "Content-Transfer-Encoding:base64\r\n";
+					$body .= "Content-Disposition:attachment\r\n\r\n";
+					$body .= chunk_split(base64_encode($cont)) . "\r\n\r\n";
+				}
+
+				$body .= $this->bound . "--\r\n";
+				$this->message = $body;
+			} else {
+				$this->subject = '=?UTF-8?B?' . base64_encode($this->subject) . '?=';
+				$headers = "MIME-Version: 1.0\r\n";
+				$headers .= "Content-type: text/html; charset=utf-8\r\n";
+				$headers .= "From: " . $this->from . "\r\n";
+				if (isset($this->copy) && $this->copy != '') $headers .= "Cc: " . $this->copy . "\r\n";
+				if (isset($this->hidden) && $this->hidden != '') $headers .= "Bcc: " . $this->hidden . "\r\n";
+			}
+
+			if (!mail($this->to, $this->subject, $this->message, $headers)) {
+				$this->set_error($this->errors['send'], $callback);
+				return $this->result;
+			}
+
+			if ($this->json) {
+				$this->result = json_encode(array (
+					'status'	=> MAILER_SUCCESS,
+					'message'	=> $message,
+					'field'		=> $this->field,
+					'input'		=> $this->input,
+					'warning'	=> $this->warning,
+					'from'		=> $this->from,
+					'to'		=> $this->to,
+				));
+			} else {
+				$this->result = $this->format($message, $this->formats['success']);
+			}
+			return $this->result;
+		}
+
+	}
+
+?>

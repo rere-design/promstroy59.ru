@@ -1,0 +1,1169 @@
+/*
+	CSS Crossbrowser Mixins.
+	Version: 1.12
+	Author: Zazhirskiy Ruslan
+	Site: szenprogs.ru
+	Email: szenprogs@gmail.com
+	Skype: szenprogs
+*/
+/* SNIPPETS */
+/* cols */
+/* menu */
+/* mobile menu */
+/*
+	HTML Structure
+
+	.mobile_menu>(a.menu_button[href="mobile_menu"]{menu})+(.menu_content>ul>li*2>a{Item $})
+
+ */
+section,
+article,
+header,
+footer,
+nav {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+body {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  background: #fff;
+  color: #000;
+  font-family: "Open Sans", sans-serif;
+  cursor: default;
+  font-size: 14px;
+}
+section,
+.sec {
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: auto;
+  position: relative;
+}
+article,
+.art,
+header,
+footer {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+img {
+  border: none;
+}
+table {
+  width: 100%;
+  border: none;
+  border-collapse: collapse;
+}
+table td {
+  vertical-align: middle;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+a,
+button,
+input[type=file] {
+  cursor: pointer;
+  -webkit-transition: all 300ms ease;
+  -khtml-transition: all 300ms ease;
+  -icab-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+  outline-style: none;
+}
+.site_wrap {
+  text-align: left;
+  width: 1100px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+.site_wrap:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}
+h1 {
+  background: #500;
+  color: #fff;
+  font-size: 28px;
+  padding: 10px 10px;
+  position: relative;
+}
+h1 img {
+  vertical-align: middle;
+  margin-right: 10px;
+  background: #fff;
+  padding: 5px;
+  width: 20px;
+  height: 20px;
+}
+h1 .version {
+  font-size: 12px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+h2 {
+  background: #fbb;
+  border-bottom: 1px solid #500;
+  font-size: 24px;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+}
+h3 {
+  border-bottom: 1px solid #500;
+  font-size: 18px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+h5 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.cp_menu {
+  margin-bottom: 20px;
+  background: #ccc;
+  padding: 5px;
+}
+.cp_menu:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}
+.cp_menu .left {
+  float: left;
+  font-size: 14px;
+  padding: 2px 0;
+}
+.cp_menu .left a {
+  display: inline-block;
+  vertical-align: top;
+  background: #060;
+  border: 1px solid #060;
+  color: #fff;
+  padding: 0 10px;
+  margin-right: 5px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -icab-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 14px;
+}
+.cp_menu .left a:hover,
+.cp_menu .left a:focus {
+  background: #fff;
+  color: #060;
+}
+.cp_menu .right {
+  float: right;
+}
+.cp_menu form button {
+  display: block;
+  background: #f00;
+  border: 1px solid #f00;
+  color: #fff;
+  padding: 2px 7px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -icab-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+.cp_menu form button:hover,
+.cp_menu form button:focus {
+  background: #fff;
+  color: #f00;
+}
+.login_form {
+  width: 300px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+.login_form .error_mess {
+  margin-bottom: 10px;
+}
+.login_form .item {
+  margin-bottom: 10px;
+}
+.login_form .item label {
+  display: block;
+  font-size: 12px;
+}
+.sections {
+  float: left;
+  width: 20%;
+}
+.sections ul {
+  list-style: none;
+  width: 80%;
+  padding: 5%;
+  background: #000;
+}
+.sections ul li {
+  border-bottom: 1px solid #555;
+}
+.sections ul li:last-child {
+  border-bottom: none;
+}
+.sections ul li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 5px;
+  font-size: 18px;
+}
+.sections ul li a:hover,
+.sections ul li a:focus {
+  background: #555;
+}
+.sections ul li a.current {
+  background: #fff;
+  color: #000;
+}
+.groups {
+  margin-bottom: 20px;
+  background: #000;
+  padding: 5px;
+}
+.groups ul {
+  list-style: none;
+}
+.groups ul:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}
+.groups ul li {
+  float: left;
+  border-right: 1px solid #555;
+}
+.groups ul li:last-child {
+  border-right: none;
+}
+.groups ul li a {
+  display: block;
+  padding: 3px 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+.groups ul li a:hover,
+.groups ul li a:focus {
+  background: #555;
+}
+.groups ul li a.current {
+  background: #fff;
+  color: #000;
+}
+.content {
+  float: left;
+  width: 80%;
+}
+.control table {
+  margin-bottom: 20px;
+}
+.control table td {
+  vertical-align: middle;
+  text-align: left;
+}
+.control table thead td {
+  background: #000;
+  color: #fff;
+  height: 40px;
+  border-left: 1px solid #fff;
+  padding: 0 10px;
+}
+.control table thead td:first-child {
+  border: none;
+}
+.control table tfoot td {
+  background: #ccc;
+  border-top: 1px solid #555;
+  padding: 5px 10px;
+}
+.control table tfoot .add {
+  display: inline-block;
+  vertical-align: middle;
+  background: #060;
+  border: 1px solid #060;
+  color: #fff;
+  padding: 3px 10px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -icab-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 12px;
+}
+.control table tfoot .add:hover,
+.control table tfoot .add:focus {
+  background: #fff;
+  color: #060;
+}
+.control table tbody tr td {
+  padding: 2px 10px;
+}
+.control table tbody tr td:first-child {
+  border: none !important;
+}
+.control table tbody tr td:nth-child(4) {
+  width: 10px;
+}
+.control table tbody tr:nth-child(even) td {
+  background: #eee;
+  border-left: 1px solid #fff;
+}
+.control table tbody tr:nth-child(odd) td {
+  background: #fff;
+  border-left: 1px solid #eee;
+}
+.control table tbody tr.disabled td {
+  background: #fbb;
+}
+.control table tbody .move_item {
+  width: 20px;
+  -webkit-transition: all 300ms ease;
+  -khtml-transition: all 300ms ease;
+  -icab-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+.control table tbody .move_item:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  cursor: move;
+  background: url(icons/move.png) no-repeat center;
+}
+.control table tbody .move_item:hover {
+  background-color: #ccc;
+}
+.control table tbody .edit {
+  width: 10px;
+}
+.control table tbody .edit .delete {
+  display: block;
+  float: left;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  background: url(icons/delete.png) no-repeat center center;
+  text-indent: -1000px;
+}
+.control table tbody .edit .delete:hover,
+.control table tbody .edit .delete:focus {
+  border: none;
+  outline-style: none;
+  background-color: #fbb;
+  -webkit-transform: rotate(360deg);
+  -khtml-transform: rotate(360deg);
+  -icab-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+.control table tbody .num {
+  width: 10px;
+}
+form input[type=text],
+form input[type=password],
+form input[type=file],
+form input[type=email],
+form input[type=tel],
+form input[type=url] {
+  width: 100%;
+  padding: 3px;
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #000;
+  font-size: 14px;
+  -webkit-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  -icab-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -icab-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 300ms ease;
+  -khtml-transition: all 300ms ease;
+  -icab-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+form input[type=text]:hover,
+form input[type=password]:hover,
+form input[type=file]:hover,
+form input[type=email]:hover,
+form input[type=tel]:hover,
+form input[type=url]:hover,
+form input[type=text]:focus,
+form input[type=password]:focus,
+form input[type=file]:focus,
+form input[type=email]:focus,
+form input[type=tel]:focus,
+form input[type=url]:focus {
+  outline-style: none;
+  border-color: #f00;
+  background: #fbb;
+}
+form input[type=text]:read-only,
+form input[type=password]:read-only,
+form input[type=file]:read-only,
+form input[type=email]:read-only,
+form input[type=tel]:read-only,
+form input[type=url]:read-only {
+  background: #eee;
+  border-color: #ccc;
+}
+form textarea {
+  width: 100%;
+  padding: 3px;
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #000;
+  font-size: 14px;
+  -webkit-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  -icab-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -icab-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 300ms ease;
+  -khtml-transition: all 300ms ease;
+  -icab-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+form textarea:hover,
+form textarea:focus {
+  outline-style: none;
+  border-color: #f00;
+  background: #fbb;
+}
+form .single_field {
+  padding: 10px 0;
+  border-bottom: 1px dotted #ccc;
+}
+form .single_field:first-child {
+  border-top: 1px dotted #ccc;
+}
+form .single_field:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}
+form .single_field .title {
+  float: left;
+  width: 20%;
+  font-size: 14px;
+}
+form .single_field .title .desc {
+  font-size: 12px;
+  font-style: italic;
+  color: #060;
+}
+form .single_field .item {
+  float: left;
+  width: 80%;
+}
+form .manage {
+  background: #ccc;
+  padding: 5px;
+}
+form .manage a {
+  color: #009;
+  text-decoration: none;
+}
+form .manage a:hover,
+form .manage a:focus {
+  color: #f00;
+}
+form .manage .add {
+  display: inline-block;
+  vertical-align: top;
+  padding: 3px 10px;
+  background: #060;
+  border: 1px solid #060;
+  color: #fff;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -icab-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 14px;
+}
+form .manage .add:hover,
+form .manage .add:focus {
+  background: #fff;
+  color: #060;
+}
+form .empty_item {
+  height: 30px;
+  background: #ccc;
+  margin-bottom: 10px;
+}
+form .list_item .head {
+  background: #ccc;
+  margin-bottom: 10px;
+}
+form .list_item .head .move_item {
+  float: left;
+  width: 3%;
+  height: 29px;
+  background: #fff;
+  -webkit-transition: all 300ms ease;
+  -khtml-transition: all 300ms ease;
+  -icab-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+form .list_item .head .move_item:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: move;
+  background: url(icons/move.png) no-repeat center;
+}
+form .list_item .head .move_item:hover {
+  background-color: #ccc;
+}
+form .list_item .head:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}
+form .list_item .head .left {
+  display: block;
+  -webkit-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  -icab-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  width: 77%;
+  padding: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #9f9;
+  color: #000;
+  text-decoration: none;
+}
+form .list_item .head .right {
+  -webkit-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  -icab-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  float: right;
+  width: 20%;
+  padding: 5px;
+  text-align: right;
+}
+form .list_item .head .right a {
+  color: #009;
+  text-decoration: none;
+}
+form .list_item .head .right a:hover,
+form .list_item .head .right a:focus {
+  color: #f00;
+}
+form .list_item .head .right .delete {
+  display: inline-block;
+  vertical-align: top;
+  background: #f00;
+  border: 1px solid #f00;
+  color: #fff;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -icab-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  padding: 0 10px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+}
+form .list_item .head .right .delete:hover,
+form .list_item .head .right .delete:focus {
+  background: #fff;
+  color: #f00;
+}
+form .list_item .head .num {
+  width: 40px;
+}
+form .list_item .head .num:after {
+  content: '. ';
+}
+form .list_item .disabled .left {
+  background: #fbb;
+}
+form .list_item .list_field {
+  margin-bottom: 5px;
+}
+form .list_item .list_field:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}
+form .list_item .list_field .title {
+  float: left;
+  width: 19%;
+  padding-right: 1%;
+  font-size: 14px;
+}
+form .list_item .list_field .title .desc {
+  font-size: 12px;
+  font-style: italic;
+  color: #060;
+}
+form .list_item .list_field .item {
+  float: left;
+  width: 80%;
+}
+form .list_item .separator {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 1px;
+  border: none;
+  background: #060;
+}
+form .imgfield {
+  height: 50px;
+  line-height: 50px;
+}
+form .imgfield:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}
+form .imgfield .img {
+  float: left;
+  width: 20%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+form .imgfield .img img {
+  vertical-align: middle;
+  height: 100%;
+}
+form .imgfield .img .img_del {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  background: #fff url(icons/delete.png) no-repeat center center;
+  text-indent: -1000px;
+}
+form .imgfield .img .img_del:hover,
+form .imgfield .img .img_del:focus {
+  border: none;
+  outline-style: none;
+  background-color: #fbb;
+  -webkit-transform: rotate(360deg);
+  -khtml-transform: rotate(360deg);
+  -icab-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+form .imgfield .file {
+  float: left;
+  width: 80%;
+  height: 100%;
+}
+form .imgfield .file input {
+  vertical-align: middle;
+}
+form .imglist .img,
+form .imglist .empty {
+  width: 15.66666667%;
+  margin-right: 1%;
+  height: 100px;
+  line-height: 100px;
+  float: left;
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 10px;
+  position: relative;
+  cursor: move;
+}
+form .imglist .img img,
+form .imglist .empty img {
+  width: 100%;
+  vertical-align: middle;
+}
+form .imglist .img .img_del,
+form .imglist .empty .img_del {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  background: #fff url(icons/delete.png) no-repeat center center;
+  text-indent: -1000px;
+}
+form .imglist .img .img_del:hover,
+form .imglist .empty .img_del:hover,
+form .imglist .img .img_del:focus,
+form .imglist .empty .img_del:focus {
+  border: none;
+  outline-style: none;
+  background-color: #fbb;
+  -webkit-transform: rotate(360deg);
+  -khtml-transform: rotate(360deg);
+  -icab-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+form .imglist .empty {
+  background: #ccc;
+}
+form .imglist .file {
+  clear: both;
+}
+form .linkfield:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}
+form .linkfield .link {
+  float: left;
+  width: 40%;
+  overflow: hidden;
+}
+form .linkfield .link a {
+  display: inline-block;
+  vertical-align: top;
+  line-height: normal;
+  font-size: 14px;
+  width: 98%;
+  padding: 0 1%;
+  color: #060;
+  text-decoration: none;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+form .linkfield .link a:hover,
+form .linkfield .link a:focus {
+  text-decoration: underline;
+}
+form .linkfield .file {
+  float: left;
+  width: 60%;
+}
+form .linkfield .file input {
+  vertical-align: top;
+}
+form .button {
+  padding: 10px 0;
+}
+form .button button[type=submit] {
+  display: inline-block;
+  vertical-align: middle;
+  border: 2px solid #f00;
+  background: #f00;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  width: 300px;
+  height: 40px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  -icab-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+form .button button[type=submit] span {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
+form .button button[type=submit]:hover,
+form .button button[type=submit]:focus {
+  background: #fff;
+  color: #f00;
+  outline-style: none;
+}
+form .button button[type=submit]:disabled {
+  background: #ccc;
+  border-color: #ccc;
+  color: #fff;
+}
+form .text_list {
+  margin-bottom: 20px;
+}
+form .text_list .text_list_items .empty {
+  background: #eee;
+  height: 20px;
+}
+form .text_list .text_list_items .text_list_item .move {
+  float: left;
+  height: 20px;
+  width: 3%;
+  -webkit-transition: all 300ms ease;
+  -khtml-transition: all 300ms ease;
+  -icab-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+form .text_list .text_list_items .text_list_item .move:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -khtml-box-sizing: border-box;
+  -icab-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  background: url(icons/move.png) no-repeat center;
+  margin-right: 10px;
+  cursor: move;
+}
+form .text_list .text_list_items .text_list_item .move:hover {
+  background-color: #ccc;
+}
+form .text_list .text_list_items .text_list_item:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}
+form .text_list .text_list_items .text_list_item .ftitle {
+  width: 80%;
+  float: left;
+}
+form .text_list .text_list_items .text_list_item .ftitle + input[type=file] {
+  display: none;
+}
+form .text_list .text_list_items .text_list_item .ftitle a {
+  color: #555;
+  font-size: 14px;
+  font-style: italic;
+}
+form .text_list .text_list_items .text_list_item .ftitle a:hover,
+form .text_list .text_list_items .text_list_item .ftitle a:focus {
+  color: #060;
+}
+form .text_list .text_list_items .text_list_item input,
+form .text_list .text_list_items .text_list_item textarea {
+  width: 80%;
+  float: left;
+}
+form .text_list .text_list_items .text_list_item input[type=file] {
+  width: 83%;
+}
+form .text_list .text_list_items .text_list_item .text_list_item_delete {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  text-indent: -1000px;
+  background: url(icons/delete.png) no-repeat center center;
+  float: left;
+}
+form .text_list .text_list_items .text_list_item .text_list_item_delete:hover {
+  background-color: #fbb;
+}
+form .text_list .text_list_item_add {
+  display: inline-block;
+  vertical-align: top;
+  background: #060;
+  border: 1px solid #060;
+  color: #fff;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -icab-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  margin-top: 10px;
+  padding: 3px 10px;
+  text-decoration: none;
+  font-size: 14px;
+}
+form .text_list .text_list_item_add:hover,
+form .text_list .text_list_item_add:focus {
+  background: #fff;
+  color: #060;
+}
+form .table_list {
+  margin-bottom: 20px;
+}
+form .table_list table {
+  margin-bottom: 0;
+}
+form .table_list table td {
+  width: auto !important;
+}
+form .table_list table td:first-child {
+  width: 10px !important;
+}
+form .table_list table td:last-child {
+  width: 30px !important;
+}
+form .table_list table td .table_list_item_delete {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  text-indent: -1000px;
+  background: url(icons/delete.png) no-repeat center center;
+  float: left;
+}
+form .table_list table td .table_list_item_delete:hover {
+  background-color: #fbb;
+}
+form .table_list table thead td {
+  background: #555;
+  height: 30px;
+}
+form .table_list table tbody .table_list_item_move {
+  width: 20px;
+  -webkit-transition: all 300ms ease;
+  -khtml-transition: all 300ms ease;
+  -icab-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+form .table_list table tbody .table_list_item_move:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  cursor: move;
+  background: url(icons/move.png) no-repeat center;
+}
+form .table_list table tbody .table_list_item_move:hover {
+  background-color: #ccc;
+}
+form .table_list .table_list_item_add {
+  display: inline-block;
+  vertical-align: top;
+  padding: 3px 10px;
+  margin-top: 10px;
+  background: #060;
+  border: 1px solid #060;
+  color: #fff;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -icab-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 14px;
+}
+form .table_list .table_list_item_add:hover,
+form .table_list .table_list_item_add:focus {
+  background: #fff;
+  color: #060;
+}
+form .yandex_map {
+  padding-bottom: 10px;
+}
+form .yandex_map .coordinates {
+  margin-bottom: 10px;
+}
+form .yandex_map .coordinates:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}
+form .yandex_map .coordinates .col {
+  width: 31.33333333%;
+  padding-right: 2%;
+  float: left;
+}
+form .yandex_map .coordinates .col span {
+  display: block;
+  font-size: 14px;
+}
+form .yandex_map .map_label {
+  margin-bottom: 10px;
+}
+form .yandex_map .map_label span {
+  display: block;
+  font-size: 14px;
+}
+form .yandex_map .map_label textarea {
+  height: 100px;
+}
+form .yandex_map .map_link a {
+  display: inline-block;
+  vertical-align: top;
+  padding: 3px 10px;
+  background: #060;
+  border: 1px solid #060;
+  color: #fff;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -icab-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 14px;
+}
+form .yandex_map .map_link a:hover,
+form .yandex_map .map_link a:focus {
+  background: #fff;
+  color: #060;
+}
+form .yandex_map .map_content {
+  height: 400px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+form .yandex_map .map_manage a {
+  display: inline-block;
+  vertical-align: top;
+  padding: 3px 10px;
+  color: #fff;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -icab-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 14px;
+}
+form .yandex_map .map_manage .link_ymap_save {
+  background: #060;
+  border: 1px solid #060;
+}
+form .yandex_map .map_manage .link_ymap_save:hover,
+form .yandex_map .map_manage .link_ymap_save:focus {
+  background: #fff;
+  color: #060;
+}
+form .yandex_map .map_manage .link_ymap_cancel {
+  background: #f00;
+  border: 1px solid #f00;
+}
+form .yandex_map .map_manage .link_ymap_cancel:hover,
+form .yandex_map .map_manage .link_ymap_cancel:focus {
+  background: #fff;
+  color: #f00;
+}
+form .colorpicker {
+  margin-bottom: 10px;
+}
+form .colorpicker:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}
+form .colorpicker .color_area {
+  float: left;
+  width: 50px;
+  height: 20px;
+  border: 2px solid #ccc;
+  margin-right: 5px;
+  cursor: pointer;
+}
+form .colorpicker .color_input {
+  float: left;
+  width: 70px;
+}
+.cleditorMain iframe {
+  width: 100% !important;
+}
+.error_mess {
+  background: #fbb;
+  padding: 10px;
+}
+sup[title] {
+  color: #f00;
+  font-weight: bold;
+}

@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title Restyler ready app
+
+  body
+    include ../components/header/index
+    main
+      .container
+        p MAIN
+        svg
+          use(xlink:href="#logo")
+    include ../components/footer/index

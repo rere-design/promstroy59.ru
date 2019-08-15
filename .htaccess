@@ -1,0 +1,89 @@
+# индекс по-умолчанию
+DirectoryIndex index.php
+
+# кодировка
+AddDefaultCharset UTF-8
+
+# зпарет на директории без индекса
+Options All -Indexes
+
+# предопреденеие страниц ошибок
+ErrorDocument 401 /401
+ErrorDocument 403 /403
+ErrorDocument 404 /404
+ErrorDocument 500 /500
+
+# запрет на типы файлов
+<Files ~ "\.(inc|ini|htaccess|tpl|less|log)$">
+	<IfModule mod_access_compat.c>
+		Order deny,allow
+		Deny from all
+	</IfModule>
+	<IfModule !mod_access_compat.c>
+		Require all denied
+	</IfModule>
+</Files>
+
+<IfModule mod_rewrite.c>
+	Options +FollowSymLinks
+	RewriteEngine On
+
+	# Редирект с www на без www
+	RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+	RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
+
+	# Редирект без слеша
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_URI} !\?
+	RewriteCond %{REQUEST_URI} !\&
+	RewriteCond %{REQUEST_URI} !\=
+	RewriteCond %{REQUEST_URI} !\.
+	RewriteCond %{REQUEST_URI} ![^\/]$
+	RewriteRule ^(.*)\/$ /$1 [R=301,L]
+
+	# Блокируем все ссылки, содержащие <script>
+	RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+	# Блокируем все скрипты, которые пытаются изменить переменные PHP Globals:
+	RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+	# Блокируем все скрипты, которые пытаются изменить переменную _REQUEST:
+	RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+	# Перенаправляем все подобные на страницу с ошибкой 403 — запрещено
+	RewriteRule ^(.*)$ /error/403 [F,L]
+
+	# Перенаправляем запросы на роутинг
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !.(js|css|gif|png|jpg|jpeg|ico|bmp|htm|html|txt|json|xml)$
+	RewriteRule ^(.*)$ /?route=$1 [L,QSA]
+
+	# Редирект с index на слеш
+	RewriteCond %{REQUEST_URI} /index.php
+	RewriteRule ^(.*)$ / [R=301,L]
+</IfModule>
+
+# Время жизни кеша
+<ifModule mod_headers.c>
+	# Все html и htm файлы будут храниться в кэше браузера один день
+	<FilesMatch "\.(html|htm)$">
+		Header set Cache-Control "max-age=43200"
+	</FilesMatch>
+	# Все css, javascript и текстовые файлы будут храниться в кэше браузера одну неделю
+	<FilesMatch "\.(js|css|txt)$">
+		Header set Cache-Control "max-age=604800"
+	</FilesMatch>
+	# Все флэш файлы и изображения будут храниться в кэше браузера один месяц
+	<FilesMatch "\.(flv|swf|ico|gif|jpg|jpeg|png|ttf|woff|otf|eot|svg|avi|mp4|webm|mp3|ogm|ogv)$">
+		Header set Cache-Control "max-age=2592000"
+	</FilesMatch>
+	# Отключаем кеширование php и других служебных файлов
+	<FilesMatch "\.(pl|php|cgi|spl|scgi|fcgi)$">
+		Header unset Cache-Control
+	</FilesMatch>
+</IfModule>
+
+<ifModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/css text/javascript application/javascript application/x-javascript
+</ifModule>
+
+# Отключение нотайсов и предупреждений
+#php_value error_reporting 1

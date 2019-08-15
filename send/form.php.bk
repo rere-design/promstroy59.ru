@@ -1,0 +1,208 @@
+<?php
+
+	header('Content-Type: application/json');
+	require_once $_SERVER['DOCUMENT_ROOT'] . '/inc/options.inc';
+
+	$mail = new Mailer();
+	$mail->to = implode(',', $cms_object->options->order->mailto);
+	$mail->hidden = implode(',', $cms_object->options->order->hidden);
+	$mail->from = $cms_object->options->order->mailfrom;
+	$mail->subject = $cms_object->options->order->subject;
+	$mail->json = true;
+	$mail->format['success'] = '';
+	$mail->templates['success'] = '<span>Спасибо!</span> <br>Ваша заявка принята, мы свяжемся с Вами в ближайшее время.';
+	$mail->add_item(array(
+		'name'			=>	'name',
+		'desc'			=>	'Имя',
+		'require'		=>	'yes',
+		'err_empty'		=>	'Введите ваше имя!',
+	));
+	$mail->add_item(array(
+		'name'			=>	'phone',
+		'desc'			=>	'Телефон',
+		'require'		=>	'phone',
+		'filter'		=>	7,
+		'err_empty'		=>	'Введите ваш телефон!',
+		'err_filter'	=>	'Неверный номер телефона',
+	));
+	$mail->add_item(array(
+		'name'			=>	'email',
+		'desc'			=>	'Почта',
+		'require'		=>	'yes',
+		'filter'		=>	'/^([a-zа-я0-9_\.-]+)@([a-zа-я0-9_\.-]+)\.([a-zа-я\.]{2,6})$/ui',
+		'err_empty'		=>	'Введите ваш email!',
+		'err_filter'	=>	'Email нужно вводить в формате name@site.ru',
+	));
+	$mail->add_item(array(
+		'name'			=>	'text',
+		'desc'			=>	'Вопрос',
+		'require'		=>	'yes',
+		'err_empty'		=>	'Введите ваш вопрос!',
+	));
+	$mail->add_item(array(
+		'name'			=>	'goalname',
+		'desc'			=>	'Заявка с кнопки',
+		'require'		=>	'all',
+		'err_empty'		=>	'Отсутствует информация о кнопке! <br> Обратитесь к администратору сайта!',
+	));
+	$mail->add_item(array(
+		'name'			=>	'goal',
+		'require'		=>	'all',
+		'send'			=>	false,
+		'err_empty'		=>	'Отсутствует информация о цели! <br> Обратитесь к администратору сайта!',
+	));
+
+	$str_refinfo = '';
+	if (is_object($refinfo)):
+		$mail->add_var('Дата первого контакта', $refinfo->data->first_date);
+		$mail->add_var('Первый контакт', $refinfo->data->first_ref);
+		$mail->add_var('Реферал', $refinfo->data->referer);
+		$mail->add_var('Параметры', $refinfo->data->get);
+		$mail->add_var('IP-адрес', $refinfo->data->ip);
+		$mail->add_var('User agent', $refinfo->data->ua);
+
+		if ($refinfo->data->first_date) $str_refinfo .= 'Дата первого контакта: ' . $refinfo->data->first_date . PHP_EOL;
+		if ($refinfo->data->first_ref) $str_refinfo .= 'Первый контакт: ' . $refinfo->data->first_ref . PHP_EOL;
+		if ($refinfo->data->referer) $str_refinfo .= 'Реферал: ' . $refinfo->data->referer . PHP_EOL;
+		if ($refinfo->data->get) $str_refinfo .= 'Параметры: ' . $refinfo->data->get . PHP_EOL;
+		if ($refinfo->data->ip) $str_refinfo .= 'IP-адрес: ' . $refinfo->data->ip . PHP_EOL;
+		if ($refinfo->data->ua) $str_refinfo .= 'User agent: ' . $refinfo->data->ua . PHP_EOL;
+
+		$sxgeo = new SxGeo($inc->sxgeodb, SXGEO_BATCH);
+		$city = $sxgeo->getCityFull($refinfo->data->ip);
+		if ($city):
+			$mail->add_var('Страна', $city['country']['name_ru']);
+			$mail->add_var('Регион', $city['region']['name_ru']);
+			$mail->add_var('Город', $city['city']['name_ru']);
+			$mail->add_var('На карте', '<a href="https://www.google.ru/maps/@' . $city['city']['lat'] . ',' . $city['city']['lon'] . ',12z?hl=ru">Google карта</a>');
+
+			$str_refinfo .= 'Страна: ' . $city['country']['name_ru'] . PHP_EOL;
+			$str_refinfo .= 'Регион: ' . $city['region']['name_ru'] . PHP_EOL;
+			$str_refinfo .= 'Город: ' . $city['city']['name_ru'] . PHP_EOL;
+		endif;
+	endif;
+
+	echo $mail->send(function($result, $items) {
+		global $inc, $cms_object;
+
+		if ($result['status'] == MAILER_SUCCESS):
+
+			/* ContactBackup start */
+			include_once $_SERVER['DOCUMENT_ROOT'] . '/../chbackup.class.php';
+			$bk = new CHBackup(array (
+				'name'	=>	$items['name']['value'],
+				'phone'	=>	$items['phone']['value'],
+				'email'	=>	$items['email']['value'],
+				'ip'	=>	$_SERVER['REMOTE_ADDR'],
+				'dom'	=>	$_SERVER['HTTP_HOST']
+			));
+			/* ContactBackup end */
+
+			/* amoCRM start */
+			if ($cms_object->integrations->amocrm->active):
+				if (!empty($cms_object->integrations->amocrm->account) && !empty($cms_object->integrations->amocrm->login) && !empty($cms_object->integrations->amocrm->apikey)):
+					$amo = new AmoCRM(array (
+						'account'	=>	$cms_object->integrations->amocrm->account,
+						'login'		=>	$cms_object->integrations->amocrm->login,
+						'apikey'	=>	$cms_object->integrations->amocrm->apikey,
+						'cookie'	=>	$_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . 'cookie_amocrm.ini'
+					));
+					$amo->init();
+					$amo->addField('name', empty($items['name']['value']) ? 'Имя не указано' : $items['name']['value']);
+					$amo->addField('company_name', 'Заявка с сайта');
+					$amo->addCustomFieldContacts('EMAIL', $items['email']['value']);
+					$amo->addCustomFieldContacts('PHONE', $items['phone']['value']);
+					$amo->sendLead('Первичный контакт', $items['goalname']['value'], $cms_object->integrations->amocrm->userid);
+					$amo->sendContact();
+					if ($amo->warning) $result['warning'][] = $amo->warning;
+				endif;
+			endif;
+			/* amoCRM end */
+
+			/* bitrix24 crm start */
+			if ($cms_object->integrations->bitrix24->active):
+				if (!empty($cms_object->integrations->bitrix24->host) && !empty($cms_object->integrations->bitrix24->login) && !empty($cms_object->integrations->bitrix24->password)):
+					$bitrix24 = new Bitrix24(array (
+						'host'		=>	$cms_object->integrations->bitrix24->host,
+						'login'		=>	$cms_object->integrations->bitrix24->login,
+						'password'	=>	$cms_object->integrations->bitrix24->password,
+					));
+					$bitrix24->addField('TITLE', $items['name']['value']);
+					$bitrix24->addField('NAME', $items['name']['value']);
+					$bitrix24->addField('PHONE_MOBILE', $items['phone']['value']);
+					$bitrix24->addField('EMAIL_HOME', $items['email']['value']);
+					if (!empty($str_refinfo)):
+						$bitrix24->addField('SOURCE_DESCRIPTION', $str_refinfo);
+					endif;
+					$responce = $bitrix24->send();
+					if ($responce->error == '301') $result['warning'][] = $responce->error_message;
+				endif;
+			endif;
+			/* bitrix24 crm end */
+
+			if (!empty($items['email']['value'])):
+
+				/* UniSender start */
+				if ($cms_object->integrations->unisender->active):
+					if (!empty($cms_object->integrations->unisender->apikey) && !empty($cms_object->integrations->unisender->listid)):
+						$data = array (
+							'api_key' 		=> $cms_object->integrations->unisender->apikey,
+							'list_ids' 		=> $cms_object->integrations->unisender->listid,
+							'fields[phone]' => $items['phone']['value'],
+							'fields[email]' => $items['email']['value'],
+							'fields[Name]' 	=> $items['name']['value'],
+							'request_ip' 	=> $_SERVER['REMOTE_ADDR'],
+							'tags' 			=> urlencode("Added using API")
+						);
+						$ch = curl_init();
+						curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+						curl_setopt($ch, CURLOPT_POST, 1);
+						curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+						curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+						curl_setopt($ch, CURLOPT_URL, 'http://api.unisender.com/ru/api/subscribe?format=json');
+						curl_exec($ch);
+						curl_close($ch);
+					endif;
+				endif;
+				/* UniSender end */
+
+				/* MailChimp start */
+				if ($cms_object->integrations->mailchimp->active):
+					if (!empty($cms_object->integrations->mailchimp->apikey) && !empty($cms_object->integrations->mailchimp->listid)):
+						$mcapi = new MCAPI($cms_object->integrations->mailchimp->apikey);
+						if ($mcapi->errorCode):
+							$result['warning'][] = 'Ошибка интеграции с MailChimp!<br>Ошибка: ' . $mcapi->errorMessage . '<br>Номер ошибки: ' . $mcapi->errorCode;
+						else:
+							$retval = $mcapi->listMembers($cms_object->integrations->mailchimp->listid, 'subscribed', null, 0, 5000);
+							$ok = true;
+							foreach ($retval['data'] as $v):
+								if ($v['email'] == $items['email']['value']):
+									$ok = false;
+									$result['warning'][] = 'Вы уже зарегистрированы!';
+									break;
+								endif;
+							endforeach;
+							if ($ok):
+								$mcapi->listSubscribe($cms_object->integrations->mailchimp->listid, $items['email']['value'], array (
+									'UNAME'			=> $items['name']['value'],
+									'EMAIL'			=> $items['email']['value'],
+									'PHONE'			=> $items['phone']['value'],
+									'MC_LANGUAGE'	=> 'ru'
+								));
+								if ($mcapi->errorCode):
+									$result['warning'][] = 'Ошибка регистрации пользователя! <br>Ошибка: ' . $mcapi->errorMessage . ' <br>Номер ошибки: ' . $mcapi->errorCode;
+								else:
+									$result['message'] .= ' <br>Перейдите на вашу почту (' . $items['email']['value'] . ') и подтвердите участие.';
+								endif;
+							endif;
+						endif;
+					endif;
+				endif;
+				/* MailChimp end */
+
+			endif;
+		endif;
+		return $result;
+	});
+
+?>
