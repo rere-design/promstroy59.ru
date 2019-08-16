@@ -1,0 +1,33 @@
+-
+  var listMenu=[
+  {link: "#equipment", title: "Продажа компрессоров"},
+  {link: "#buyout", title: "Выкуп Б/У"},
+  {link: "#comments", title: "Отзывы"},
+  {link: "#contacts", title: "Контакты"}
+  ]
+mixin itemMenu(link,title)
+  li.navbar-item
+    a(href=link)=title
+
+header.header
+    .navbar.is-spaced.is-fixed-top
+      .container
+        .navbar-brand.is-pulled-left
+          a.navbar-burger.burger
+            span(aria-hidden="true")
+            span(aria-hidden="true")
+            span(aria-hidden="true")
+          .logo
+            a(href="/")
+              img(src="/styles/img/logo.png")
+        .navbar-menu
+          ul.navbar-start
+            each el in listMenu
+              +itemMenu(el.link, el.title)
+          ul.navbar-end.header__contact
+            li.navbar-item.email
+              a(href="mailto:promstroy59@bk.ru" target="_blank" data-goal="goal_email").clickgoal promstroy59@bk.ru
+            li.navbar-item.phone
+              a(href="tel:+73422021715" data-goal="goal_phone").clickgoal 8 (342) 202-17-15
+            li.navbar-item.phone
+              a(href="tel:+73422021715" data-goal="goal_phone").clickgoal 8 (342) 202-17-15

@@ -1,5 +1,5 @@
 module.exports = {
-  // 'dir': '../local/templates/../assets', // Path from this dir
+  'dir': '../local/templates/r-promstroy/assets', // Path from this dir
   'ftp': {
     // 'host': '',
     // 'port': '22',

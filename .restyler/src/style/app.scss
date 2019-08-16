@@ -1,5 +1,424 @@
 @import 'variables';
-@import '~bulma/bulma.sass';
-@import "global";
+@import '~bulma/sass/utilities/_all';
+//@import '~bulma/sass/base/_all';
+@import '~bulma/sass/elements/container';
+@import '~bulma/sass/components/media';
+@import '~bulma/sass/components/navbar';
+@import '~bulma/sass/grid/columns';
+@import '~bulma/sass/layout/section';
 // Custom styles
-@import 'components/header';
+//@import 'components/header';
+.sec_offer {
+  .sec_hook {
+    .wrap {
+      background-color: #f1f1f3;
+      padding: 25px;
+      width: auto;
+      form {
+        .items {
+          .item {
+            max-width: 380px;
+            margin: 0 auto 15px;
+            @include mobile {
+              width: auto;
+            }
+          }
+        }
+        label {
+          .label {
+            color: black;
+          }
+        }
+      }
+      .rem {
+        color: black;
+      }
+    }
+  }
+}
+
+.sec_compressors {
+  .art {
+    .items {
+      @include mobile {
+        display: block;
+      }
+      .item {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+body {
+  @include touch {
+    padding-top: 52px !important;
+  }
+  .section {
+    @include touch {
+      padding: 0 12px;
+    }
+  }
+}
+
+header.header {
+  @include touch {
+    height: 52px;
+  }
+}
+
+.header {
+  .navbar {
+    &.is-spaced {
+      width: auto;
+      float: none;
+      @include touch {
+        padding: 0;
+      }
+    }
+  }
+  &__logo {
+    padding: 6px 8px !important;
+  }
+  .contacts {
+    .email {
+      padding-left: 30px;
+      background: url(/styles/img/icon_mail.png) no-repeat left center;
+      margin-left: 30px;
+    }
+    .phone {
+      &:before {
+        content: '';
+        display: inline-block;
+        background: url(/styles/img/icon_phone.png) no-repeat left center;
+        width: 22px;
+        height: 22px;
+        margin-top: -7px;
+      }
+    }
+  }
+}
+
+.sec_offer {
+  height: auto;
+  background-image: none;
+  .banner {
+    position: relative;
+    overflow: hidden;
+    padding: 0 12px;
+    &__img {
+      max-height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      img {
+        height: auto;
+        max-width: 100%;
+        @include mobile {
+          max-width: none;
+          height: 100%;
+        }
+      }
+    }
+    .art {
+      @include touch {
+        padding-top: 35px;
+      }
+      .info {
+        width: auto;
+        float: none;
+        padding-top: 0;
+        > p {
+          @include touch {
+            font-size: 15px;
+          }
+        }
+        .sec_hook {
+          @include touch {
+            margin-top: 25px;
+            margin-bottom: 35px;
+          }
+        }
+      }
+    }
+    &__box {
+      position: relative !important;
+      width: auto !important;
+      left: 0 !important;
+      @include touch {
+        padding: 15px;
+        h1 {
+          font-size: 26px;
+          font-weight: 600;
+          line-height: 1.2;
+          margin-bottom: 7px;
+        }
+        .desc {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+#compressors.sec_compressors {
+  .art {
+    .head2 {
+      @include touch {
+        font-size: 22px;
+        line-height: 27px;
+        font-weight: 600;
+      }
+      @include mobile {
+        text-align: center;
+      }
+    }
+    .items {
+      @include touch {
+        margin-top: 20px;
+      }
+      .item {
+        max-width: 350px;
+        @include mobile {
+          width: 100%;
+        }
+        .desc {
+          @include mobile {
+            top: -220px;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#compressors_form.sec_svyazatsa_form {
+  @include touch {
+    margin-top: 20px;
+  }
+  .art {
+    @include mobile {
+      padding: 35px 12px;
+    }
+    .wrap {
+      .head2 {
+        @include touch {
+          line-height: 30px;
+          font-size: 22px;
+        }
+      }
+      form {
+        @include mobile {
+          width: auto;
+        }
+        .items {
+          @include touch {
+            width: auto;
+          }
+          .item {
+
+          }
+        }
+      }
+    }
+  }
+}
+
+#quiz.sec_quiz {
+  @include touch {
+    margin-top: 20px;
+  }
+  .art {
+    .head2 {
+      &.title {
+        @include touch {
+          line-height: 31px !important;
+          margin-bottom: 10px !important;
+          font-size: 22px !important;
+        }
+      }
+    }
+    #app {
+      div {
+        div {
+          h2 {
+            @include mobile {
+              font-size: 17px;
+            }
+          }
+          ol {
+            li {
+              @include mobile {
+                padding: 10px;
+                margin-right: 10px;
+              }
+              .new {
+                .option {
+                  @include mobile {
+                    font-size: 15px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.sec_buyout_long#buyout_long {
+  .art {
+    .items {
+      .item {
+        .header {
+          margin-top: 0;
+          margin-left: 0;
+          width: auto !important;
+          @include touch {
+            padding: 10px 12px !important;
+          }
+          .head2 {
+            @include touch {
+              font-size: 22px;
+              line-height: 31px
+            }
+          }
+        }
+        .icons {
+          @include touch {
+            height: auto;
+          }
+          ul {
+            @include mobile {
+              padding-bottom: 20px;
+            }
+            li {
+              @include mobile {
+                height: 158px;
+                padding-top: 0;
+                padding-bottom: 0;
+                margin-top: 20px;
+              }
+              .icon {
+                @include mobile {
+                  height: 66px;
+                  line-height: 71px;
+                  margin-bottom: 17px;
+                }
+                img {
+                  @include mobile {
+                    margin-top: 19px;
+                    font-size: 14px;
+                    width: 40px;
+                  }
+                }
+              }
+              .title {
+                @include mobile {
+                  margin-top: 19px;
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.sec_contacts#contacts {
+  .art {
+    .head2 {
+      @include touch {
+        font-size: 22px;
+        margin-bottom: 6px;
+        font-weight: 600;
+        line-height: 29px;
+      }
+    }
+    .desc {
+      @include touch {
+        font-size: 17px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .bg {
+    padding: 40px 12px;
+    margin: 0 -24px;
+    @include touch {
+      padding: 20px 12px;
+      margin: 0 -12px;
+    }
+    .art2 {
+      &.art {
+        height: auto !important;
+        .ymap {
+          width: 100%;
+          height: 100%;
+        }
+        .contacts {
+          float: none;
+          padding-top: 0;
+          width: 100%;
+          .address, .phones, .email {
+            @include touch {
+              font-size: 14px;
+              font-weight: 600;
+              margin-bottom: 18px;
+            }
+          }
+          .socials {
+            .item {
+              float: none;
+              margin-bottom: 18px;
+              @include touch {
+                margin-bottom: 0;
+                img {
+                  width: 24px;
+                }
+                .clickgoal {
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.sec_buyout#buyout {
+  .art {
+    .items {
+      .item {
+        float: none;
+        @include tablet {
+          width: 50%;
+        }
+        .header {
+          .head2 {
+          }
+          .desc {
+
+          }
+        }
+        .img {
+          width: auto !important;
+          left: 12px;
+          bottom: 12px;
+          right: 12px;
+        }
+        .icons {
+
+        }
+      }
+    }
+  }
+}
+

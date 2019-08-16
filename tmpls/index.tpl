@@ -10,47 +10,84 @@
 		<? include($root . '/tmpls/header.inc'); ?>
 
 		<div class="sev sec_offer" id="offer">
-			<div class="art">
-				<div class="block">
-					<h1><?= $cms_object->offer->data->header; ?></h1>
-					<div class="desc"><?= $cms_object->offer->data->desc; ?></div>
+			<div class="banner">
+				<div class="banner__img" >
+					<img src="/styles/img/offer_bg5.jpg" width="" height="600" alt="">
 				</div>
-				<div class="info">
-					<?= Landing::GetTextareaContent($cms_object->offer->data->right, Landing::LE_PARAGRAPH); ?>
-					<div class="button_wrap"><a href="#hook" class="button scroll gotoform" data-goal="goal_call" data-goalname="Связаться с нами" data-class-head2="Безмасляные компрессоры для любой сферы применения" data-name-good=""><span>Связаться с нами</span></a></div>
-					<div class="rem">Перезвоним вам в течении 20 минут</div>
+				<div class="art container">
+					<div class="columns is-variable is-7">
+						<div class="column is-7">
+							<div class="block banner__box">
+								<h1><?= $cms_object->offer->data->header; ?></h1>
+								<div class="desc"><?= $cms_object->offer->data->desc; ?></div>
+							</div>
+						</div>
+						<div class="column">
+							<div class="info" style="">
+								<?= Landing::GetTextareaContent($cms_object->offer->data->right, Landing::LE_PARAGRAPH); ?>
+								<div class="sec sec_hook" id="hook">
+									<div class="wrap" >
+										<form action="<?= $inc->send; ?>" method="post">
+											<input type="hidden" name="goalname" value="Информация">
+											<input type="hidden" name="goal" value="goal_info">
+											<input type="hidden" name="good" value="">
+											<div class="items"  style="display: flex; flex-direction: column">
+												<input type="hidden" name="answers" value="">
+												<div class="item" style="width: 100%; max-width:none;"><input type="email" name="email" placeholder="Элетронная почта"></div>
+												<div class="item" style="width: 100%; max-width:none;"><input type="text" name="phone" placeholder="+7 (____) - ___ - ___ - _"></div>
+												<div class="item" style="width: 100%; max-width:none;"><button type="submit"><span>Отправить письмо</span></button></div>
+											</div>
+											<label><input type="checkbox" name="politic" value="1" data-focus="icon" checked><span class="icon"></span><span class="label">Я даю согласие на обработку персональных данных</span></label>
+										</form>
+										<div class="rem" style="margin-top: 15px;">Перезвоним вам в течении 20 минут</div>
+									</div>
+								</div>
+								<div class="button_wrap" style="display: none;">
+									<a href="#hook" class="button scroll gotoform" data-goal="goal_call" data-goalname="Связаться с нами" data-class-head2="Безмасляные компрессоры для любой сферы применения" data-name-good="">
+										<span>Связаться с нами</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="sev sec_compressors" id="compressors">
-			<div class="art">
+		<div class="sev sec_compressors section" id="compressors">
+			<div class="art container">
 				<div class="head2">Вам нужен компрессор?<br><span>Тогда вы правильно обратились!</span></div>
-				<ul class="items">
-					<li class="item">
-						<div class="desc">
-							<span>Компрессор дизельный малой мощности 7-12 Бар/2-5,5 м3.мин</span>
-						</div>
-						<img src="data/upload/equipments/list/thumb_01.jpg" alt="Компрессор дизельный малой мощности 7-12 Бар/2-5,5 м3.мин">
-					</li>
-					<li class="item">
-						<div class="desc">
-							<span>Компрессор дизельный средней мощности 7-14 Бар/7,5-12 м3.мин</span>
-						</div>
-						<img src="data/upload/equipments/list/thumb_02.jpg" alt="Компрессор дизельный малой мощности 7-12 Бар/2-5,5 м3.мин">
-					</li>
-					<li class="item">
-						<div class="desc">
-							<span>Компрессор дизельной высокой мощности 8,6-35Бар/22-63 м3.мин</span>
-						</div>
-						<img src="data/upload/equipments/list/thumb_03.jpg" alt="Компрессор дизельной высокой мощности 8,6-35Бар/22-63 м3.мин">
-					</li>
-				</ul>
+                <div class="columns items is-multiline">
+                    <div class="column is-narrow">
+                        <div class="item">
+                            <div class="desc">
+                                <span>Компрессор дизельный малой мощности 7-12 Бар/2-5,5 м3.мин</span>
+                            </div>
+                            <img src="data/upload/equipments/list/thumb_01.jpg" alt="Компрессор дизельный малой мощности 7-12 Бар/2-5,5 м3.мин">
+                        </div>
+                    </div>
+                    <div class="column is-narrow">
+                        <div class="item">
+                            <div class="desc">
+                                <span>Компрессор дизельный средней мощности 7-14 Бар/7,5-12 м3.мин</span>
+                            </div>
+                            <img src="data/upload/equipments/list/thumb_02.jpg" alt="Компрессор дизельный малой мощности 7-12 Бар/2-5,5 м3.мин">
+                        </div>
+                    </div>
+                    <div class="column is-narrow">
+                        <div class="item">
+                            <div class="desc">
+                                <span>Компрессор дизельной высокой мощности 8,6-35Бар/22-63 м3.мин</span>
+                            </div>
+                            <img src="data/upload/equipments/list/thumb_03.jpg" alt="Компрессор дизельной высокой мощности 8,6-35Бар/22-63 м3.мин">
+                        </div>
+                    </div>
+                </div>
 			</div>
 		</div>
 
 		<div class="sev sec_svyazatsa_form" id="compressors_form">
-			<div class="art">
+			<div class="art container">
 				<div class="wrap">
 					<div class="head2">Связаться с нами</div>
 					<form action="<?= $inc->send; ?>" method="post">
@@ -65,14 +102,14 @@
 						<label><input type="checkbox" name="politic" value="1" data-focus="icon" checked><span class="icon"></span><span class="label">Я даю согласие на обработку персональных данных</span></label>
 					</form>
 				</div>
-			</div>						
+			</div>
 			</div>
 		</div>
 
-		<div class="sev sec_quiz" id="quiz">
-			<div class="art">
-				<div class="head2">Подберите компрессор для своего бизнеса у нас,<br> со <span>скидкой в 20%!</span></div>
-				
+		<div class="sev sec_quiz section" id="quiz">
+			<div class="art container">
+				<div class="head2 title">Подберите компрессор для своего бизнеса у нас,<br> со <span>скидкой в 20%!</span></div>
+
 				<div id="app">
 				  <div class="info" v-show="completed === false">
 					  <div class="percentage" >
@@ -83,7 +120,7 @@
 					  </div>
 					  <div class="question_number">
 						  Вопрос {{ questionIndex+1 }} из {{ quiz.questions.length+1 }}
-					  </div>				  	
+					  </div>
 				  </div>
 				  <div v-for="(question, index) in quiz.questions">
 				    <!-- Hide all questions, show only the one with index === to current question index -->
@@ -96,8 +133,8 @@
 				            <!-- v-bind:value sets "value" to "true" if the response is correct -->
 				            <!-- v-bind:name sets "name" to question index to group answers by question -->
 				            <!-- v-model creates binding with userResponses -->
-				            <input type="radio" 
-				                   v-bind:name="index" 
+				            <input type="radio"
+				                   v-bind:name="index"
 				                   v-model="userResponses[index]" v-on:click="next"
 				                   > {{response.text}}
 				          </label>
@@ -148,30 +185,30 @@
 			    }, {
 			      text: "Какой тип компрессора требуется?",
 			      responses: [
-			        {text: 'Передвижной'}, 
-			        {text: 'Станционарный'}, 
-			        {text: 'Не знаю'}, 
+			        {text: 'Передвижной'},
+			        {text: 'Станционарный'},
+			        {text: 'Не знаю'},
 			      ]
 			    }, {
 			      text: "Необходимое рабочее давление?",
 			      responses: [
-			        {text: 'От 1-7 Бар'}, 
-			        {text: '7-14 Бар'}, 
-			        {text: '14-35 Бар'}, 
-			        {text: 'Не знаю'}, 
+			        {text: 'От 1-7 Бар'},
+			        {text: '7-14 Бар'},
+			        {text: '14-35 Бар'},
+			        {text: 'Не знаю'},
 			      ]
 			    }, {
 			      text: "Требуемая производительность компрессора?",
 			      responses: [
-			        {text: 'До 5,5 м3 в минуту'}, 
-			        {text: 'от 5,5 – 13 м3 в минуту'}, 
-			        {text: '13- 65 м3 в минуту'}, 
-			        {text: 'Не знаю'}, 
+			        {text: 'До 5,5 м3 в минуту'},
+			        {text: 'от 5,5 – 13 м3 в минуту'},
+			        {text: '13- 65 м3 в минуту'},
+			        {text: 'Не знаю'},
 			      ]
-			    } 
+			    }
 			  ]
 			};
-			      
+
 			new Vue({
 			  el: '#app',
 			  data: {
@@ -187,7 +224,7 @@
 				},
 				percentStyle: function() {
 					return ((this.questionIndex / this.quiz.questions.length) * 100 + 5) + '%'
-				}				
+				}
 			  },
 			  methods: {
 			    next: function(e) {
@@ -205,12 +242,12 @@
 			    	this.questionIndex = 0;
 			    }
 			  }
-			});			
+			});
 		</script>
 
 <?/*
 		<div class="sec sec_equipment" id="equipment">
-			<div class="art">
+			<div class="art container">
 				<div class="head2">Оборудование <span>PromStroy</span></div>
 				<div class="items">
 					<? foreach ($cms_object->equipments->list as $equipment): ?>
@@ -233,21 +270,24 @@
 		</div>
 */?>
 
-		<div class="sec sec_hook" id="hook">
-			<div class="art">
+		<div class="sec sec_hook section" id="hook">
+			<div class="art container">
 				<div class="wrap">
 					<div class="head2">Остались вопросы, <br>мы вам перезвоним!</div>
 					<form action="<?= $inc->send; ?>" method="post">
 						<input type="hidden" name="goalname" value="Остались вопросы">
 						<input type="hidden" name="goal" value="goal_questions">
 						<input type="hidden" name="good" value="">
-						<div class="items">
+						<div class="items ">
 							<div class="item"><input type="text" name="name" placeholder="Ваше имя"></div>
 							<div class="item"><input type="text" name="phone" placeholder="+7 (____) - ___ - ___ - _"></div>
 							<div class="item"><input type="text" name="email" placeholder="E-mail"></div>
 							<div class="item"><button type="submit"><span>Отправить письмо</span></button></div>
 						</div>
-						<label><input type="checkbox" name="politic" value="1" data-focus="icon" checked><span class="icon"></span><span class="label">Я даю согласие на обработку персональных данных</span></label>
+						<label>
+                            <input type="checkbox" name="politic" value="1" data-focus="icon" checked>
+                            <span class="icon"></span><span class="label">Я даю согласие на обработку персональных данных</span>
+                        </label>
 					</form>
 				</div>
 			</div>
@@ -303,11 +343,11 @@
 				),
 			);
 		?>
-		<div class="sec sec_buyout" id="buyout">
-			<div class="art">
-				<div class="items">
+		<div class="sec sec_buyout section" id="buyout">
+			<div class="art container">
+				<div class="items columns">
 					<? foreach ($buyouts as $buyout): ?>
-						<div class="item">
+						<div class="item column is-6">
 							<div class="header">
 								<div class="head2"><?= $buyout->title; ?></div>
 								<div class="desc"><?= $buyout->desc; ?></div>
@@ -330,7 +370,7 @@
 		</div>
 
 		<div class="sec sec_buyout_long" id="buyout_long">
-			<div class="art">
+			<div class="art container">
 				<div class="items">
 					<div class="item">
 						<div class="header">
@@ -361,7 +401,7 @@
 								<li>
 									<div class="icon"><img src="/styles/img/buyout/buyout_2_img_03.png" alt="Компрессор уезжает к ВАМ!!!"></div>
 									<div class="title">Компрессор уезжает к <strong>вам!</strong></div>
-								</li>												
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -370,11 +410,11 @@
 					Возможна продажа по программе по <span>Trade In</span>, в зачет возьмем Ваш старый компрессор!
 				</div>
 			</div>
-		</div>		
+		</div>
 
 		<? if (!empty($cms_object->comments->list)): ?>
 			<div class="sec sec_comments" id="comments">
-				<div class="art">
+				<div class="art container">
 					<div class="head2">Отзывы наших клиентов</div>
 					<div class="desc">Сотрудничайте и убедитесь сами</div>
 					<div class="slider">
@@ -412,27 +452,33 @@
 			</div>
 		<? endif; ?>
 
-		<div class="sec sec_contacts" id="contacts">
-			<div class="art art1">
+		<div class="sec sec_contacts section" id="contacts">
+			<div class="art art1 container">
 				<div class="head2">Контактная информация</div>
 				<div class="desc">Как вы можете связаться с нами</div>
 			</div>
 			<div class="bg">
-				<div class="art art2">
-					<div class="contacts">
-						<div class="address"><?= Landing::GetTextareaContent($cms_object->options->contacts->address, Landing::LE_BR); ?></div>
-						<div class="phones">
-							<? foreach ($cms_object->options->contacts->phones as $id => $phone): ?>
-								<div class="item"><a href="<?= Landing::GetPhone($phone); ?>" class="clickgoal" data-goal="goal_phone"><?= $phone; ?></a></div>
-							<? endforeach; ?>
+				<div class="art art2 container">
+					<div class="columns">
+						<div class="column is-5">
+							<div class="contacts">
+								<div class="address"><?= Landing::GetTextareaContent($cms_object->options->contacts->address, Landing::LE_BR); ?></div>
+								<div class="phones">
+									<? foreach ($cms_object->options->contacts->phones as $id => $phone): ?>
+									<div class="item"><a href="<?= Landing::GetPhone($phone); ?>" class="clickgoal" data-goal="goal_phone"><?= $phone; ?></a></div>
+									<? endforeach; ?>
+								</div>
+								<div class="email"><a href="<?= Landing::GetEmail($cms_object->options->contacts->email); ?>" target="_blank" class="clickgoal" data-goal="goal_email"><?= $cms_object->options->contacts->email; ?></a></div>
+								<div class="socials">
+									<? if ($cms_object->options->contacts->whatsapp): ?><div class="item"><img src="/styles/img/socials/icon_whatsapp.png" alt="WhatsApp"><a href="<?= Landing::GetWhatsApp($cms_object->options->contacts->whatsapp); ?>" class="clickgoal" data-goal="goal_whatsapp">WhatsApp</a></div><? endif; ?>
+									<? if ($cms_object->options->contacts->viber): ?><div class="item"><img src="/styles/img/socials/icon_viber.png" alt="Viber"><a href="<?= Landing::GetViber($cms_object->options->contacts->viber); ?>" class="clickgoal" data-goal="goal_viber">Viber</a></div><? endif; ?>
+								</div>
+							</div>
 						</div>
-						<div class="email"><a href="<?= Landing::GetEmail($cms_object->options->contacts->email); ?>" target="_blank" class="clickgoal" data-goal="goal_email"><?= $cms_object->options->contacts->email; ?></a></div>
-						<div class="socials">
-							<? if ($cms_object->options->contacts->whatsapp): ?><div class="item"><img src="/styles/img/socials/icon_whatsapp.png" alt="WhatsApp"><a href="<?= Landing::GetWhatsApp($cms_object->options->contacts->whatsapp); ?>" class="clickgoal" data-goal="goal_whatsapp">WhatsApp</a></div><? endif; ?>
-							<? if ($cms_object->options->contacts->viber): ?><div class="item"><img src="/styles/img/socials/icon_viber.png" alt="Viber"><a href="<?= Landing::GetViber($cms_object->options->contacts->viber); ?>" class="clickgoal" data-goal="goal_viber">Viber</a></div><? endif; ?>
+						<div class="column">
+							<? Landing::ShowMap($cms_object->options->contacts->map); ?>
 						</div>
 					</div>
-					<? Landing::ShowMap($cms_object->options->contacts->map); ?>
 				</div>
 			</div>
 		</div>

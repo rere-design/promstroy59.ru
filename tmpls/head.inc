@@ -6,6 +6,7 @@
 		'/js/tools/owl-carousel/owl.carousel.css',
 		//'/js/tools/wow/animate.css',
 		'/styles/style.css',
+		'/local/templates/r-promstroy/assets/app.css'
 		//'/styles/adaptive-1200.css',
 		//'/styles/adaptive-992.css',
 		//'/styles/adaptive-768.css',
@@ -29,7 +30,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<?/*<meta name="viewport" content="width=device-width">*/?>
-		<meta name="viewport" content="width=1600">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="format-detection" content="telephone=no">
 		<meta http-equiv="x-rim-auto-match" content="none">
 
@@ -55,5 +56,4 @@
 		<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
 		<?= $this->include_style(); ?>
 		<? Landing::ShowCode($cms_object->codes->head); ?>
-
 <!-- /HEAD SECTION END -->
