@@ -16,7 +16,7 @@
 				</div>
 				<div class="art container">
 					<div class="columns is-variable is-7">
-						<div class="column is-7">
+						<div class="column is-5-tablet is-7-desktop">
 							<div class="block banner__box">
 								<h1><?= $cms_object->offer->data->header; ?></h1>
 								<div class="desc"><?= $cms_object->offer->data->desc; ?></div>
@@ -24,7 +24,9 @@
 						</div>
 						<div class="column">
 							<div class="info" style="">
-								<?= Landing::GetTextareaContent($cms_object->offer->data->right, Landing::LE_PARAGRAPH); ?>
+								<p>
+									Наша компания занимается ПРОДАЖЕЙ новых и б/у КОМПРЕССОРОВ.
+								</p>
 								<div class="sec sec_hook" id="hook">
 									<div class="wrap" >
 										<form action="<?= $inc->send; ?>" method="post">
@@ -56,9 +58,17 @@
 
 		<div class="sev sec_compressors section" id="compressors">
 			<div class="art container">
-				<div class="head2">Вам нужен компрессор?<br><span>Тогда вы правильно обратились!</span></div>
-                <div class="columns items is-multiline">
-                    <div class="column is-narrow">
+				<div class="head2" style="line-height: 30px;">Вам нужен компрессор?<br>
+					<span style="font-size: 18px">Тогда вы по адресу, большой парк надежных компрессоров компании Atlas Copco:</span>
+				</div>
+				<div class="text" style="text-align:left;">
+					(аналоги Айрман,Кайзер, ЧКЗ КВ, ЗИФ Ремеза и т.д.) малой и средней мощности (7-12 бар, 5-10м3/мин).
+					<br>
+					Мы надежный поставщик арендных компрессоров на рынке Пермского края, у нас своя сервисная служба, которая ликвидирует остановку компрессора в кротчайшие сроки или разъяснит Вашим сотрудникам необходимые вопросы.
+					<br> Если Вам нужен хороший компрессор ? Звоните !!!
+				</div>
+                <div class="columns items is-multiline" style="justify-content: flex-start;">
+                    <div class="column">
                         <div class="item">
                             <div class="desc">
                                 <span>Компрессор дизельный малой мощности 7-12 Бар/2-5,5 м3.мин</span>
@@ -66,7 +76,7 @@
                             <img src="data/upload/equipments/list/thumb_01.jpg" alt="Компрессор дизельный малой мощности 7-12 Бар/2-5,5 м3.мин">
                         </div>
                     </div>
-                    <div class="column is-narrow">
+                    <div class="column">
                         <div class="item">
                             <div class="desc">
                                 <span>Компрессор дизельный средней мощности 7-14 Бар/7,5-12 м3.мин</span>
@@ -74,7 +84,7 @@
                             <img src="data/upload/equipments/list/thumb_02.jpg" alt="Компрессор дизельный малой мощности 7-12 Бар/2-5,5 м3.мин">
                         </div>
                     </div>
-                    <div class="column is-narrow">
+                    <div class="column">
                         <div class="item">
                             <div class="desc">
                                 <span>Компрессор дизельной высокой мощности 8,6-35Бар/22-63 м3.мин</span>
@@ -82,6 +92,38 @@
                             <img src="data/upload/equipments/list/thumb_03.jpg" alt="Компрессор дизельной высокой мощности 8,6-35Бар/22-63 м3.мин">
                         </div>
                     </div>
+					<div class="column">
+						<div class="item">
+							<div class="desc">
+								<span>Аренда компрессора Atlas Copco XAS 97 5,3м3/мин 7бар</span>
+							</div>
+							<img src="data/upload/equipments/list/cq5dam.web.1600.1600.jpeg" alt="Аренда компрессора Atlas Copco XAS97 5,3м3/мин 7бар">
+						</div>
+					</div>
+					<div class="column">
+						<div class="item">
+							<div class="desc">
+								<span>Аренда компрессора Atlas Copco XATS 156</span>
+							</div>
+							<img src="data/upload/equipments/list/cq5dam.web.1600.jpeg" alt="Аренда компрессора Atlas Copco XATS 156">
+						</div>
+					</div>
+					<div class="column">
+						<div class="item">
+							<div class="desc">
+								<span>Аренда компрессора Atlas Copco XAHS 186 10,4м3/мин 12 бар</span>
+							</div>
+							<img src="data/upload/equipments/list/cq5dam.web.16.jpeg" alt="Аренда компрессора Atlas Copco XAHS 186 10,4м3/мин 12 бар">
+						</div>
+					</div>
+					<div class="column">
+						<div class="item">
+							<div class="desc">
+								<span>Пескоструйный Аппарат Contracor DBS 200 (шланги 60м + сопло 8мм)</span>
+							</div>
+							<img src="data/upload/equipments/list/CRKT6tfQNnM.jpg" alt="Пескоструйный Аппарат Contracor DBS 200 (шланги 60м + сопло 8мм)">
+						</div>
+					</div>
                 </div>
 			</div>
 		</div>
@@ -278,11 +320,13 @@
 						<input type="hidden" name="goalname" value="Остались вопросы">
 						<input type="hidden" name="goal" value="goal_questions">
 						<input type="hidden" name="good" value="">
-						<div class="items ">
-							<div class="item"><input type="text" name="name" placeholder="Ваше имя"></div>
-							<div class="item"><input type="text" name="phone" placeholder="+7 (____) - ___ - ___ - _"></div>
-							<div class="item"><input type="text" name="email" placeholder="E-mail"></div>
-							<div class="item"><button type="submit"><span>Отправить письмо</span></button></div>
+						<div class="items columns">
+							<div class="item column"><input type="text" name="name" placeholder="Ваше имя"></div>
+							<div class="item column"><input type="text" name="phone" placeholder="+7 (____) - ___ - ___ - _"></div>
+						</div>
+						<div class="columns items">
+							<div class="item column"><input type="text" name="email" placeholder="E-mail"></div>
+							<div class="item column"><button type="submit"><span>Отправить письмо</span></button></div>
 						</div>
 						<label>
                             <input type="checkbox" name="politic" value="1" data-focus="icon" checked>
@@ -319,7 +363,7 @@
 					),
 				),
 				(object) array (
-					'title'	=>	'Как мы работаем <br>с нашими клиентами',
+					'title'	=>	'Процесс выкупа <br> оборудование',
 					'desc'	=>	'',
 					'img'	=>	'/styles/img/buyout_2_bg.jpg',
 					'items'	=>	array (
@@ -347,21 +391,23 @@
 			<div class="art container">
 				<div class="items columns">
 					<? foreach ($buyouts as $buyout): ?>
-						<div class="item column is-6">
+						<div class="item column">
 							<div class="header">
 								<div class="head2"><?= $buyout->title; ?></div>
 								<div class="desc"><?= $buyout->desc; ?></div>
 							</div>
-							<div class="img"><img src="<?= $buyout->img; ?>" alt="<?= $buyout->title; ?>"></div>
-							<div class="icons">
-								<ul>
-									<? foreach ($buyout->items as $item): ?>
+							<div class="wrapper">
+								<div class="img"><img src="<?= $buyout->img; ?>" alt="<?= $buyout->title; ?>"></div>
+								<div class="icons">
+									<ul>
+										<? foreach ($buyout->items as $item): ?>
 										<li>
 											<div class="icon"><img src="<?= $item->icon; ?>" alt="<?= $item->title; ?>"></div>
 											<div class="title"><?= $item->title; ?></div>
 										</li>
-									<? endforeach; ?>
-								</ul>
+										<? endforeach; ?>
+									</ul>
+								</div>
 							</div>
 						</div>
 					<? endforeach; ?>
@@ -413,7 +459,7 @@
 		</div>
 
 		<? if (!empty($cms_object->comments->list)): ?>
-			<div class="sec sec_comments" id="comments">
+			<div class="sec sec_comments section" id="comments">
 				<div class="art container">
 					<div class="head2">Отзывы наших клиентов</div>
 					<div class="desc">Сотрудничайте и убедитесь сами</div>

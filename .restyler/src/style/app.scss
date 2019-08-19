@@ -8,6 +8,10 @@
 @import '~bulma/sass/layout/section';
 // Custom styles
 //@import 'components/header';
+.is-hidden {
+  display: none;
+}
+
 .sec_offer {
   .sec_hook {
     .wrap {
@@ -76,15 +80,37 @@ header.header {
         padding: 0;
       }
     }
+    .navbar-menu {
+      @include touch {
+        .navbar-start {
+          width: 100%;
+        }
+      }
+    }
   }
   &__logo {
     padding: 6px 8px !important;
   }
   .contacts {
+    @include touch {
+      float: none;
+      width: auto;
+      text-align: left;
+    }
     .email {
-      padding-left: 30px;
-      background: url(/styles/img/icon_mail.png) no-repeat left center;
-      margin-left: 30px;
+      &:before {
+        content: '';
+        display: inline-block;
+        background: url(/styles/img/icon_mail.png) no-repeat left center;
+        width: 22px;
+        height: 22px;
+        margin-top: -3px;
+        margin-right: 5px;
+        @include touch {
+          margin-bottom: -8px;
+          margin-top: 0;
+        }
+      }
     }
     .phone {
       &:before {
@@ -112,11 +138,20 @@ header.header {
       left: 0;
       top: 0;
       bottom: 0;
+      @include tablet-only {
+        right: 0;
+      }
       img {
         height: auto;
         max-width: 100%;
         @include mobile {
           max-width: none;
+          height: 100%;
+        }
+        @include tablet-only {
+          width: 100%;
+        }
+        @include desktop-only {
           height: 100%;
         }
       }
@@ -148,14 +183,24 @@ header.header {
       left: 0 !important;
       @include touch {
         padding: 15px;
-        h1 {
+      }
+      h1 {
+        @include touch {
           font-size: 26px;
           font-weight: 600;
           line-height: 1.2;
           margin-bottom: 7px;
         }
-        .desc {
+        @include desktop-only {
+          font-size: 40px;
+        }
+      }
+      .desc {
+        @include touch {
           font-size: 15px;
+        }
+        @include desktop-only {
+          font-size: 22px;
         }
       }
     }
@@ -185,7 +230,7 @@ header.header {
         }
         .desc {
           @include mobile {
-            top: -220px;
+            top: -211px;
             font-size: 15px;
           }
         }
@@ -234,9 +279,10 @@ header.header {
     .head2 {
       &.title {
         @include touch {
-          line-height: 31px !important;
+          line-height: 27px !important;
           margin-bottom: 10px !important;
           font-size: 22px !important;
+          font-weight: 600;
         }
       }
     }
@@ -265,12 +311,34 @@ header.header {
           }
         }
       }
+      .form-quiz{
+        .head3{
+          @include touch{
+            font-size: 16px;
+            margin: 11px 0;
+            line-height: 20px;
+          }
+        }
+        form{
+          .items{
+            @include touch{
+              width: auto;
+            }
+          }
+        }
+      }
     }
   }
 }
 
 .sec_buyout_long#buyout_long {
+  @include touch {
+    margin-bottom: 0;
+  }
   .art {
+    @include touch {
+      padding-top: 0;
+    }
     .items {
       .item {
         .header {
@@ -295,7 +363,14 @@ header.header {
             @include mobile {
               padding-bottom: 20px;
             }
+            @include tablet-only {
+              padding-bottom: 0;
+            }
             li {
+              @include tablet-only {
+                height: auto;
+                margin-top: 0;
+              }
               @include mobile {
                 height: 158px;
                 padding-top: 0;
@@ -308,11 +383,17 @@ header.header {
                   line-height: 71px;
                   margin-bottom: 17px;
                 }
+                @include tablet-only {
+                  height: 57px;
+                }
                 img {
                   @include mobile {
                     margin-top: 19px;
                     font-size: 14px;
                     width: 40px;
+                  }
+                  @include tablet-only {
+                    width: 55px;
                   }
                 }
               }
@@ -324,6 +405,16 @@ header.header {
               }
             }
           }
+        }
+      }
+    }
+    .notice {
+      @include touch {
+        margin-top: 40px;
+        font-size: 14px;
+        padding: 15px 0;
+        span {
+          font-size: 16px;
         }
       }
     }
@@ -360,6 +451,7 @@ header.header {
         .ymap {
           width: 100%;
           height: 100%;
+          float: none;
         }
         .contacts {
           float: none;
@@ -395,30 +487,181 @@ header.header {
 
 .sec_buyout#buyout {
   .art {
+    @include touch {
+      padding-top: 0;
+    }
     .items {
       .item {
         float: none;
         @include tablet {
           width: 50%;
         }
+        @include touch {
+          width: auto !important;
+        }
         .header {
+          height: auto;
+          min-height: 210px;
+          padding: 25px;
+          @include touch {
+            padding: 20px;
+            min-height: auto;
+          }
+          @include tablet-only {
+            min-height: 154px;
+          }
           .head2 {
+            line-height: 40px;
+            margin-bottom: 12px;
+            @include touch {
+              font-weight: 600;
+              font-size: 22px;
+              line-height: 30px;
+              margin-bottom: 10px;
+            }
           }
           .desc {
-
+            @include touch {
+              font-size: 16px;
+            }
           }
         }
-        .img {
-          width: auto !important;
-          left: 12px;
-          bottom: 12px;
-          right: 12px;
-        }
-        .icons {
-
+        .wrapper {
+          position: relative;
+          overflow: hidden;
+          @include tablet-only {
+            min-height: 346px;
+          }
+          .img {
+            width: auto !important;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            @include touch {
+              height: auto;
+            }
+            img {
+              @include touch {
+                max-width: none;
+              }
+            }
+          }
+          .icons {
+            @include touch {
+              padding-bottom: 20px;
+              height: auto;
+            }
+            ul {
+              li {
+                @include touch {
+                  height: auto;
+                  padding: 20px 10px;
+                }
+                .icon {
+                  @include touch {
+                    height: 65px;
+                    line-height: 65px;
+                    margin-bottom: 10px;
+                  }
+                  img {
+                    @include touch {
+                      width: 50px;
+                    }
+                  }
+                }
+                .title {
+                  @include touch {
+                    font-size: 14px;
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
   }
 }
 
+.sec_hook#hook {
+  .art {
+    @include touch {
+      background: #f1f1f2;
+      padding: 20px;
+      height: auto !important;
+      margin: 0 -12px;
+    }
+    .wrap {
+      @include touch {
+        padding-left: 0;
+        width: auto;
+      }
+      .head2 {
+        @include touch {
+          font-size: 22px;
+          margin-bottom: 10px;
+          font-weight: 600;
+          line-height: 30px;
+        }
+      }
+      form {
+        .items {
+          .item {
+            float: none !important;
+            width: auto;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sec_comments#comments {
+  @include touch {
+    margin-bottom: 0;
+  }
+  .art {
+    .head2 {
+      @include touch {
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 30px;
+        margin-bottom: 10px;
+      }
+    }
+    .desc {
+      @include touch {
+        font-size: 16px;
+        margin-bottom: 35px;
+      }
+    }
+    .slider {
+      ul {
+        .owl-stage-outer {
+          .owl-item {
+            li {
+              width: auto !important;
+              margin: 0;
+              @include desktop {
+                margin: 0 25px;
+              }
+              .text {
+                @include touch {
+                  height: auto;
+                  padding: 20px;
+                }
+                .date {
+                  @include touch{
+                    position: relative;
+                    bottom: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

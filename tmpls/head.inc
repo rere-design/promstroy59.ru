@@ -21,6 +21,7 @@
 		'//api-maps.yandex.ru/2.1/?lang=ru_RU',
 		'/js/tools/core/core.js',
 		'/js/scripts.js',
+        '/local/templates/r-promstroy/assets/app.js'
 	));
 ?>
 <!-- HEAD SECTION START -->

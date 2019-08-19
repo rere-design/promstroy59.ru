@@ -7,15 +7,14 @@
                 <a class="navbar-item header__logo" href="/">
                     <img src="/styles/img/logo.png" width="188" height="40">
                 </a>
-                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                   data-target="navbarBasicExample">
+                <a role="button" class="navbar-burger burger" data-toggle="menu">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                 </a>
             </div>
 
-            <div id="navbarBasicExample" class="navbar-menu">
+            <div id="menu" class="navbar-menu">
                 <ul class="navbar-start">
                     <? foreach ($cms_object->options->menu as $item): ?>
                         <? if (empty($item->active)) continue; ?>

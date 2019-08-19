@@ -55,9 +55,13 @@ $(function(){
 
 	var block_3 = new Block();
 	block_3.open_text = '<ul class="compressors"><li>Altas copco</li><li>Comprag</li><li>ЗИФ</li></ul>'; 
-	block_3.closed_text = '<span>Компрессор дизельной высокой мощности 8,6-35Бар/22-63 м3.мин</span>'; 
+	block_3.closed_text = '<span>Компрессор дизельной высокой мощности 8,6-35Бар/22-63 м3.мин</span>';
 
-	$choice = [];
+  var block_4 = new Block();
+  block_4.open_text = '<ul class="compressors"><li>Altas copco</li><li>Comprag</li><li>ЗИФ</li></ul>';
+  block_4.closed_text = '<span>Компрессор дизельной высокой мощности 8,6-35Бар/22-63 м3.мин</span>';
+
+  $choice = [];
 
 	$('#compressors .art .items .item:eq(0)').click(function(e) {
 		$choice = [];
@@ -117,6 +121,27 @@ $(function(){
 			}			
 			$('#compressors .art .items .item:eq(2) .desc').find('>:first-child').replaceWith(block_3.closed_text);
 			block_3.scrollOpen();
+			$('[name="choice"]').val(JSON.stringify($choice));
+		}
+
+	});
+
+	$('#compressors .art .items .item:eq(3)').click(function(e) {
+		$choice = [];
+		$('[name="choice"]').val('');
+		block_4.toggleOpen();
+		$(this).find('.desc').toggleClass('bounce animated');
+
+		if (block_4.open) {
+			$('#compressors .art .items .item:eq(3) .desc').find('>:first-child').replaceWith(block_4.open_text);
+		} else {
+			if (e.target.className !== 'desc') {
+				$choice.push([block_4.closed_text.replace('<span>','').replace('</span>',''), e.target.textContent]);
+			} else {
+				$choice.push([block_4.closed_text.replace('<span>','').replace('</span>','')]);
+			}
+			$('#compressors .art .items .item:eq(3) .desc').find('>:first-child').replaceWith(block_4.closed_text);
+			block_4.scrollOpen();
 			$('[name="choice"]').val(JSON.stringify($choice));
 		}
 

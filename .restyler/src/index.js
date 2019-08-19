@@ -1,10 +1,10 @@
 import './style/app.scss'
 import 'babel-polyfill';
-// import './js/app'
+import './js/app'
 // Uncomment for use vue
 // import './js/vue-init'
 // Uncomment for use sprite
-import './js/svg-include'
+// import './js/svg-include'
 
 import modernizr from './.modernizrrc';
 
