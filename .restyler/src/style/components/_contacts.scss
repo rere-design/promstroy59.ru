@@ -41,6 +41,9 @@
           padding-top: 0;
           width: 100%;
           .address, .phones, .email {
+            margin-bottom: 20px !important;
+            padding-left: 46px !important;
+            background-position-x: 6px;
             @include touch {
               font-size: 14px;
               font-weight: 600;
@@ -48,8 +51,8 @@
             }
           }
           .address{
-            height: 36px;
             align-items: center;
+            background-size: 18px;
           }
           .socials {
             .item {
@@ -58,7 +61,7 @@
               height: 30px;
               line-height: 30px;
               img{
-                width: 23px;
+                width: 32px;
               }
               @include touch {
                 margin-bottom: 0;

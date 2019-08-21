@@ -75,7 +75,7 @@
                 <div class="card-product">
                     <div class="card-product__hover">
                         <a href="#compressors_form"
-                           class="callback scroll scroll scroll scroll scroll scroll scroll scroll scroll scroll scroll">Связаться
+                           class="callback scroll">Связаться
                             с нами</a>
                     </div>
                     <div class="card-product__title">
@@ -97,7 +97,7 @@
                 <div class="card-product">
                     <div class="card-product__hover">
                         <a href="#compressors_form"
-                           class="callback scroll scroll scroll scroll scroll scroll scroll scroll scroll scroll scroll">Связаться
+                           class="callback scroll">Связаться
                             с нами</a>
                     </div>
                     <div class="card-product__title">
@@ -119,7 +119,7 @@
                 <div class="card-product">
                     <div class="card-product__hover">
                         <a href="#compressors_form"
-                           class="callback scroll scroll scroll scroll scroll scroll scroll scroll scroll scroll scroll">Связаться
+                           class="callback scroll">Связаться
                             с нами</a>
                     </div>
                     <div class="card-product__title">
@@ -507,8 +507,8 @@
             <div class="column is-4">
                 <div class="card-product">
                     <div class="card-product__hover">
-                        <a href="#compressors_form"
-                           class="callback scroll scroll scroll scroll scroll scroll scroll scroll scroll scroll scroll scroll">Узнать
+                        <a href="#rent_form"
+                           class="callback scroll">Узнать
                             цену</a>
                     </div>
                     <div class="card-product__title">
@@ -529,8 +529,8 @@
             <div class="column is-4">
                 <div class="card-product">
                     <div class="card-product__hover">
-                        <a href="#compressors_form"
-                           class="callback scroll scroll scroll scroll scroll scroll scroll scroll scroll scroll scroll">Узнать
+                        <a href="#rent_form"
+                           class="callback scroll">Узнать
                             цену</a>
                     </div>
                     <div class="card-product__title">
@@ -551,8 +551,8 @@
             <div class="column is-4">
                 <div class="card-product">
                     <div class="card-product__hover">
-                        <a href="#compressors_form"
-                           class="callback scroll scroll scroll scroll scroll scroll scroll scroll scroll scroll scroll">Узнать
+                        <a href="#rent_form"
+                           class="callback scroll">Узнать
                             цену</a>
                     </div>
                     <div class="card-product__title">
@@ -573,8 +573,8 @@
             <div class="column is-4">
                 <div class="card-product">
                     <div class="card-product__hover">
-                        <a href="#compressors_form"
-                           class="callback scroll scroll scroll scroll scroll scroll scroll scroll scroll scroll scroll">Узнать
+                        <a href="#rent_form"
+                           class="callback scroll">Узнать
                             цену</a>
                     </div>
                     <div class="card-product__title">
@@ -595,8 +595,8 @@
             <div class="column is-4">
                 <div class="card-product">
                     <div class="card-product__hover">
-                        <a href="#compressors_form"
-                           class="callback scroll scroll scroll scroll scroll scroll scroll scroll scroll scroll scroll">Узнать
+                        <a href="#rent_form"
+                           class="callback scroll">Узнать
                             цену</a>
                     </div>
                     <div class="card-product__title">
@@ -614,6 +614,28 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+<div class="sev sec_svyazatsa_form" id="rent_form">
+    <div class="art container">
+        <div class="wrap">
+            <div class="head2">Связаться с нами</div>
+            <form action="<?= $inc->send; ?>" method="post">
+                <input type="hidden" name="goalname" value="Связаться с нами">
+                <input type="hidden" name="goal" value="goal_contact">
+                <input type="hidden" name="choice" value="">
+                <div class="items">
+                    <div class="item"><input type="text" name="name" placeholder="Ваше имя"></div>
+                    <div class="item"><input type="text" name="phone" placeholder="+7 (____) - ___ - ___ - _"></div>
+                    <div class="item">
+                        <button type="submit"><span>Отправить письмо</span></button>
+                    </div>
+                </div>
+                <label><input type="checkbox" name="politic" value="1" data-focus="icon" checked><span
+                            class="icon"></span><span
+                            class="label">Я даю согласие на обработку персональных данных</span></label>
+            </form>
         </div>
     </div>
 </div>
@@ -712,7 +734,7 @@
             <div class="columns">
                 <div class="column is-5">
                     <div class="contacts">
-                        <div class="address" style="height: 36px;">
+                        <div class="address">
                             <span>г.Пермь, ул. 1-я Красноармейская 5, оф № 7</span>
                         </div>
                         <div class="phones">

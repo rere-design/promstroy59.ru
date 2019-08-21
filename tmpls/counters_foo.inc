@@ -7,8 +7,5 @@
 			Landing::ShowCode($cms_object->codes->footer);
 		?>
 
-<!-- /COUNTERS SECTION END -->
-
-<? Landing::ShowAuthorInfo(); ?>
 
 <? if ($this->debug): ?><div id="goals"></div><? endif; ?>

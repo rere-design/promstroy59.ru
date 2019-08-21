@@ -464,20 +464,6 @@
 			return false;
 		}
 
-		static public function ShowAuthorInfo() {
-			echo '
-				<!--
-				==============================
-				Сверстал: Руслан Александрович
-				==============================
-				КОНТАКТЫ
-				Skype:  szenprogs
-				e-mail: szenprogs@gmail.com
-				phone:  +79600876433
-				==============================
-				-->
-			';
-		}
 	}
 
 ?>
