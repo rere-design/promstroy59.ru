@@ -45,3 +45,15 @@ function resizeHeaderMenu() {
 
 window.addEventListener('resize', resizeHeaderMenu);
 window.addEventListener('load', resizeHeaderMenu);
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const buttonCallback = document.querySelectorAll('.callback.scroll');
+  const form = document.querySelector('#compressors_form');
+  buttonCallback.forEach(button => button.addEventListener('click', () => {
+    if (!form.classList.contains('is-active')) form.classList.add('is-active');
+  }));
+});
+
+
+

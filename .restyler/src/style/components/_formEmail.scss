@@ -1,0 +1,39 @@
+.sec_hook#hook {
+  margin-top: 50px;
+  @include touch{
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  .art {
+    padding-bottom: 30px;
+    height: auto !important;
+    @include touch {
+      background: #f1f1f2;
+      padding: 20px;
+      margin: 0 -12px;
+    }
+    .wrap {
+      @include touch {
+        padding-left: 0;
+        width: auto;
+      }
+      .head2 {
+        @include touch {
+          font-size: 22px;
+          margin-bottom: 10px;
+          font-weight: 600;
+          line-height: 30px;
+        }
+      }
+      form {
+        .items {
+          .item {
+            float: none !important;
+            width: auto;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

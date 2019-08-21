@@ -1,11 +1,21 @@
 <? Landing::ShowCode($cms_object->codes->body); ?>
 
+<?
+$headerMenu = array(
+    ['TITLE' => 'Продажа компрессоров', 'URL'=>'compressors'],
+    ['TITLE' => 'Выкуп Б/У', 'URL'=>'buyout'],
+    ['TITLE' => 'Отзывы', 'URL'=>'comments'],
+    ['TITLE' => 'Аренда', 'URL'=>'rent'],
+    ['TITLE' => 'Выкуп', 'URL'=>'buyout'],
+    ['TITLE' => 'Контакты', 'URL'=>'contacts'],
+)
+?>
 <header class="header">
     <div class="art container">
         <nav class="navbar is-spaced">
             <div class="navbar-brand">
                 <a class="navbar-item header__logo" href="/">
-                    <img src="/styles/img/logo.png" width="188" height="40">
+                    <img src="/styles/img/logo.jpg" width="188" height="43">
                 </a>
                 <a role="button" class="navbar-burger burger" data-toggle="menu">
                     <span aria-hidden="true"></span>
@@ -16,24 +26,18 @@
 
             <div id="menu" class="navbar-menu">
                 <ul class="navbar-start">
-                    <? foreach ($cms_object->options->menu as $item): ?>
-                        <? if (empty($item->active)) continue; ?>
+                    <? foreach ($headerMenu as $value):?>
                         <li class="navbar-item" style="float: none; margin:0;">
-                            <a href="<?= $item->url; ?>"<?= Landing::IfThen(strpos($item->url, '#') > -1, ' class="scroll"', ''); ?>><?= $item->title; ?></a>
+                            <a href="#<?= $value['URL']?>" class="scroll"><?= $value['TITLE']?></a>
                         </li>
-                    <? endforeach; ?>
+                    <?endforeach;?>
                 </ul>
                 <ul class="navbar-end contacts">
-                    <li class="email navbar-item" style="float: none; margin:0;"><a href="<?= Landing::GetEmail($cms_object->options->contacts->email); ?>"
-                                          target="_blank" class="clickgoal"
-                                          data-goal="goal_email"><?= $cms_object->options->contacts->email; ?></a></li>
-                    <? foreach ($cms_object->options->contacts->phones as $id => $phone): ?>
-                        <? if ($id > 1) break; ?>
-                        <li class="phone navbar-item" style="float: none; margin:0;">
-                            <a href="<?= Landing::GetPhone($phone); ?>" class="clickgoal"
-                               data-goal="goal_phone"><?= $phone; ?></a>
-                        </li>
-                    <? endforeach; ?>
+                    <li class="phone navbar-item" style="float: none; margin:0;">
+                        <a href="tel:+79082500119" class="clickgoal" data-goal="goal_phone">
+                            8 (908) 25-00-119
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>

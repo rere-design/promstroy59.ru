@@ -1,0 +1,148 @@
+.sec_buyout#buyout {
+  @include touch {
+    margin-bottom: 0;
+  }
+  .art {
+    padding-top: 0;
+    .items {
+      .item {
+        float: none;
+        width: 100%;
+        & + .item {
+          margin-top: 26px;
+          @include touch {
+            margin-top: 20px;
+          }
+        }
+        .buyout-item {
+          @include mobile {
+            margin: 0 -12px;
+          }
+        }
+        .header {
+          height: auto;
+          padding: 25px;
+          @include mobile {
+            padding: 10px;
+            min-height: auto;
+          }
+          @include tablet-only {
+            padding: 20px;
+            min-height: 154px;
+          }
+          .head2 {
+            line-height: 40px;
+            margin-bottom: 12px;
+            @include touch {
+              font-weight: 600;
+              font-size: 22px;
+              line-height: 30px;
+              margin-bottom: 10px;
+            }
+          }
+          .desc {
+            @include touch {
+              font-size: 16px;
+            }
+          }
+        }
+        .wrapper {
+          position: relative;
+          overflow: hidden;
+          @include tablet-only {
+            min-height: 346px;
+          }
+          .img {
+            width: auto !important;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            @include touch {
+              height: auto;
+              top: 0;
+            }
+            img {
+              position: absolute;
+              left: 0;
+              width: 100%;
+              height: auto;
+              @include touch {
+                max-width: none;
+                width: auto;
+                height: 100%;
+              }
+            }
+          }
+          .icons {
+            height: auto;
+            padding: 40px;
+            @include tablet-only {
+              padding: 20px;
+            }
+            @include mobile {
+              padding: 10px;
+            }
+            ul {
+              width: 100%;
+              li {
+                height: auto;
+                float: none;
+                width: 25%;
+                @include touch {
+                  padding: 20px 10px;
+                }
+                @include mobile {
+                  width: 50%;
+                }
+                .icon {
+                  @include touch {
+                    height: 65px;
+                    line-height: 65px;
+                    margin-bottom: 10px;
+                  }
+                  img {
+                    @include touch {
+                      width: 50px;
+                    }
+                  }
+                }
+                .title {
+                  @include touch {
+                    font-size: 14px;
+                  }
+                }
+                .buyout-wrapper {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                  height: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .notice {
+      padding-top: 20px;
+      margin-top: 50px;
+      border-top: 1px solid #dcdcdc;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #dcdcdc;
+      @include touch {
+        margin: 28px -12px 0;
+        font-size: 14px;
+        padding: 15px 12px;
+      }
+      span {
+        color: #2895fb;
+        font-weight: 700;
+        font-size: 22px;
+        @include touch {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

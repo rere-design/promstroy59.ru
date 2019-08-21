@@ -1,0 +1,79 @@
+.sec_buyout_long#buyout_long {
+  @include touch {
+    margin: 0 -12px;
+  }
+  margin-bottom: 0;
+  .art {
+    padding-top: 0;
+    .items {
+      .item {
+        .header {
+          margin-top: 0;
+          margin-left: 0;
+          width: auto !important;
+          @include touch {
+            padding: 10px 12px !important;
+          }
+          .head2 {
+            @include touch {
+              font-size: 22px;
+              line-height: 31px
+            }
+          }
+        }
+        .icons {
+          @include touch {
+            height: auto;
+          }
+          ul {
+            padding: 12px;
+            @include mobile {
+              padding-bottom: 20px;
+            }
+            @include tablet-only {
+              padding-bottom: 0;
+            }
+            li {
+              @include tablet-only {
+                height: auto;
+                margin-top: 0;
+              }
+              @include mobile {
+                height: 158px;
+                padding-top: 0;
+                padding-bottom: 0;
+                margin-top: 20px;
+              }
+              .icon {
+                @include mobile {
+                  height: 66px;
+                  line-height: 71px;
+                  margin-bottom: 17px;
+                }
+                @include tablet-only {
+                  height: 57px;
+                }
+                img {
+                  @include mobile {
+                    margin-top: 19px;
+                    font-size: 14px;
+                    width: 40px;
+                  }
+                  @include tablet-only {
+                    width: 55px;
+                  }
+                }
+              }
+              .title {
+                @include mobile {
+                  margin-top: 19px;
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

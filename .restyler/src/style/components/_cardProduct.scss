@@ -1,0 +1,72 @@
+.card-product {
+  position: relative;
+  border: 1px solid #dedede;
+  &:hover {
+    .card-product__hover {
+      opacity: 1;
+      z-index: 2;
+      background: rgba(0, 0, 0, .8);
+      bottom: 0;
+      max-height: 500px;
+      .callback{
+        display: block;
+      }
+    }
+  }
+  &__title {
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 600;
+    color: white;
+    background: #2895fb;
+    padding: 10px 0;
+    margin: -1px -1px 0 -1px;
+  }
+  &__img {
+    position: relative;
+    padding-top: 60%;
+    margin: 15px 0;
+    overflow: hidden;
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &__desc {
+    text-align: left;
+    padding: 20px;
+  }
+  &__hover {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    max-height: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: .4s;
+    .callback {
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px 20px;
+      border: 1px solid #fff;
+      color: white;
+      background: transparent;
+      white-space: nowrap;
+      font-weight: 600;
+      font-size: 15px;
+      &:hover{
+        background: white;
+        color: black;
+      }
+    }
+  }
+}

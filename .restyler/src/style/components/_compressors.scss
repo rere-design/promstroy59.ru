@@ -1,0 +1,31 @@
+#compressors.sec_compressors {
+  .art {
+    .head2 {
+      @include touch {
+        font-size: 22px;
+        line-height: 27px;
+        font-weight: 600;
+      }
+      @include mobile {
+        text-align: center;
+      }
+    }
+    .items {
+      @include touch {
+        margin-top: 20px;
+      }
+      .item {
+        max-width: 350px;
+        @include mobile {
+          width: 100%;
+        }
+        .desc {
+          @include mobile {
+            top: -211px;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}

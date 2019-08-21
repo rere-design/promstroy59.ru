@@ -1,0 +1,198 @@
+html {
+  @include desktop {
+    padding-top: 80px;
+  }
+  @include touch {
+    padding-top: 52px;
+  }
+}
+
+body {
+  .section {
+    @include touch {
+      padding: 0 12px;
+    }
+  }
+}
+
+.is-hidden {
+  display: none;
+}
+
+.sec_offer {
+  .sec_hook {
+    .wrap {
+      background-color: #f1f1f3;
+      padding: 25px;
+      width: auto;
+      form {
+        .items {
+          .item {
+            max-width: 380px;
+            margin: 0 auto 15px;
+            @include mobile {
+              width: auto;
+            }
+          }
+        }
+        label {
+          .label {
+            color: black;
+          }
+        }
+      }
+      .rem {
+        color: black;
+      }
+    }
+  }
+}
+
+.sec_compressors {
+  .art {
+    .items {
+      margin-top: 0;
+      @include mobile {
+        display: block;
+      }
+      .item {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.sec_offer {
+  height: auto;
+  background-image: none;
+  margin-bottom: 0 !important;
+  .banner {
+    position: relative;
+    overflow: hidden;
+    padding: 0 12px;
+    &__img {
+      max-height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      @include tablet-only {
+        right: 0;
+      }
+      img {
+        height: auto;
+        max-width: 100%;
+        @include mobile {
+          max-width: none;
+          height: 100%;
+        }
+        @include tablet-only {
+          width: 100%;
+        }
+        @include desktop-only {
+          height: 100%;
+        }
+      }
+    }
+    .art {
+      @include touch {
+        padding-top: 35px;
+      }
+      .info {
+        width: auto;
+        float: none;
+        padding-top: 0;
+        > p {
+          @include touch {
+            font-size: 15px;
+          }
+        }
+        .sec_hook {
+          margin-top: 0;
+          @include touch {
+            margin-top: 25px;
+            margin-bottom: 35px;
+          }
+        }
+      }
+    }
+    &__box {
+      position: relative !important;
+      width: auto !important;
+      left: 0 !important;
+      @include touch {
+        padding: 15px;
+      }
+      h1 {
+        @include touch {
+          font-size: 26px;
+          font-weight: 600;
+          line-height: 1.2;
+          margin-bottom: 7px;
+        }
+        @include desktop-only {
+          font-size: 40px;
+        }
+      }
+      .desc {
+        @include touch {
+          font-size: 15px;
+        }
+        @include desktop-only {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}
+
+button[type="submit"] {
+  span {
+    vertical-align: initial !important;
+  }
+}
+
+.sec_rent#rent {
+  margin: 90px 0 50px;
+  @include touch {
+    margin: 25px 0;
+  }
+  .head2 {
+    @include touch {
+      font-size: 22px;
+      line-height: 27px;
+      font-weight: 600;
+    }
+  }
+}
+
+.section {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  @include touch {
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
+  }
+}
+
+.sec_brand {
+  &__box {
+    height: max-content;
+  }
+  &__wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__wrapper-box{
+    padding: 40px 0;
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    @include touch{
+      padding: 20px 0;
+    }
+  }
+}

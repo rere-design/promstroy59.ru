@@ -1,0 +1,62 @@
+header.header {
+  @include touch {
+    height: 52px;
+  }
+}
+
+.header {
+  .navbar {
+    &.is-spaced {
+      width: auto;
+      float: none;
+      @include touch {
+        padding: 0;
+      }
+    }
+    .navbar-menu {
+      @include touch {
+        .navbar-start {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &__logo {
+    padding: 6px 8px !important;
+    img {
+      @include desktop {
+        margin-top: -5px;
+      }
+    }
+  }
+  .contacts {
+    float: none;
+    width: auto;
+    text-align: left;
+    .email {
+      &:before {
+        content: '';
+        display: inline-block;
+        background: url(/styles/img/icon_mail.png) no-repeat left center;
+        width: 22px;
+        height: 22px;
+        margin-top: -3px;
+        margin-right: 5px;
+        @include touch {
+          margin-bottom: -8px;
+          margin-top: 0;
+        }
+      }
+    }
+    .phone {
+      &:before {
+        content: '';
+        display: inline-block;
+        background: url(/styles/img/icon_phone.png) no-repeat left center;
+        width: 22px;
+        height: 22px;
+        margin-top: -7px;
+      }
+    }
+  }
+}

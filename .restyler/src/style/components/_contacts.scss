@@ -1,0 +1,78 @@
+.sec_contacts#contacts {
+  padding-bottom: 0 !important;
+  .bg {
+    padding: 40px 12px;
+    margin: 0 -24px;
+    @include touch {
+      padding: 20px 12px;
+      margin: 0 -12px;
+    }
+    .art1 {
+      padding-top: 0;
+      height: auto;
+      .head2 {
+        line-height: 37px;
+        margin-bottom: 10px;
+        @include touch {
+          font-size: 22px;
+          margin-bottom: 6px;
+          font-weight: 600;
+          line-height: 29px;
+        }
+      }
+      .desc {
+        margin-bottom: 30px;
+        @include touch {
+          font-size: 17px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .art2 {
+      &.art {
+        height: auto !important;
+        .ymap {
+          width: 100%;
+          height: 100%;
+          float: none;
+        }
+        .contacts {
+          float: none;
+          padding-top: 0;
+          width: 100%;
+          .address, .phones, .email {
+            @include touch {
+              font-size: 14px;
+              font-weight: 600;
+              margin-bottom: 18px;
+            }
+          }
+          .address{
+            height: 36px;
+            align-items: center;
+          }
+          .socials {
+            .item {
+              float: none;
+              margin-bottom: 18px;
+              height: 30px;
+              line-height: 30px;
+              img{
+                width: 23px;
+              }
+              @include touch {
+                margin-bottom: 0;
+                img {
+                  width: 24px;
+                }
+                .clickgoal {
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+#compressors_form.sec_svyazatsa_form {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 0;
+  @include touch {
+    margin-top: 20px;
+  }
+  &.is-active {
+    max-height: 1000px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .art {
+    @include mobile {
+      padding: 35px 12px;
+    }
+    .wrap {
+      .head2 {
+        @include touch {
+          line-height: 30px;
+          font-size: 22px;
+        }
+      }
+      form {
+        @include mobile {
+          width: auto;
+        }
+        .items {
+          @include touch {
+            width: auto;
+          }
+          .item {
+
+          }
+        }
+      }
+    }
+  }
+}
