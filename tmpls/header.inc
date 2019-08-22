@@ -3,10 +3,11 @@
 <?
 $headerMenu = array(
     ['TITLE' => 'Продажа компрессоров', 'URL'=>'compressors'],
-    ['TITLE' => 'Выкуп Б/У', 'URL'=>'buyout'],
-    ['TITLE' => 'Отзывы', 'URL'=>'comments'],
+    ['TITLE' => 'Выкуп Б/У', 'URL'=>'buyback'],
     ['TITLE' => 'Аренда', 'URL'=>'rent'],
-    ['TITLE' => 'Выкуп', 'URL'=>'buyout'],
+    ['TITLE' => 'Ремонт', 'URL'=>'service'],
+    ['TITLE' => 'Выкуп', 'URL'=>'vykup'],
+    ['TITLE' => 'Отзывы', 'URL'=>'comments'],
     ['TITLE' => 'Контакты', 'URL'=>'contacts'],
 )
 ?>

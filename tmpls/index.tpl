@@ -48,7 +48,7 @@
                                     <label><input type="checkbox" name="politic" value="1" data-focus="icon"
                                                   checked><span class="icon"></span><span class="label">Я даю согласие на обработку персональных данных</span></label>
                                 </form>
-                                <div class="rem" style="margin-top: 15px; text-align: center;">Перезвоним вам в течении
+                                <div class="rem" style="margin-top: 15px; text-align: center;">Перезвоним вам в течение
                                     20 минут
                                 </div>
                             </div>
@@ -367,85 +367,6 @@
 </div>
 */?>
 
-<div class="sec sec_hook section" id="hook">
-    <div class="art container">
-        <div class="wrap">
-            <div class="head2">Остались вопросы, <br>мы вам перезвоним!</div>
-            <form action="<?= $inc->send; ?>" method="post">
-                <input type="hidden" name="goalname" value="Остались вопросы">
-                <input type="hidden" name="goal" value="goal_questions">
-                <input type="hidden" name="good" value="">
-                <div class="items columns">
-                    <div class="item column"><input type="text" name="name" placeholder="Ваше имя"></div>
-                    <div class="item column"><input type="text" name="phone" placeholder="+7 (____) - ___ - ___ - _">
-                    </div>
-                </div>
-                <div class="columns items">
-                    <div class="item column"><input type="text" name="email" placeholder="E-mail"></div>
-                    <div class="item column">
-                        <button type="submit"><span>Отправить письмо</span></button>
-                    </div>
-                </div>
-                <label>
-                    <input type="checkbox" name="politic" value="1" data-focus="icon" checked>
-                    <span class="icon"></span><span class="label">Я даю согласие на обработку персональных данных</span>
-                </label>
-            </form>
-        </div>
-    </div>
-</div>
-
-<?
-			$buyouts = array (
-				(object) array (
-					'title'	=>    'Выкуп Б/У: Компрессоров и Комплектующих',
-'desc' => 'Купим Ваш компрессор <b>ДОРОГО</b> <br>и в любом состоянии',
-'img' => '/styles/img/buyout_1_bg.jpg',
-'items' => array (
-(object) array (
-'title' => 'Работаем 24/7',
-'icon' => '/styles/img/buyout/buyout_1_img_01.png',
-),
-(object) array (
-'title' => 'Выезд в любую <br>точку страны',
-'icon' => '/styles/img/buyout/buyout_1_img_02.png',
-),
-(object) array (
-'title' => 'Деньги в день <br>сделки',
-'icon' => '/styles/img/buyout/buyout_1_img_03.png',
-),
-(object) array (
-'title' => 'Консультация по любым <br>вопросам сделки',
-'icon' => '/styles/img/buyout/buyout_1_img_04.png',
-),
-),
-),
-(object) array (
-'title' => 'Процесс выкупа оборудование',
-'desc' => '',
-'img' => '/styles/img/buyout_2_bg.jpg',
-'items' => array (
-(object) array (
-'title' => 'Звонок или заявка',
-'icon' => '/styles/img/buyout/buyout_2_img_01.png',
-),
-(object) array (
-'title' => 'Оцениваем ваше <br>оборудование',
-'icon' => '/styles/img/buyout/buyout_2_img_02.png',
-),
-(object) array (
-'title' => 'Вызежаем к вам',
-'icon' => '/styles/img/buyout/buyout_2_img_03.png',
-),
-(object) array (
-'title' => 'Вы получаете деньги',
-'icon' => '/styles/img/buyout/buyout_2_img_04.png',
-),
-),
-),
-);
-?>
-
 <div class="sec sec_buyout_long section" id="buyout_long">
     <div class="art container">
         <div class="items">
@@ -492,9 +413,112 @@
     </div>
 </div>
 
+
+<div class="sec sec_hook section" id="hook">
+    <div class="art container">
+        <div class="wrap">
+            <div class="head2">Остались вопросы, <br>мы вам перезвоним!</div>
+            <form action="<?= $inc->send; ?>" method="post">
+                <input type="hidden" name="goalname" value="Остались вопросы">
+                <input type="hidden" name="goal" value="goal_questions">
+                <input type="hidden" name="good" value="">
+                <div class="items columns">
+                    <div class="item column"><input type="text" name="name" placeholder="Ваше имя"></div>
+                    <div class="item column"><input type="text" name="phone" placeholder="+7 (____) - ___ - ___ - _">
+                    </div>
+                </div>
+                <div class="columns items">
+                    <div class="item column"><input type="text" name="email" placeholder="E-mail"></div>
+                    <div class="item column">
+                        <button type="submit"><span>Отправить письмо</span></button>
+                    </div>
+                </div>
+                <label>
+                    <input type="checkbox" name="politic" value="1" data-focus="icon" checked>
+                    <span class="icon"></span><span class="label">Я даю согласие на обработку персональных данных</span>
+                </label>
+            </form>
+        </div>
+    </div>
+</div>
+
+<?
+			$buyouts = array (
+(object) array (
+'title' => 'Ремонт и Сервисное обслуживание <br> дизельных компрессоров',
+'id' => 'service',
+'desc' => '<b>Выполняем ремонтные и сервисные работы</b>, проводим плановое техобслуживание винтовых, поршневых компрессоров. ',
+'img' => '/styles/img/L3NA84NEKP4.jpg',
+'items' => array (
+(object) array (
+'title' => 'Среднее время <br> ремонта 2 дня.',
+'icon' => '/styles/img/buyout/icons8.png',
+),
+(object) array (
+'title' => 'Подменный компрессор <br> на время ремонта',
+'icon' => '/styles/img/buyout/icons71.png',
+),
+(object) array (
+'title' => 'Выезд инженера 24/7',
+'icon' => '/styles/img/buyout/buyout_2_img_03.png',
+),
+),
+),
+(object) array (
+'title' => 'Процесс выкупа оборудование',
+'id' => 'vykup',
+'desc' => '',
+'img' => '/styles/img/buyout_2_bg.jpg',
+'items' => array (
+(object) array (
+'title' => 'Звонок или заявка',
+'icon' => '/styles/img/buyout/buyout_2_img_01.png',
+),
+(object) array (
+'title' => 'Оцениваем ваше <br>оборудование',
+'icon' => '/styles/img/buyout/buyout_2_img_02.png',
+),
+(object) array (
+'title' => 'Вызежаем к вам',
+'icon' => '/styles/img/buyout/buyout_2_img_03.png',
+),
+(object) array (
+'title' => 'Вы получаете деньги',
+'icon' => '/styles/img/buyout/buyout_2_img_04.png',
+),
+),
+),
+(object) array (
+'title' => 'Выкуп Б/У: Компрессоров и Комплектующих',
+'id' => 'buyback',
+'desc' => 'Купим Ваш компрессор <b>ДОРОГО</b> и в любом состоянии',
+'img' => '/styles/img/buyout_1_bg.jpg',
+'items' => array (
+(object) array (
+'title' => 'Работаем 24/7',
+'icon' => '/styles/img/buyout/buyout_1_img_01.png',
+),
+(object) array (
+'title' => 'Выезд в любую <br>точку страны',
+'icon' => '/styles/img/buyout/buyout_1_img_02.png',
+),
+(object) array (
+'title' => 'Деньги в день <br>сделки',
+'icon' => '/styles/img/buyout/buyout_1_img_03.png',
+),
+(object) array (
+'title' => 'Консультация по любым <br>вопросам сделки',
+'icon' => '/styles/img/buyout/buyout_1_img_04.png',
+),
+),
+),
+);
+?>
+
+
 <div class=" sec_rent section" id="rent">
     <div class="art container">
-        <div class="head2">Вам нужен компрессор?<br>
+        <div class="head2">Вам нужен компрессор в аренду?<br>
             <span>Тогда вы по адресу,</span>
             большой парк надежных компрессоров компании Atlas Copco:
         </div>
@@ -515,7 +539,7 @@
                         Аренда компрессора <br> Atlas Copco XAS 97
                     </div>
                     <div class="card-product__img">
-                        <img src="data/upload/equipments/list/cq5dam.web.1600.1600.jpeg"
+                        <img src="data/upload/equipments/list/cq5dam.web.1600.jpg"
                              alt="">
                     </div>
                     <div class="card-product__desc">
@@ -537,7 +561,7 @@
                         Аренда компрессора <br> Atlas Copco XAS 186
                     </div>
                     <div class="card-product__img">
-                        <img src="data/upload/equipments/list/cq5dam.web.1600.jpeg"
+                        <img src="data/upload/equipments/list/cq5dam.web.jpg"
                              alt="">
                     </div>
                     <div class="card-product__desc">
@@ -559,7 +583,7 @@
                         Аренда компрессора <br> Atlas Copco XAHS 186
                     </div>
                     <div class="card-product__img">
-                        <img src="data/upload/equipments/list/cq5dam.web.16.jpeg"
+                        <img src="data/upload/equipments/list/cq5dam.web.jpg"
                              alt="">
                     </div>
                     <div class="card-product__desc">
@@ -581,7 +605,7 @@
                         Аренда компрессора <br> Atlas Copco XATS 156
                     </div>
                     <div class="card-product__img">
-                        <img src="data/upload/equipments/list/cq5dam.web.16.jpeg"
+                        <img src="data/upload/equipments/list/cq5dam.web.jpg"
                              alt="">
                     </div>
                     <div class="card-product__desc">
@@ -617,6 +641,7 @@
         </div>
     </div>
 </div>
+
 <div class="sev sec_svyazatsa_form" id="rent_form">
     <div class="art container">
         <div class="wrap">
@@ -640,11 +665,32 @@
     </div>
 </div>
 
+<div class=" sec_rent section" style="display: none;" id="">
+    <div class="art container">
+        <div class="head2"><span>Ремонт и Сервисное обслуживание</span> дизельных компрессоров<br>
+        </div>
+        <div style="text-align: left; margin-bottom: 25px;">
+            Выполняем ремонтные и сервисные работы, проводим плановое техобслуживание винтовых, поршневых компрессоров.
+            <br>
+                Наши преимущества:
+            <ul style="    margin: 10px 0 20px 30px;list-style-type: disc;">
+                <li>Среднее время ремонта 2 дня.</li>
+                <li>Подменный компрессор на время ремонта</li>
+                <li>Выезд инженера 24/7</li>
+            </ul>
+        </div>
+        <div class="">
+            <img src="./styles/img/L3NA84NEKP4.jpg" alt="">
+        </div>
+    </div>
+</div>
+
+
 <div class="sec sec_buyout section" id="buyout">
     <div class="art container">
         <div class="items columns is-multiline">
             <? foreach ($buyouts as $buyout): ?>
-            <div class="item column is-full">
+            <div class="item column is-full" id="<?= $buyout->id; ?>">
                 <div class="buyout-item">
                     <div class="header">
                         <div class="head2"><?= $buyout->title; ?></div>
@@ -653,7 +699,7 @@
                     <div class="wrapper">
                         <div class="img"><img src="<?= $buyout->img; ?>" alt="<?= $buyout->title; ?>"></div>
                         <div class="icons">
-                            <ul class="columns is-multiline is-mobile">
+                            <ul class="columns is-centered is-multiline is-mobile">
                                 <? foreach ($buyout->items as $item): ?>
                                 <li class="column is-3 is-6-mobile">
                                     <div class="buyout-wrapper">
@@ -735,7 +781,7 @@
                 <div class="column is-5">
                     <div class="contacts">
                         <div class="address">
-                            <span>г.Пермь, ул. 1-я Красноармейская 5, оф № 7</span>
+                            <span>г. Пермь, ул. 1-я Красноармейская 5, оф № 7</span>
                         </div>
                         <div class="phones">
                             <div class="item">

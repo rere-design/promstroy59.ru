@@ -1,7 +1,6 @@
 <?php
 	$this->add_style(array (
-		'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,cyrillic',
-		'http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700&amp;subset=latin,cyrillic',
+		'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:300,400,600,700,800&display=swap',
 		'/js/tools/colorbox/style/colorbox.css',
 		'/js/tools/owl-carousel/owl.carousel.css',
 		//'/js/tools/wow/animate.css',
