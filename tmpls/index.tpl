@@ -82,7 +82,7 @@
                         Компрессор дизельный <br> малой мощности
                     </div>
                     <div class="card-product__img">
-                        <img src="data/upload/equipments/list/thumb_01.jpg"
+                        <img src="data/upload/equipments/list/kmm.png"
                              alt="Компрессор дизельный малой мощности 7-12 Бар/2-5,5 м3.мин">
                     </div>
                     <div class="card-product__desc">
@@ -104,7 +104,7 @@
                         Компрессор дизельный <br> средней мощности
                     </div>
                     <div class="card-product__img">
-                        <img src="data/upload/equipments/list/thumb_02.jpg"
+                        <img src="data/upload/equipments/list/kmc.png"
                              alt="Компрессор дизельный средней мощности 7-14 Бар/7,5-12 м3.мин">
                     </div>
                     <div class="card-product__desc">
@@ -126,7 +126,7 @@
                         Компрессор дизельный <br> высокой мощности
                     </div>
                     <div class="card-product__img">
-                        <img src="data/upload/equipments/list/thumb_03.jpg"
+                        <img src="data/upload/equipments/list/kmv.png"
                              alt="Компрессор дизельный средней мощности 8,6-35Бар/22-63 м3.мин">
                     </div>
                     <div class="card-product__desc">
@@ -384,7 +384,7 @@
                         <li>
                             <div class="icon"><img src="/styles/img/buyout/buyout_1_img_04.png"
                                                    alt="Оцениваем ваше оборудование"></div>
-                            <div class="title">Уточняем параметры компрессор</div>
+                            <div class="title">Уточняем параметры компрессора</div>
                         </li>
                         <li>
                             <div class="icon"><img src="/styles/img/buyout/buyout_2_img_02.png"
@@ -404,7 +404,7 @@
                         <li>
                             <div class="icon"><img src="/styles/img/buyout/buyout_2_img_03.png"
                                                    alt="Компрессор уезжает к ВАМ!!!"></div>
-                            <div class="title">Компрессор уезжает к <strong>вам!</strong></div>
+                            <div class="title">Компрессор уезжает к <strong style="color: white">вам!</strong></div>
                         </li>
                     </ul>
                 </div>
@@ -417,9 +417,9 @@
 <div class="sec sec_hook section" id="hook">
     <div class="art container">
         <div class="wrap">
-            <div class="head2">Остались вопросы, <br>мы вам перезвоним!</div>
+            <div class="head2">Есть вопросы, <br>мы вам перезвоним!</div>
             <form action="<?= $inc->send; ?>" method="post">
-                <input type="hidden" name="goalname" value="Остались вопросы">
+                <input type="hidden" name="goalname" value="Есть вопросы">
                 <input type="hidden" name="goal" value="goal_questions">
                 <input type="hidden" name="good" value="">
                 <div class="items columns">
@@ -465,30 +465,6 @@
 ),
 ),
 (object) array (
-'title' => 'Процесс выкупа оборудование',
-'id' => 'vykup',
-'desc' => '',
-'img' => '/styles/img/buyout_2_bg.jpg',
-'items' => array (
-(object) array (
-'title' => 'Звонок или заявка',
-'icon' => '/styles/img/buyout/buyout_2_img_01.png',
-),
-(object) array (
-'title' => 'Оцениваем ваше <br>оборудование',
-'icon' => '/styles/img/buyout/buyout_2_img_02.png',
-),
-(object) array (
-'title' => 'Вызежаем к вам',
-'icon' => '/styles/img/buyout/buyout_2_img_03.png',
-),
-(object) array (
-'title' => 'Вы получаете деньги',
-'icon' => '/styles/img/buyout/buyout_2_img_04.png',
-),
-),
-),
-(object) array (
 'title' => 'Выкуп Б/У: Компрессоров и Комплектующих',
 'id' => 'buyback',
 'desc' => 'Купим Ваш компрессор <b>ДОРОГО</b> и в любом состоянии',
@@ -509,6 +485,30 @@
 (object) array (
 'title' => 'Консультация по любым <br>вопросам сделки',
 'icon' => '/styles/img/buyout/buyout_1_img_04.png',
+),
+),
+),
+(object) array (
+'title' => 'Процесс выкупа оборудование',
+'id' => 'vykup',
+'desc' => '',
+'img' => '/styles/img/buyout_2_bg.jpg',
+'items' => array (
+(object) array (
+'title' => 'Звонок или заявка',
+'icon' => '/styles/img/buyout/buyout_2_img_01.png',
+),
+(object) array (
+'title' => 'Оцениваем ваше <br>оборудование',
+'icon' => '/styles/img/buyout/buyout_2_img_02.png',
+),
+(object) array (
+'title' => 'Выезжаем к вам',
+'icon' => '/styles/img/buyout/buyout_2_img_03.png',
+),
+(object) array (
+'title' => 'Вы получаете деньги',
+'icon' => '/styles/img/buyout/buyout_2_img_04.png',
 ),
 ),
 ),
@@ -785,8 +785,8 @@
                         </div>
                         <div class="phones">
                             <div class="item">
-                                <a href="tel:+79082500119" class="clickgoal" data-goal="goal_phone">
-                                    8 (908) 25-00-119
+                                <a href="tel:+79824508490" class="clickgoal" data-goal="goal_phone">
+                                    8 (982) 450 84 90
                                 </a>
                             </div>
                         </div>

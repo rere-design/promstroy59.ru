@@ -3,10 +3,9 @@
 <?
 $headerMenu = array(
     ['TITLE' => 'Продажа компрессоров', 'URL'=>'compressors'],
-    ['TITLE' => 'Выкуп Б/У', 'URL'=>'buyback'],
     ['TITLE' => 'Аренда', 'URL'=>'rent'],
     ['TITLE' => 'Ремонт', 'URL'=>'service'],
-    ['TITLE' => 'Выкуп', 'URL'=>'vykup'],
+    ['TITLE' => 'Выкуп Б/У', 'URL'=>'buyback'],
     ['TITLE' => 'Отзывы', 'URL'=>'comments'],
     ['TITLE' => 'Контакты', 'URL'=>'contacts'],
 )
@@ -35,8 +34,8 @@ $headerMenu = array(
                 </ul>
                 <ul class="navbar-end contacts">
                     <li class="phone navbar-item" style="float: none; margin:0;">
-                        <a href="tel:+79082500119" class="clickgoal" data-goal="goal_phone">
-                            8 (908) 25-00-119
+                        <a href="tel:+79824508490" class="clickgoal" data-goal="goal_phone">
+                            8 (982) 450 84 90
                         </a>
                     </li>
                 </ul>
