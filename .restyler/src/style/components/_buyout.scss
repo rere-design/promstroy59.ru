@@ -28,7 +28,7 @@
           }
           @include tablet-only {
             padding: 20px;
-            min-height: 154px;
+            min-height: auto;
           }
           .head2 {
             line-height: 40px;
@@ -50,7 +50,7 @@
           position: relative;
           overflow: hidden;
           @include tablet-only {
-            min-height: 346px;
+            //min-height: 346px;
           }
           .img {
             width: auto !important;
@@ -68,8 +68,6 @@
               height: auto;
               @include touch {
                 max-width: none;
-                width: auto;
-                height: 100%;
               }
             }
           }
