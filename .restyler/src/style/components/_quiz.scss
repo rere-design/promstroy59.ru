@@ -1,4 +1,4 @@
-#quiz.sec_quiz {
+#quiz.sec_quiz, #quizs.sec_quiz {
   @include touch {
     margin-top: 20px;
   }
@@ -13,7 +13,7 @@
         }
       }
     }
-    #app {
+    #app, #apps {
       div {
         div {
           h2 {
@@ -64,6 +64,26 @@
           }
         }
       }
+    }
+  }
+}
+
+#quiz.sec_quiz {
+  @include mobile {
+    display: none;
+  }
+}
+
+#quizs.sec_quiz {
+  color: black !important;
+  margin-top: 0 !important;
+  @include tablet {
+    display: none;
+  }
+  .art {
+    padding: 0 !important;
+    .option{
+      padding-left: 0 !important;
     }
   }
 }

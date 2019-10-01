@@ -26,30 +26,110 @@
                     <div class="info" style="">
                         <div class="sec sec_hook" id="hook">
                             <div class="wrap">
-                                <p style="color: black; text-align: center;">Пишите! Ответим на все Ваши вопросы!</p>
-                                <form action="<?= $inc->send; ?>" method="post">
-                                    <input type="hidden" name="goalname" value="Информация">
-                                    <input type="hidden" name="goal" value="goal_info">
-                                    <input type="hidden" name="good" value="">
-                                    <div class="items" style="display: flex; flex-direction: column">
-                                        <input type="hidden" name="answers" value="">
-                                        <div class="item" style="width: 100%; max-width:none;"><input type="email"
-                                                                                                      name="email"
-                                                                                                      placeholder="Элетронная почта">
+                                <div class="sev sec_quiz" id="quizs">
+                                    <div class="art container">
+                                        <div class="head2 title">Подберите компрессор для своего бизнеса у нас,<br> со
+                                            <span>скидкой в 20%!</span></div>
+
+                                        <div id="apps">
+                                            <div class="info" v-show="completed === false">
+                                                <div class="percentage">
+                                                    Пройдено: {{ percent }}
+                                                </div>
+                                                <div class="progressbar">
+                                                    <div class="progressbar_body"
+                                                         v-bind:style="{width: percentStyle}"></div>
+                                                </div>
+                                                <div class="question_number">
+                                                    Вопрос {{ questionIndex+1 }} из {{ quizs.questions.length+1 }}
+                                                </div>
+                                            </div>
+                                            <div v-for="(question, index) in quizs.questions">
+                                                <!-- Hide all questions, show only the one with index === to current question index -->
+                                                <div v-show="index === questionIndex">
+                                                    <h2>{{ question.text }}</h2>
+                                                    <ol>
+                                                        <li v-for="response in question.responses">
+                                                            <label class="option">
+                                                                <!-- The radio button has three new directives -->
+                                                                <!-- v-bind:value sets "value" to "true" if the response is correct -->
+                                                                <!-- v-bind:name sets "name" to question index to group answers by question -->
+                                                                <!-- v-model creates binding with userResponses -->
+                                                                <input type="radio"
+                                                                       v-bind:name="index"
+                                                                       v-model="userResponses[index]" v-on:click="next"
+                                                                > {{response.text}}
+                                                            </label>
+                                                        </li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                            <div class="result_controls"
+                                                 v-show="questionIndex === quizs.questions.length && completed === false">
+                                                <button v-on:click="submit">
+                                                    Подтвердить
+                                                </button>
+                                                <button v-on:click="restart">
+                                                    Ответить заново
+                                                </button>
+                                            </div>
+
+                                            <div class="form-quiz" v-show="completed === true">
+                                                <div class="head3">Спасибо за ответы, куда выслать информацию?</div>
+                                                <form action="<?= $inc->send; ?>" method="post">
+                                                    <input type="hidden" name="goalname" value="Информация">
+                                                    <input type="hidden" name="goal" value="goal_info">
+                                                    <input type="hidden" name="good" value="">
+                                                    <div class="items">
+                                                        <input type="hidden" name="answers" value="">
+                                                        <div class="item"><input type="email" name="email"
+                                                                                 placeholder="Электронная почта"></div>
+                                                        <div class="item"><input type="text" name="phone"
+                                                                                 placeholder="+7 (____) - ___ - ___ - _">
+                                                        </div>
+                                                        <div class="item">
+                                                            <button type="submit"><span>Отправить письмо</span></button>
+                                                        </div>
+                                                    </div>
+                                                    <label><input type="checkbox" name="politic" value="1"
+                                                                  data-focus="icon" checked><span
+                                                                class="icon"></span><span
+                                                                class="label">Я даю согласие на обработку персональных данных</span></label>
+                                                </form>
+                                            </div>
+
                                         </div>
-                                        <div class="item" style="width: 100%; max-width:none;"><input type="text"
-                                                                                                      name="phone"
-                                                                                                      placeholder="+7 (____) - ___ - ___ - _">
-                                        </div>
-                                        <div class="item" style="width: 100%; max-width:none;">
-                                            <button type="submit"><span>Отправить письмо</span></button>
-                                        </div>
+
                                     </div>
-                                    <label><input type="checkbox" name="politic" value="1" data-focus="icon"
-                                                  checked><span class="icon"></span><span class="label">Я даю согласие на обработку персональных данных</span></label>
-                                </form>
-                                <div class="rem" style="margin-top: 15px; text-align: center;">Перезвоним вам в течение
-                                    20 минут
+                                </div>
+                                <div class="form-desktop">
+                                    <p style="color: black; text-align: center;">Пишите! Ответим на все Ваши
+                                        вопросы!</p>
+                                    <form action="<?= $inc->send; ?>" method="post">
+                                        <input type="hidden" name="goalname" value="Информация">
+                                        <input type="hidden" name="goal" value="goal_info">
+                                        <input type="hidden" name="good" value="">
+                                        <div class="items" style="display: flex; flex-direction: column">
+                                            <input type="hidden" name="answers" value="">
+                                            <div class="item" style="width: 100%; max-width:none;"><input type="email"
+                                                                                                          name="email"
+                                                                                                          placeholder="Электронная почта">
+                                            </div>
+                                            <div class="item" style="width: 100%; max-width:none;"><input type="text"
+                                                                                                          name="phone"
+                                                                                                          placeholder="+7 (____) - ___ - ___ - _">
+                                            </div>
+                                            <div class="item" style="width: 100%; max-width:none;">
+                                                <button type="submit"><span>Отправить письмо</span></button>
+                                            </div>
+                                        </div>
+                                        <label><input type="checkbox" name="politic" value="1" data-focus="icon"
+                                                      checked><span class="icon"></span><span class="label">Я даю согласие на обработку персональных данных</span></label>
+                                    </form>
+                                    <div class="rem" style="margin-top: 15px; text-align: center;">Перезвоним вам в
+                                        течение
+                                        20 минут
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -65,6 +145,83 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="sev sec_quiz section" id="quiz">
+    <div class="art container">
+        <div class="head2 title">Подберите компрессор для своего бизнеса у нас,<br> со
+            <span>скидкой в 20%!</span></div>
+
+        <div id="app">
+            <div class="info" v-show="completed === false">
+                <div class="percentage">
+                    Пройдено: {{ percent }}
+                </div>
+                <div class="progressbar">
+                    <div class="progressbar_body"
+                         v-bind:style="{width: percentStyle}"></div>
+                </div>
+                <div class="question_number">
+                    Вопрос {{ questionIndex+1 }} из {{ quiz.questions.length+1 }}
+                </div>
+            </div>
+            <div v-for="(question, index) in quiz.questions">
+                <!-- Hide all questions, show only the one with index === to current question index -->
+                <div v-show="index === questionIndex">
+                    <h2>{{ question.text }}</h2>
+                    <ol>
+                        <li v-for="response in question.responses">
+                            <label class="option">
+                                <!-- The radio button has three new directives -->
+                                <!-- v-bind:value sets "value" to "true" if the response is correct -->
+                                <!-- v-bind:name sets "name" to question index to group answers by question -->
+                                <!-- v-model creates binding with userResponses -->
+                                <input type="radio"
+                                       v-bind:name="index"
+                                       v-model="userResponses[index]" v-on:click="next"
+                                > {{response.text}}
+                            </label>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="result_controls"
+                 v-show="questionIndex === quiz.questions.length && completed === false">
+                <button v-on:click="submit">
+                    Подтвердить
+                </button>
+                <button v-on:click="restart">
+                    Ответить заново
+                </button>
+            </div>
+
+            <div class="form-quiz" v-show="completed === true">
+                <div class="head3">Спасибо за ответы, куда выслать информацию?</div>
+                <form action="<?= $inc->send; ?>" method="post">
+                    <input type="hidden" name="goalname" value="Информация">
+                    <input type="hidden" name="goal" value="goal_info">
+                    <input type="hidden" name="good" value="">
+                    <div class="items">
+                        <input type="hidden" name="answers" value="">
+                        <div class="item"><input type="email" name="email"
+                                                 placeholder="Электронная почта"></div>
+                        <div class="item"><input type="text" name="phone"
+                                                 placeholder="+7 (____) - ___ - ___ - _">
+                        </div>
+                        <div class="item">
+                            <button type="submit"><span>Отправить письмо</span></button>
+                        </div>
+                    </div>
+                    <label><input type="checkbox" name="politic" value="1"
+                                  data-focus="icon" checked><span
+                                class="icon"></span><span
+                                class="label">Я даю согласие на обработку персональных данных</span></label>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
 </div>
 
 <div class="sev sec_compressors section" id="compressors">
@@ -195,76 +352,6 @@
 </div>
 </div>
 
-<div class="sev sec_quiz section" id="quiz">
-    <div class="art container">
-        <div class="head2 title">Подберите компрессор для своего бизнеса у нас,<br> со <span>скидкой в 20%!</span></div>
-
-        <div id="app">
-            <div class="info" v-show="completed === false">
-                <div class="percentage">
-                    Пройдено: {{ percent }}
-                </div>
-                <div class="progressbar">
-                    <div class="progressbar_body" v-bind:style="{width: percentStyle}"></div>
-                </div>
-                <div class="question_number">
-                    Вопрос {{ questionIndex+1 }} из {{ quiz.questions.length+1 }}
-                </div>
-            </div>
-            <div v-for="(question, index) in quiz.questions">
-                <!-- Hide all questions, show only the one with index === to current question index -->
-                <div v-show="index === questionIndex">
-                    <h2>{{ question.text }}</h2>
-                    <ol>
-                        <li v-for="response in question.responses">
-                            <label class="option">
-                                <!-- The radio button has three new directives -->
-                                <!-- v-bind:value sets "value" to "true" if the response is correct -->
-                                <!-- v-bind:name sets "name" to question index to group answers by question -->
-                                <!-- v-model creates binding with userResponses -->
-                                <input type="radio"
-                                       v-bind:name="index"
-                                       v-model="userResponses[index]" v-on:click="next"
-                                > {{response.text}}
-                            </label>
-                        </li>
-                    </ol>
-                </div>
-            </div>
-            <div class="result_controls" v-show="questionIndex === quiz.questions.length && completed === false">
-                <button v-on:click="submit">
-                    Подтвердить
-                </button>
-                <button v-on:click="restart">
-                    Ответить заново
-                </button>
-            </div>
-
-            <div class="form-quiz" v-show="completed === true">
-                <div class="head3">Спасибо за ответы, куда выслать информацию?</div>
-                <form action="<?= $inc->send; ?>" method="post">
-                    <input type="hidden" name="goalname" value="Информация">
-                    <input type="hidden" name="goal" value="goal_info">
-                    <input type="hidden" name="good" value="">
-                    <div class="items">
-                        <input type="hidden" name="answers" value="">
-                        <div class="item"><input type="email" name="email" placeholder="Элетронная почта"></div>
-                        <div class="item"><input type="text" name="phone" placeholder="+7 (____) - ___ - ___ - _"></div>
-                        <div class="item">
-                            <button type="submit"><span>Отправить письмо</span></button>
-                        </div>
-                    </div>
-                    <label><input type="checkbox" name="politic" value="1" data-focus="icon" checked><span
-                                class="icon"></span><span
-                                class="label">Я даю согласие на обработку персональных данных</span></label>
-                </form>
-            </div>
-
-        </div>
-
-    </div>
-</div>
-
 <script>
   var quiz = {
     questions: [
@@ -322,6 +409,79 @@
     methods: {
       next: function (e) {
         var question = quiz.questions[this.questionIndex].text;
+        var answer = e.target.labels[0].innerText;
+        this.answers.push([question, answer]);
+        this.questionIndex++;
+      },
+      submit: function () {
+        this.completed = true;
+        $('[name=answers]').val(JSON.stringify(this.answers));
+      },
+      restart: function () {
+        this.answers = [];
+        this.questionIndex = 0;
+      }
+    }
+  });
+</script>
+
+<script>
+  var quizs = {
+    questions: [
+      {
+        text: "Какой привод компрессора?",
+        responses: [
+            {text: 'Электрический'},
+            {text: 'Дизельный'},
+            {text: 'Не знаю'},
+        ]
+      }, {
+        text: "Какой тип компрессора требуется?",
+        responses: [
+            {text: 'Передвижной'},
+            {text: 'Станционарный'},
+            {text: 'Не знаю'},
+        ]
+      }, {
+        text: "Необходимое рабочее давление?",
+        responses: [
+            {text: 'От 1-7 Бар'},
+            {text: '7-14 Бар'},
+            {text: '14-35 Бар'},
+            {text: 'Не знаю'},
+        ]
+      }, {
+        text: "Требуемая производительность компрессора?",
+        responses: [
+            {text: 'До 5,5 м3 в минуту'},
+            {text: 'от 5,5 – 13 м3 в минуту'},
+            {text: '13- 65 м3 в минуту'},
+            {text: 'Не знаю'},
+        ]
+      }
+    ]
+  };
+
+  new Vue({
+    el: '#apps',
+    data: {
+      quizs: quizs,
+      questionIndex: 0,
+      userResponses: Array(quizs.questions.length).fill(false),
+      answers: [],
+      completed: false
+    },
+    computed: {
+      percent: function () {
+        return ((this.questionIndex / this.quizs.questions.length) * 100) + '%'
+      },
+      percentStyle: function () {
+        return ((this.questionIndex / this.quizs.questions.length) * 100 + 5) + '%'
+      }
+    },
+    methods: {
+      next: function (e) {
+        var question = quizs.questions[this.questionIndex].text;
         var answer = e.target.labels[0].innerText;
         this.answers.push([question, answer]);
         this.questionIndex++;
@@ -447,7 +607,8 @@
 (object) array (
 'title' => 'Ремонт и Сервисное обслуживание <br> дизельных компрессоров',
 'id' => 'service',
-'desc' => '<b>Выполняем ремонтные и сервисные работы</b>, проводим плановое техобслуживание винтовых, поршневых компрессоров. ',
+'desc' => '<b>Выполняем ремонтные и сервисные работы</b>, проводим плановое техобслуживание винтовых, поршневых
+компрессоров. ',
 'img' => '/styles/img/L3NA84NEKP4.jpg',
 'items' => array (
 (object) array (
@@ -672,7 +833,7 @@
         <div style="text-align: left; margin-bottom: 25px;">
             Выполняем ремонтные и сервисные работы, проводим плановое техобслуживание винтовых, поршневых компрессоров.
             <br>
-                Наши преимущества:
+            Наши преимущества:
             <ul style="    margin: 10px 0 20px 30px;list-style-type: disc;">
                 <li>Среднее время ремонта 2 дня.</li>
                 <li>Подменный компрессор на время ремонта</li>
@@ -723,52 +884,120 @@
 </div>
 
 
-<? if (!empty($cms_object->comments->list)): ?>
 <div class="sec sec_comments section" id="comments">
     <div class="art container">
         <div class="head2">Отзывы наших клиентов</div>
         <div class="desc">Сотрудничайте и убедитесь сами</div>
         <div class="slider">
             <ul data-center="1">
-                <? foreach ($cms_object->comments->list as $comment): ?>
-                <? if (empty($comment->active)) continue; ?>
                 <li>
                     <div class="header">
                         <div class="photo"><img
-                                    src="<?= Landing::IfThen(empty($comment->photo), '/styles/img/comments_def_photo.jpg', $comment->photo->thumb); ?>"
-                                    alt="<?= $comment->name; ?>"></div>
+                                    src="/styles/img/comments_def_photo.jpg"
+                                    alt=""></div>
                         <div class="title">
-                            <div class="name"><?= $comment->name; ?></div>
-                            <div class="company"><?= $comment->desc; ?></div>
+                            <div class="name">Вепрев Ю.А.</div>
+                            <div class="company">Директор ООО «Мастер»</div>
                         </div>
                     </div>
                     <div class="text">
-                        <div class="content"><?= Landing::GetTextareaContent($comment->text, Landing::LE_PARAGRAPH);
-                            ?>
+                        <div class="content">
+                            <p>
+                                ООО «Мастер» выражает благодарность компании ООО «ПромСтрой» за
+                                профессиональный подход
+                                и качественно выполненную работу по поставке
+                                компрессорного оборудования.
+                            </p>
+                            <p>
+                                Добросовестность Ваших сотрудников позволили максимально сократить
+                                время
+                                производства работ и минимизировать связанные с этим неудобства.
+                            </p>
+                            <p>
+                                Желаем Вам и Вашей компании дальнейшего роста и процветания.
+                                Искренне надеемся, что в будущем вы также останетесь в списке наших
+                                партнеров.
+                            </p>
                         </div>
-                        <? if (!empty($comment->letter)): ?>
-                        <div class="letter"><span><a href="<?= $comment->letter; ?>" target="_blank">Скачать благодарственное письмо</a></span>
-                        </div>
-                        <? endif; ?>
-                        <div class="date"><?= $comment->date; ?></div>
+                        <div class="date">07-07-2018</div>
                     </div>
                 </li>
-                <? endforeach; ?>
+                <li>
+                    <div class="header">
+                        <div class="photo"><img
+                                    src="/styles/img/comments_def_photo.jpg"
+                                    alt=""></div>
+                        <div class="title">
+                            <div class="name">Красильников Н.А.</div>
+                            <div class="company">Директор ООО «ПЗМИ»</div>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <div class="content">
+                            <p>
+
+                                Настоящим письмом ООО «Пермский Завод Металлических Изделий»
+                                выражает благодарность компании ООО «Промстрой» за своевременное соблюдение
+                                сроков поставки оборудования. <br>
+                                Особенно хотелось бы отметить качество продукции,
+                                которое на протяжении всего периода эксплуатации оборудования зарекомендовало
+                                себя с лучшей стороны. <br>
+                                Кроме того‚ ООО «Промстрой» оказывает нашему
+                                предприятию информационную поддержку,
+                                осуществляя профессиональные
+                                консультации по эксплуатации оборудования.
+
+                            </p>
+                            <p>
+                                Спасибо за сотрудничество, быструю реакцию на поставленные задачи.
+                            </p>
+                        </div>
+                        <div class="date"></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="header">
+                        <div class="photo"><img
+                                    src="/styles/img/comments_def_photo.jpg"
+                                    alt=""></div>
+                        <div class="title">
+                            <div class="name">Буторин А.Б.</div>
+                            <div class="company">Директор ООО «ГАВ Пермь»</div>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <div class="content">
+                            <p>
+                                Выражаем компании ООО «Промышленное строительство»
+                                искреннюю благодарность и глубокую признательность за поставку
+
+                                компрессорного оборудования в 2019 году.
+                            </p>
+                            <p>
+                                Мы верим в сохранение сложившихся деловых и дружеских
+
+                                отношений, надеемся на дальнейшее взаимовыгодное сотрудничество.
+                            </p>
+                            <p>
+                                <b>Желаем успешного развития и достижения новых вершин В бизнесе.</b>
+                            </p>
+                        </div>
+                        <div class="date">24-05-2019</div>
+                    </div>
+                </li>
             </ul>
             <div class="navigation">
                 <a href="#prev" class="nav prev">prev</a>
                 <span class="dots">
-								<? foreach ($cms_object->comments->list as $id => $comment): ?>
-                    <? if (empty($comment->active)) continue; ?>
-									<span class="dot"><?= ($id + 1); ?></span>
-                    <? endforeach; ?>
-							</span>
+                    <span class="dot">1</span>
+                    <span class="dot">2</span>
+                    <span class="dot">3</span>
+				</span>
                 <a href="#next" class="nav next">next</a>
             </div>
         </div>
     </div>
 </div>
-<? endif; ?>
 
 <div class="sec sec_contacts section" id="contacts">
     <div class="bg">
@@ -818,6 +1047,26 @@
 <? include($root . '/tmpls/footer.inc'); ?>
 
 <? include($root . '/tmpls/popups.inc'); ?>
+
+<!-- Marquiz script start -->
+<script src="//script.marquiz.ru/v1.js" type="application/javascript"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    Marquiz.init({
+      id: '5d8dea7a9ffdf500442a7903',
+      autoOpen: 10,
+      autoOpenFreq: 'once',
+      openOnExit: false
+    });
+  });
+</script>
+<!-- Marquiz script end -->
+<div class="marquiz__container">
+    <a class="marquiz__button marquiz__button_blicked marquiz__button_fixed marquiz__button_fixed-right"
+       href="#popup:marquiz_5d8dea7a9ffdf500442a7903" data-fixed-side="right"
+       data-alpha-color="rgba(51, 154, 251, 0.5)" data-color="#339afb" data-text-color="#ffffff">Расчет стоимости</a>
+</div>
+
 
 <?= $this->include_js(); ?>
 

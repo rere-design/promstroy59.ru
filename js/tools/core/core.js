@@ -600,9 +600,9 @@
         speed: 400,
       }, options);
       var opt;
-      if (window.innerWidth < 1024 && window.innerWidth > 768) {
+      if ( window.innerWidth > 769 && window.innerWidth < 1024) {
         opt = $.extend({
-          items: 2,
+          items: 1,
           startPosition: 0,
           dotsContainer: $parent.find(o.dots),
         }, $this.data());
