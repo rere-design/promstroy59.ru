@@ -1,14 +1,80 @@
 <?php
-	global $inc, $current, $refinfo, $cms_object, $root;
+global $inc, $current, $refinfo, $cms_object, $root;
 ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <? include($root . '/tmpls/head.inc'); ?>
+    <!-- HEAD SECTION START -->
+    <title>Продажа компрессоров</title>
+    <meta name="description" content="Наш сервис по продаже компрессоров представлен широким ассортиментом винтовых, зубчатых, центробежных, поршневых, спиральных компрессоров и компрессоров с впрыском воды.">
+    <meta name="keywords" content="">
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="x-rim-auto-match" content="none">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Продажа компрессоров">
+    <meta property="og:title" content="Продажа компрессоров">
+    <meta property="og:description" content="Наш сервис по продаже компрессоров представлен широким ассортиментом винтовых, зубчатых, центробежных, поршневых, спиральных компрессоров и компрессоров с впрыском воды.">
+    <meta property="og:url" content="/">
+
+    <script type="text/javascript" src="/js/tools/fixes/console-fix.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/js/tools/fixes/html5.js"></script>
+    <script type="text/javascript" src="/js/tools/fixes/ie9.js"></script>
+    <script type="text/javascript" src="/js/tools/fixes/css3-mediaqueries.js"></script>
+    <![endif]-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <link href="/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:300,400,600,700,800&display=swap">
+    <link type="text/css" rel="stylesheet" href="/js/tools/colorbox/style/colorbox.css">
+    <link type="text/css" rel="stylesheet" href="/js/tools/owl-carousel/owl.carousel.css">
+    <link type="text/css" rel="stylesheet" href="/styles/style.css">
+    <link type="text/css" rel="stylesheet" href="/local/templates/r-promstroy/assets/app.css">
+    <!-- /HEAD SECTION END -->
 </head>
 <body>
-<? include($root . '/tmpls/header.inc'); ?>
+<header class="header">
+    <div class="art container">
+        <nav class="navbar is-spaced">
+            <div class="navbar-brand">
+                <a class="navbar-item header__logo" href="/">
+                    <img src="/styles/img/logo.jpg" width="188" height="43">
+                </a>
+                <a role="button" class="navbar-burger burger" data-toggle="menu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
 
+            <div id="menu" class="navbar-menu">
+                <ul class="navbar-start" style="max-width: 996px;">
+                    <li class="navbar-item" style="float: none; margin:0;">
+                        <a href="#buyback" class="scroll">Выкуп Б/У</a>
+                    </li>
+                    <li class="navbar-item" style="float: none; margin:0;">
+                        <a href="#comments" class="scroll">Отзывы</a>
+                    </li>
+                    <li class="navbar-item" style="float: none; margin:0;">
+                        <a href="#contacts" class="scroll">Контакты</a>
+                    </li>
+                    <li class="more-item navbar-item has-dropdown is-hoverable is-hidden"><a href="javascript:void(false)">Еще</a><ul class="navbar-dropdown is-radiusless header-menu__third-level"></ul></li></ul>
+                <ul class="navbar-end contacts">
+                    <li class="phone navbar-item" style="float: none; margin:0;">
+                        <a href="tel:+79824508490" class="clickgoal" data-goal="goal_phone">
+                            8 (982) 450 84 90
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
 <div class="sev sec_offer" id="offer">
     <div class="banner">
         <div class="banner__img">
@@ -19,7 +85,7 @@
                 <div class="column is-5-tablet is-7-desktop">
                     <div class="block banner__box">
                         <h1><?= $cms_object->offer->data->header; ?></h1>
-                        <div class="desc">Наша компания занимается ПРОДАЖЕЙ новых и б/у КОМПРЕССОРОВ.</div>
+                        <div class="desc">Наша компания занимается ВЫКУПОМ  б/у КОМПРЕССОРОВ.</div>
                     </div>
                 </div>
                 <div class="column">
@@ -93,8 +159,8 @@
                                                     </div>
                                                     <label><input type="checkbox" name="politic" value="1"
                                                                   data-focus="icon" checked><span
-                                                                class="icon"></span><span
-                                                                class="label">Я даю согласие на обработку персональных данных</span></label>
+                                                            class="icon"></span><span
+                                                            class="label">Я даю согласие на обработку персональных данных</span></label>
                                                 </form>
                                             </div>
 
@@ -214,88 +280,14 @@
                     </div>
                     <label><input type="checkbox" name="politic" value="1"
                                   data-focus="icon" checked><span
-                                class="icon"></span><span
-                                class="label">Я даю согласие на обработку персональных данных</span></label>
+                            class="icon"></span><span
+                            class="label">Я даю согласие на обработку персональных данных</span></label>
                 </form>
             </div>
 
         </div>
     </div>
 
-</div>
-
-<div class="sev sec_compressors section" id="compressors">
-    <div class="art container">
-        <div class="head2">Вам нужен компрессор?<br><span>Тогда вы правильно обратились!</span></div>
-        <div class="columns items is-multiline">
-            <div class="column">
-                <div class="card-product">
-                    <div class="card-product__hover">
-                        <a href="#compressors_form"
-                           class="callback scroll">Связаться
-                            с нами</a>
-                    </div>
-                    <div class="card-product__title">
-                        Компрессор дизельный <br> малой мощности
-                    </div>
-                    <div class="card-product__img">
-                        <img src="data/upload/equipments/list/kmm.png"
-                             alt="Компрессор дизельный малой мощности 7-12 Бар/2-5,5 м3.мин">
-                    </div>
-                    <div class="card-product__desc">
-                        <ul>
-                            <li><b>Рабочее давление, бар:</b> 7-12</li>
-                            <li><b>Производительность, м<sup>3</sup>/мин:</b> 2-5,5</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="card-product">
-                    <div class="card-product__hover">
-                        <a href="#compressors_form"
-                           class="callback scroll">Связаться
-                            с нами</a>
-                    </div>
-                    <div class="card-product__title">
-                        Компрессор дизельный <br> средней мощности
-                    </div>
-                    <div class="card-product__img">
-                        <img src="data/upload/equipments/list/kmc.png"
-                             alt="Компрессор дизельный средней мощности 7-14 Бар/7,5-12 м3.мин">
-                    </div>
-                    <div class="card-product__desc">
-                        <ul>
-                            <li><b>Рабочее давление, бар:</b> 7-14</li>
-                            <li><b>Производительность, м<sup>3</sup>/мин:</b> 5-12</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="card-product">
-                    <div class="card-product__hover">
-                        <a href="#compressors_form"
-                           class="callback scroll">Связаться
-                            с нами</a>
-                    </div>
-                    <div class="card-product__title">
-                        Компрессор дизельный <br> высокой мощности
-                    </div>
-                    <div class="card-product__img">
-                        <img src="data/upload/equipments/list/kmv.png"
-                             alt="Компрессор дизельный средней мощности 8,6-35Бар/22-63 м3.мин">
-                    </div>
-                    <div class="card-product__desc">
-                        <ul>
-                            <li><b>Рабочее давление, бар:</b> 8,6-35</li>
-                            <li><b>Производительность, м<sup>3</sup>/мин:</b> 22-63</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 <div class="sec_brand section">
@@ -344,8 +336,8 @@
                     </div>
                 </div>
                 <label><input type="checkbox" name="politic" value="1" data-focus="icon" checked><span
-                            class="icon"></span><span
-                            class="label">Я даю согласие на обработку персональных данных</span></label>
+                        class="icon"></span><span
+                        class="label">Я даю согласие на обработку персональных данных</span></label>
             </form>
         </div>
     </div>
@@ -358,32 +350,32 @@
       {
         text: "Какой привод компрессора?",
         responses: [
-            {text: 'Электрический'},
-            {text: 'Дизельный'},
-            {text: 'Не знаю'},
+          {text: 'Электрический'},
+          {text: 'Дизельный'},
+          {text: 'Не знаю'},
         ]
       }, {
         text: "Какой тип компрессора требуется?",
         responses: [
-            {text: 'Передвижной'},
-            {text: 'Станционарный'},
-            {text: 'Не знаю'},
+          {text: 'Передвижной'},
+          {text: 'Станционарный'},
+          {text: 'Не знаю'},
         ]
       }, {
         text: "Необходимое рабочее давление?",
         responses: [
-            {text: 'От 1-7 Бар'},
-            {text: '7-14 Бар'},
-            {text: '14-35 Бар'},
-            {text: 'Не знаю'},
+          {text: 'От 1-7 Бар'},
+          {text: '7-14 Бар'},
+          {text: '14-35 Бар'},
+          {text: 'Не знаю'},
         ]
       }, {
         text: "Требуемая производительность компрессора?",
         responses: [
-            {text: 'До 5,5 м3 в минуту'},
-            {text: 'от 5,5 – 13 м3 в минуту'},
-            {text: '13- 65 м3 в минуту'},
-            {text: 'Не знаю'},
+          {text: 'До 5,5 м3 в минуту'},
+          {text: 'от 5,5 – 13 м3 в минуту'},
+          {text: '13- 65 м3 в минуту'},
+          {text: 'Не знаю'},
         ]
       }
     ]
@@ -431,71 +423,73 @@
       {
         text: "Какой привод компрессора?",
         responses: [
-            {text: 'Электрический'},
-            {text: 'Дизельный'},
-            {text: 'Не знаю'},
+          {text: 'Электрический'},
+          {text: 'Дизельный'},
+          {text: 'Не знаю'},
         ]
       }, {
         text: "Какой тип компрессора требуется?",
         responses: [
-            {text: 'Передвижной'},
-            {text: 'Станционарный'},
-            {text: 'Не знаю'},
+          {text: 'Передвижной'},
+          {text: 'Станционарный'},
+          {text: 'Не знаю'},
         ]
       }, {
         text: "Необходимое рабочее давление?",
         responses: [
-            {text: 'От 1-7 Бар'},
-            {text: '7-14 Бар'},
-            {text: '14-35 Бар'},
-            {text: 'Не знаю'},
+          {text: 'От 1-7 Бар'},
+          {text: '7-14 Бар'},
+          {text: '14-35 Бар'},
+          {text: 'Не знаю'},
         ]
       }, {
         text: "Требуемая производительность компрессора?",
         responses: [
-            {text: 'До 5,5 м3 в минуту'},
-            {text: 'от 5,5 – 13 м3 в минуту'},
-            {text: '13- 65 м3 в минуту'},
-            {text: 'Не знаю'},
+          {text: 'До 5,5 м3 в минуту'},
+          {text: 'от 5,5 – 13 м3 в минуту'},
+          {text: '13- 65 м3 в минуту'},
+          {text: 'Не знаю'},
         ]
       }
     ]
   };
 
-  new Vue({
-    el: '#apps',
-    data: {
-      quizs: quizs,
-      questionIndex: 0,
-      userResponses: Array(quizs.questions.length).fill(false),
-      answers: [],
-      completed: false
-    },
-    computed: {
-      percent: function () {
-        return ((this.questionIndex / this.quizs.questions.length) * 100) + '%'
+
+    new Vue({
+      el: '#apps',
+      data: {
+        quizs: quizs,
+        questionIndex: 0,
+        userResponses: Array(quizs.questions.length).fill(false),
+        answers: [],
+        completed: false
       },
-      percentStyle: function () {
-        return ((this.questionIndex / this.quizs.questions.length) * 100 + 5) + '%'
+      computed: {
+        percent: function () {
+          return ((this.questionIndex / this.quizs.questions.length) * 100) + '%'
+        },
+        percentStyle: function () {
+          return ((this.questionIndex / this.quizs.questions.length) * 100 + 5) + '%'
+        }
+      },
+      methods: {
+        next: function (e) {
+          var question = quizs.questions[this.questionIndex].text;
+          var answer = e.target.labels[0].innerText;
+          this.answers.push([question, answer]);
+          this.questionIndex++;
+        },
+        submit: function () {
+          this.completed = true;
+          $('[name=answers]').val(JSON.stringify(this.answers));
+        },
+        restart: function () {
+          this.answers = [];
+          this.questionIndex = 0;
+        }
       }
-    },
-    methods: {
-      next: function (e) {
-        var question = quizs.questions[this.questionIndex].text;
-        var answer = e.target.labels[0].innerText;
-        this.answers.push([question, answer]);
-        this.questionIndex++;
-      },
-      submit: function () {
-        this.completed = true;
-        $('[name=answers]').val(JSON.stringify(this.answers));
-      },
-      restart: function () {
-        this.answers = [];
-        this.questionIndex = 0;
-      }
-    }
-  });
+    });
+
 </script>
 
 <?/*
@@ -527,52 +521,6 @@
 </div>
 */?>
 
-<div class="sec sec_buyout_long section" id="buyout_long">
-    <div class="art container">
-        <div class="items">
-            <div class="item">
-                <div class="header">
-                    <div class="head2">Как мы продаем компрессора:</div>
-                </div>
-                <div class="icons">
-                    <ul>
-                        <li>
-                            <div class="icon"><img src="/styles/img/buyout/buyout_2_img_01.png" alt="Звонок или заявка">
-                            </div>
-                            <div class="title">Звонок или заявка</div>
-                        </li>
-                        <li>
-                            <div class="icon"><img src="/styles/img/buyout/buyout_1_img_04.png"
-                                                   alt="Оцениваем ваше оборудование"></div>
-                            <div class="title">Уточняем параметры компрессора</div>
-                        </li>
-                        <li>
-                            <div class="icon"><img src="/styles/img/buyout/buyout_2_img_02.png"
-                                                   alt="Подбираем подходящую модель"></div>
-                            <div class="title">Подбираем подходящую модель</div>
-                        </li>
-                        <li>
-                            <div class="icon"><img src="/styles/img/buyout/buyout_long_img_doc.png"
-                                                   alt="Оформляем документы"></div>
-                            <div class="title">Оформляем документы</div>
-                        </li>
-                        <li>
-                            <div class="icon"><img src="/styles/img/buyout/buyout_1_img_03.png" alt="Вы оплачиваете">
-                            </div>
-                            <div class="title">Вы оплачиваете</div>
-                        </li>
-                        <li>
-                            <div class="icon"><img src="/styles/img/buyout/buyout_2_img_03.png"
-                                                   alt="Компрессор уезжает к ВАМ!!!"></div>
-                            <div class="title">Компрессор уезжает к <strong style="color: white">вам!</strong></div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <div class="sec sec_hook section" id="hook">
     <div class="art container">
@@ -603,249 +551,58 @@
 </div>
 
 <?
-			$buyouts = array (
-(object) array (
-'title' => 'Ремонт и Сервисное обслуживание <br> дизельных компрессоров',
-'id' => 'service',
-'desc' => '<b>Выполняем ремонтные и сервисные работы</b>, проводим плановое техобслуживание винтовых, поршневых
-компрессоров. ',
-'img' => '/styles/img/L3NA84NEKP4.jpg',
-'items' => array (
-(object) array (
-'title' => 'Среднее время <br> ремонта 2 дня.',
-'icon' => '/styles/img/buyout/icons8.png',
-),
-(object) array (
-'title' => 'Подменный компрессор <br> на время ремонта',
-'icon' => '/styles/img/buyout/icons71.png',
-),
-(object) array (
-'title' => 'Выезд инженера 24/7',
-'icon' => '/styles/img/buyout/buyout_2_img_03.png',
-),
-),
-),
-(object) array (
-'title' => 'Выкуп Б/У: Компрессоров и Комплектующих',
-'id' => 'buyback',
-'desc' => 'Купим Ваш компрессор <b>ДОРОГО</b> и в любом состоянии',
-'img' => '/styles/img/buyout_1_bg.jpg',
-'items' => array (
-(object) array (
-'title' => 'Работаем 24/7',
-'icon' => '/styles/img/buyout/buyout_1_img_01.png',
-),
-(object) array (
-'title' => 'Выезд в любую <br>точку страны',
-'icon' => '/styles/img/buyout/buyout_1_img_02.png',
-),
-(object) array (
-'title' => 'Деньги в день <br>сделки',
-'icon' => '/styles/img/buyout/buyout_1_img_03.png',
-),
-(object) array (
-'title' => 'Консультация по любым <br>вопросам сделки',
-'icon' => '/styles/img/buyout/buyout_1_img_04.png',
-),
-),
-),
-(object) array (
-'title' => 'Процесс выкупа оборудование',
-'id' => 'vykup',
-'desc' => '',
-'img' => '/styles/img/buyout_2_bg.jpg',
-'items' => array (
-(object) array (
-'title' => 'Звонок или заявка',
-'icon' => '/styles/img/buyout/buyout_2_img_01.png',
-),
-(object) array (
-'title' => 'Оцениваем ваше <br>оборудование',
-'icon' => '/styles/img/buyout/buyout_2_img_02.png',
-),
-(object) array (
-'title' => 'Выезжаем к вам',
-'icon' => '/styles/img/buyout/buyout_2_img_03.png',
-),
-(object) array (
-'title' => 'Вы получаете деньги',
-'icon' => '/styles/img/buyout/buyout_2_img_04.png',
-),
-),
-),
+$buyouts = array (
+    (object) array (
+        'title' => 'Выкуп Б/У: Компрессоров и Комплектующих',
+        'id' => 'buyback',
+        'desc' => 'Купим Ваш компрессор <b>ДОРОГО</b> и в любом состоянии',
+        'img' => '/styles/img/buyout_1_bg.jpg',
+        'items' => array (
+            (object) array (
+                'title' => 'Работаем 24/7',
+                'icon' => '/styles/img/buyout/buyout_1_img_01.png',
+            ),
+            (object) array (
+                'title' => 'Выезд в любую <br>точку страны',
+                'icon' => '/styles/img/buyout/buyout_1_img_02.png',
+            ),
+            (object) array (
+                'title' => 'Деньги в день <br>сделки',
+                'icon' => '/styles/img/buyout/buyout_1_img_03.png',
+            ),
+            (object) array (
+                'title' => 'Консультация по любым <br>вопросам сделки',
+                'icon' => '/styles/img/buyout/buyout_1_img_04.png',
+            ),
+        ),
+    ),
+    (object) array (
+        'title' => 'Процесс выкупа оборудование',
+        'id' => 'vykup',
+        'desc' => '',
+        'img' => '/styles/img/buyout_2_bg.jpg',
+        'items' => array (
+            (object) array (
+                'title' => 'Звонок или заявка',
+                'icon' => '/styles/img/buyout/buyout_2_img_01.png',
+            ),
+            (object) array (
+                'title' => 'Оцениваем ваше <br>оборудование',
+                'icon' => '/styles/img/buyout/buyout_2_img_02.png',
+            ),
+            (object) array (
+                'title' => 'Выезжаем к вам',
+                'icon' => '/styles/img/buyout/buyout_2_img_03.png',
+            ),
+            (object) array (
+                'title' => 'Вы получаете деньги',
+                'icon' => '/styles/img/buyout/buyout_2_img_04.png',
+            ),
+        ),
+    ),
 );
 ?>
 
-
-<div class=" sec_rent section" id="rent">
-    <div class="art container">
-        <div class="head2">Вам нужен компрессор в аренду?<br>
-            <span>Тогда вы по адресу,</span>
-            большой парк надежных компрессоров компании Atlas Copco:
-        </div>
-        <div style="text-align: left; margin-bottom: 25px;">
-            (аналоги Айрман,Кайзер, ЧКЗ КВ, ЗИФ Ремеза и т.д.) малой и средней мощности (7-12 бар, 5-10м3/мин). <br>
-            Мы надежный поставщик арендных компрессоров на рынке Пермского края, у нас своя сервисная служба, которая
-            ликвидирует остановку компрессора в кротчайшие сроки или разъяснит Вашим сотрудникам необходимые вопросы.
-        </div>
-        <div class="columns is-multiline">
-            <div class="column is-4">
-                <div class="card-product">
-                    <div class="card-product__hover">
-                        <a href="#rent_form"
-                           class="callback scroll">Узнать
-                            цену</a>
-                    </div>
-                    <div class="card-product__title">
-                        Аренда компрессора <br> Atlas Copco XAS 97
-                    </div>
-                    <div class="card-product__img">
-                        <img src="data/upload/equipments/list/cq5dam.web.1600.jpg"
-                             alt="">
-                    </div>
-                    <div class="card-product__desc">
-                        <ul>
-                            <li><b>Рабочее давление, бар:</b> 7</li>
-                            <li><b>Производительность, м<sup>3</sup>/мин: </b>5,3</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-4">
-                <div class="card-product">
-                    <div class="card-product__hover">
-                        <a href="#rent_form"
-                           class="callback scroll">Узнать
-                            цену</a>
-                    </div>
-                    <div class="card-product__title">
-                        Аренда компрессора <br> Atlas Copco XAS 186
-                    </div>
-                    <div class="card-product__img">
-                        <img src="data/upload/equipments/list/cq5dam.web.jpg"
-                             alt="">
-                    </div>
-                    <div class="card-product__desc">
-                        <ul>
-                            <li><b>Рабочее давление, бар:</b> 7</li>
-                            <li><b>Производительность, м<sup>3</sup>/мин:</b> 5,3</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-4">
-                <div class="card-product">
-                    <div class="card-product__hover">
-                        <a href="#rent_form"
-                           class="callback scroll">Узнать
-                            цену</a>
-                    </div>
-                    <div class="card-product__title">
-                        Аренда компрессора <br> Atlas Copco XAHS 186
-                    </div>
-                    <div class="card-product__img">
-                        <img src="data/upload/equipments/list/cq5dam.web.jpg"
-                             alt="">
-                    </div>
-                    <div class="card-product__desc">
-                        <ul>
-                            <li><b>Рабочее давление, бар:</b> 12</li>
-                            <li><b>Производительность, м<sup>3</sup>/мин: </b>10,4</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-4">
-                <div class="card-product">
-                    <div class="card-product__hover">
-                        <a href="#rent_form"
-                           class="callback scroll">Узнать
-                            цену</a>
-                    </div>
-                    <div class="card-product__title">
-                        Аренда компрессора <br> Atlas Copco XATS 156
-                    </div>
-                    <div class="card-product__img">
-                        <img src="data/upload/equipments/list/cq5dam.web.jpg"
-                             alt="">
-                    </div>
-                    <div class="card-product__desc">
-                        <ul>
-                            <li><b>Рабочее давление, бар:</b> 10,3</li>
-                            <li><b>Производительность, м<sup>3</sup>/мин: </b>10</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-4">
-                <div class="card-product">
-                    <div class="card-product__hover">
-                        <a href="#rent_form"
-                           class="callback scroll">Узнать
-                            цену</a>
-                    </div>
-                    <div class="card-product__title">
-                        Пескоструйный Аппарат <br> Contracor DBS-200
-                    </div>
-                    <div class="card-product__img">
-                        <img src="data/upload/equipments/list/CRKT6tfQNnM.jpg"
-                             alt="">
-                    </div>
-                    <div class="card-product__desc">
-                        <ul>
-                            <li><b>Длина шланга: </b> 60м</li>
-                            <li><b>Диаметр сопла: </b>8мм</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-4">
-                <div class="card-product">
-                    <div class="card-product__hover">
-                        <a href="#rent_form"
-                           class="callback scroll">Узнать
-                            цену</a>
-                    </div>
-                    <div class="card-product__title">Аренда покрасочного <br> аппарата  Graco Xtreme X70
-                    </div>
-                    <div class="card-product__img">
-                        <img src="data/upload/equipments/list/135.jpg"
-                             alt="">
-                    </div>
-                    <div class="card-product__desc">
-                        <ul>
-                            <li><b>Длина шланга: </b> 60м</li>
-                            <li><b>Диаметр сопла: </b>8мм</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="sev sec_svyazatsa_form" id="rent_form">
-    <div class="art container">
-        <div class="wrap">
-            <div class="head2">Связаться с нами</div>
-            <form action="<?= $inc->send; ?>" method="post">
-                <input type="hidden" name="goalname" value="Связаться с нами">
-                <input type="hidden" name="goal" value="goal_contact">
-                <input type="hidden" name="choice" value="">
-                <div class="items">
-                    <div class="item"><input type="text" name="name" placeholder="Ваше имя"></div>
-                    <div class="item"><input type="text" name="phone" placeholder="+7 (____) - ___ - ___ - _"></div>
-                    <div class="item">
-                        <button type="submit"><span>Отправить письмо</span></button>
-                    </div>
-                </div>
-                <label><input type="checkbox" name="politic" value="1" data-focus="icon" checked><span
-                            class="icon"></span><span
-                            class="label">Я даю согласие на обработку персональных данных</span></label>
-            </form>
-        </div>
-    </div>
-</div>
 
 <div class=" sec_rent section" style="display: none;" id="">
     <div class="art container">
@@ -872,34 +629,31 @@
     <div class="art container">
         <div class="items columns is-multiline">
             <? foreach ($buyouts as $buyout): ?>
-            <div class="item column is-full" id="<?= $buyout->id; ?>">
-                <div class="buyout-item">
-                    <div class="header">
-                        <div class="head2"><?= $buyout->title; ?></div>
-                        <div class="desc"><?= $buyout->desc; ?></div>
-                    </div>
-                    <div class="wrapper">
-                        <div class="img"><img src="<?= $buyout->img; ?>" alt="<?= $buyout->title; ?>"></div>
-                        <div class="icons">
-                            <ul class="columns is-centered is-multiline is-mobile">
-                                <? foreach ($buyout->items as $item): ?>
-                                <li class="column is-3 is-6-mobile">
-                                    <div class="buyout-wrapper">
-                                        <div class="icon"><img src="<?= $item->icon; ?>" alt="<?= $item->title; ?>">
-                                        </div>
-                                        <div class="title"><?= $item->title; ?></div>
-                                    </div>
-                                </li>
-                                <? endforeach; ?>
-                            </ul>
+                <div class="item column is-full" id="<?= $buyout->id; ?>">
+                    <div class="buyout-item">
+                        <div class="header">
+                            <div class="head2"><?= $buyout->title; ?></div>
+                            <div class="desc"><?= $buyout->desc; ?></div>
+                        </div>
+                        <div class="wrapper">
+                            <div class="img"><img src="<?= $buyout->img; ?>" alt="<?= $buyout->title; ?>"></div>
+                            <div class="icons">
+                                <ul class="columns is-centered is-multiline is-mobile">
+                                    <? foreach ($buyout->items as $item): ?>
+                                        <li class="column is-3 is-6-mobile">
+                                            <div class="buyout-wrapper">
+                                                <div class="icon"><img src="<?= $item->icon; ?>" alt="<?= $item->title; ?>">
+                                                </div>
+                                                <div class="title"><?= $item->title; ?></div>
+                                            </div>
+                                        </li>
+                                    <? endforeach; ?>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             <? endforeach; ?>
-        </div>
-        <div class="notice">
-            Возможна продажа по программе по <span>Trade In</span>, в зачет возьмем Ваш старый компрессор!
         </div>
     </div>
 </div>
@@ -910,12 +664,12 @@
         <div class="head2">Отзывы наших клиентов</div>
         <div class="desc">Сотрудничайте и убедитесь сами</div>
         <div class="slider">
-            <ul data-center="1">
+            <ul data-center="1" style="display: flex;">
                 <li>
                     <div class="header">
                         <div class="photo"><img
-                                    src="/styles/img/comments_def_photo.jpg"
-                                    alt=""></div>
+                                src="/styles/img/comments_def_photo.jpg"
+                                alt=""></div>
                         <div class="title">
                             <div class="name">Вепрев Ю.А.</div>
                             <div class="company">Директор ООО «Мастер»</div>
@@ -946,8 +700,8 @@
                 <li>
                     <div class="header">
                         <div class="photo"><img
-                                    src="/styles/img/comments_def_photo.jpg"
-                                    alt=""></div>
+                                src="/styles/img/comments_def_photo.jpg"
+                                alt=""></div>
                         <div class="title">
                             <div class="name">Красильников Н.А.</div>
                             <div class="company">Директор ООО «ПЗМИ»</div>
@@ -979,8 +733,8 @@
                 <li>
                     <div class="header">
                         <div class="photo"><img
-                                    src="/styles/img/comments_def_photo.jpg"
-                                    alt=""></div>
+                                src="/styles/img/comments_def_photo.jpg"
+                                alt=""></div>
                         <div class="title">
                             <div class="name">Буторин А.Б.</div>
                             <div class="company">Директор ООО «ГАВ Пермь»</div>
@@ -1040,34 +794,27 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="email"><a href="<?= Landing::GetEmail($cms_object->options->contacts->email); ?>"
-                                              target="_blank" class="clickgoal" data-goal="goal_email"><?= $cms_object->
-                                options->contacts->email; ?></a></div>
+                        <div class="email"><a href="mailto:promstroy59@bk.ru"
+                                              target="_blank" class="clickgoal" data-goal="goal_email">promstroy59@bk.ru</a></div>
                         <div class="socials">
-                            <? if ($cms_object->options->contacts->whatsapp): ?>
                             <div class="item"><img src="/styles/img/socials/icon_whatsapp.png" alt="WhatsApp"><a
-                                        href="<?= Landing::GetWhatsApp($cms_object->options->contacts->whatsapp); ?>"
+                                        href="whatsapp://send?phone=+79082500119"
                                         class="clickgoal" data-goal="goal_whatsapp">WhatsApp</a></div>
-                            <? endif; ?>
-                            <? if ($cms_object->options->contacts->viber): ?>
                             <div class="item"><img src="/styles/img/socials/icon_viber.png" alt="Viber"><a
-                                        href="<?= Landing::GetViber($cms_object->options->contacts->viber); ?>"
+                                        href="viber://add?number=79082500119"
                                         class="clickgoal" data-goal="goal_viber">Viber</a></div>
-                            <? endif; ?>
                         </div>
                     </div>
                 </div>
                 <div class="column">
-                    <? Landing::ShowMap($cms_object->options->contacts->map); ?>
-                </div>
+                    <div class="ymap" data-coord-lat="58.003113836779114" data-coord-lon="56.265097340791336" data-zoom="17" data-dot-type="islands#dotIcon" data-dot-color="#0077e7"><span>Загрузка карты...</span><div style="display:none;" class="balloon"><img src="/styles/img/logo.png" alt=""><br>Пермский край, г. Пермь, <br>ул. 1-я Красноармейская 5, <br>оф № 7</div></div>                </div>
             </div>
         </div>
     </div>
 </div>
 
-<? include($root . '/tmpls/footer.inc'); ?>
 
-<? include($root . '/tmpls/popups.inc'); ?>
+
 
 <!-- Marquiz script start -->
 <script src="//script.marquiz.ru/v1.js" type="application/javascript"></script>
@@ -1082,31 +829,19 @@
   });
 </script>
 <!-- Marquiz script end -->
-<!-- Pixel -->
-<script type="text/javascript">
-  (function (d, w) {
-    var n = d.getElementsByTagName("script")[0],
-        s = d.createElement("script"),
-        f = function () { n.parentNode.insertBefore(s, n); };
-    s.type = "text/javascript";
-    s.async = true;
-    s.src = "https://qoopler.ru/index.php?ref="+d.referrer+"&cookie=" + encodeURIComponent(document.cookie);
-
-    if (w.opera == "[object Opera]") {
-      d.addEventListener("DOMContentLoaded", f, false);
-    } else { f(); }
-  })(document, window);
-</script>
-<!-- /Pixel -->
 <div class="marquiz__container">
     <a class="marquiz__button marquiz__button_blicked marquiz__button_fixed marquiz__button_fixed-right"
        href="#popup:marquiz_5d8dea7a9ffdf500442a7903" data-fixed-side="right"
        data-alpha-color="rgba(51, 154, 251, 0.5)" data-color="#339afb" data-text-color="#ffffff">Расчет стоимости</a>
 </div>
+<script type="text/javascript" src="/js/tools/jquery.min.js"></script>
+<script type="text/javascript" src="/js/tools/colorbox/jquery.colorbox-min.js"></script>
+<script type="text/javascript" src="/js/tools/owl-carousel/owl.carousel.min.js"></script>
+<script type="text/javascript" src="//api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+<script type="text/javascript" src="/js/tools/core/core.js"></script>
+<script type="text/javascript" src="/js/scripts.js"></script>
+<script type="text/javascript" src="/local/templates/r-promstroy/assets/app.js"></script>
 
 
-<?= $this->include_js(); ?>
-
-<? include($root . '/tmpls/counters_foo.inc'); ?>
 </body>
 </html>
