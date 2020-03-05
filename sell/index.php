@@ -92,7 +92,7 @@ global $inc, $current, $refinfo, $cms_object, $root;
                 <div class="column is-5-tablet is-7-desktop">
                     <div class="block banner__box">
                         <h1><?= $cms_object->offer->data->header; ?></h1>
-                        <div class="desc">Наша компания занимается ПРОДАЖЕЙ новых  КОМПРЕССОРОВ.</div>
+                        <div class="desc">Наша компания занимается ПРОДАЖЕЙ новых КОМПРЕССОРОВ.</div>
                     </div>
                 </div>
                 <div class="column">
@@ -535,40 +535,40 @@ global $inc, $current, $refinfo, $cms_object, $root;
     ]
   };
 
-    new Vue({
-      el: '#apps',
-      data: {
-        quizs: quizs,
-        questionIndex: 0,
-        userResponses: Array(quizs.questions.length).fill(false),
-        answers: [],
-        completed: false
+  new Vue({
+    el: '#apps',
+    data: {
+      quizs: quizs,
+      questionIndex: 0,
+      userResponses: Array(quizs.questions.length).fill(false),
+      answers: [],
+      completed: false
+    },
+    computed: {
+      percent: function () {
+        return ((this.questionIndex / this.quizs.questions.length) * 100) + '%'
       },
-      computed: {
-        percent: function () {
-          return ((this.questionIndex / this.quizs.questions.length) * 100) + '%'
-        },
-        percentStyle: function () {
-          return ((this.questionIndex / this.quizs.questions.length) * 100 + 5) + '%'
-        }
-      },
-      methods: {
-        next: function (e) {
-          var question = quizs.questions[this.questionIndex].text;
-          var answer = e.target.labels[0].innerText;
-          this.answers.push([question, answer]);
-          this.questionIndex++;
-        },
-        submit: function () {
-          this.completed = true;
-          $('[name=answers]').val(JSON.stringify(this.answers));
-        },
-        restart: function () {
-          this.answers = [];
-          this.questionIndex = 0;
-        }
+      percentStyle: function () {
+        return ((this.questionIndex / this.quizs.questions.length) * 100 + 5) + '%'
       }
-    });
+    },
+    methods: {
+      next: function (e) {
+        var question = quizs.questions[this.questionIndex].text;
+        var answer = e.target.labels[0].innerText;
+        this.answers.push([question, answer]);
+        this.questionIndex++;
+      },
+      submit: function () {
+        this.completed = true;
+        $('[name=answers]').val(JSON.stringify(this.answers));
+      },
+      restart: function () {
+        this.answers = [];
+        this.questionIndex = 0;
+      }
+    }
+  });
 
 </script>
 
@@ -868,8 +868,15 @@ $buyouts = array(
                                 </a>
                             </div>
                         </div>
+                        <div class="phones">
+                            <div class="item">
+                                <a href="tel:+73422021715" class="clickgoal" data-goal="goal_phone">+7 (342)
+                                    202-17-15</a>
+                            </div>
+                        </div>
                         <div class="email"><a href="mailto:promstroy59@bk.ru"
-                                              target="_blank" class="clickgoal" data-goal="goal_email">promstroy59@bk.ru</a></div>
+                                              target="_blank" class="clickgoal"
+                                              data-goal="goal_email">promstroy59@bk.ru</a></div>
                         <div class="socials">
                             <div class="item"><img src="/styles/img/socials/icon_whatsapp.png" alt="WhatsApp"><a
                                         href="whatsapp://send?phone=+79082500119"
@@ -881,7 +888,14 @@ $buyouts = array(
                     </div>
                 </div>
                 <div class="column">
-                    <div class="ymap" data-coord-lat="58.003113836779114" data-coord-lon="56.265097340791336" data-zoom="17" data-dot-type="islands#dotIcon" data-dot-color="#0077e7"><span>Загрузка карты...</span><div style="display:none;" class="balloon"><img src="/styles/img/logo.png" alt=""><br>Пермский край, г. Пермь, <br>ул. 1-я Красноармейская 5, <br>оф № 7</div></div>                </div>
+                    <div class="ymap" data-coord-lat="58.003113836779114" data-coord-lon="56.265097340791336"
+                         data-zoom="17" data-dot-type="islands#dotIcon" data-dot-color="#0077e7">
+                        <span>Загрузка карты...</span>
+                        <div style="display:none;" class="balloon"><img src="/styles/img/logo.png" alt=""><br>Пермский
+                            край, г. Пермь, <br>ул. 1-я Красноармейская 5, <br>оф № 7
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -608,6 +608,11 @@ $buyouts = array (
                                 </a>
                             </div>
                         </div>
+                        <div class="phones">
+                            <div class="item">
+                                <a href="tel:+73422021715" class="clickgoal" data-goal="goal_phone">+7 (342) 202-17-15</a>
+                            </div>
+                        </div>
                         <div class="email"><a href="mailto:promstroy59@bk.ru"
                                               target="_blank" class="clickgoal" data-goal="goal_email">promstroy59@bk.ru</a></div>
                         <div class="socials">
