@@ -54,6 +54,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
 		<link href="/favicon.ico" rel="icon" type="image/x-icon">
 		<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+        <script src="//code-ya.jivosite.com/widget/PuP6HpYMWx" async></script>
 		<?= $this->include_style(); ?>
 		<? Landing::ShowCode($cms_object->codes->head); ?>
 <!-- /HEAD SECTION END -->

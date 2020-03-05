@@ -35,6 +35,7 @@ global $inc, $current, $refinfo, $cms_object, $root;
     <link type="text/css" rel="stylesheet" href="/js/tools/owl-carousel/owl.carousel.css">
     <link type="text/css" rel="stylesheet" href="/styles/style.css">
     <link type="text/css" rel="stylesheet" href="/local/templates/r-promstroy/assets/app.css">
+    <script src="//code-ya.jivosite.com/widget/PuP6HpYMWx" async></script>
     <!-- /HEAD SECTION END -->
 </head>
 <body>
@@ -657,6 +658,96 @@ $buyouts = array (
 <script type="text/javascript" src="/js/tools/core/core.js"></script>
 <script type="text/javascript" src="/js/scripts.js"></script>
 <script type="text/javascript" src="/local/templates/r-promstroy/assets/app.js"></script>
+<div style="max-height: 0; overflow: hidden;">
+    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;">
+        <!-- Facebook Pixel Code --></div>
+    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;">
+        <script>
+          <
+          /div>
+          < div
+          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
+              !function (f, b, e, v, n, t, s)
+              < /div>
+              < div
+          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
+              {if(f.fbq
+          )
+          return;
+          n = f.fbq = function () {
+            n.callMethod ?
+          <
+            /div>
+            < div
+            style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
+                n.callMethod.apply(n, arguments)
+          :
+            n.queue.push(arguments)
+          };
+          <
+          /div>
+          < div
+          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
+          if (!f._fbq) f._fbq = n;
+          n.push = n;
+          n.loaded = !0;
+          n.version = '2.0';
+          <
+          /div>
+          < div
+          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
+          n.queue = [];
+          t = b.createElement(e);
+          t.async = !0;
+          <
+          /div>
+          < div
+          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
+          t.src = v;
+          s = b.getElementsByTagName(e)[0];
+          <
+          /div>
+          < div
+          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
+              s.parentNode.insertBefore(t, s)
+          }
+          (window, document, 'script',
+          < /div>
+          < div
+          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
+              'https://connect.facebook.net/en_US/fbevents.js'
+          )
+          ;
+          <
+          /div>
+          < div
+          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" > < /div>
+              < div
+          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" > fbq('init',
+              '649910868887814');
+          <
+          /div>
+          < div
+          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" > fbq('track',
+              'PageView');
+          <
+          /div>
+          < div
+          style = "min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;" ></script>
+    </div>
+    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;">
+        <noscript>
+    </div>
+    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;"><img height="1" width="1"
+    </div>
+    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;">
+        src="https://www.facebook.com/tr?id=649910868887814&ev=PageView
+    </div>
+    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;">&noscript=1"/></div>
+    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;"></noscript></div>
+    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;">
+        <!-- End Facebook Pixel Code --></div>
+</div>
 
 </body>
 </html>

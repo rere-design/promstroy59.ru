@@ -1108,6 +1108,96 @@
        href="#popup:marquiz_5d8dea7a9ffdf500442a7903" data-fixed-side="right"
        data-alpha-color="rgba(51, 154, 251, 0.5)" data-color="#339afb" data-text-color="#ffffff">Расчет стоимости</a>
 </div>
+<div style="max-height: 0; overflow: hidden;">
+    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;">
+        <!-- Facebook Pixel Code --></div>
+    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;">
+        <script>
+          <
+          /div>
+          < div
+          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
+              !function (f, b, e, v, n, t, s)
+              < /div>
+              < div
+          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
+          {if(f.fbq
+          )
+          return;
+          n = f.fbq = function () {
+          n.callMethod ?
+          <
+          /div>
+          < div
+          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
+          n.callMethod.apply(n, arguments)
+          :
+          n.queue.push(arguments)
+          };
+          <
+          /div>
+          < div
+          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
+          if (!f._fbq) f._fbq = n;
+          n.push = n;
+          n.loaded = !0;
+          n.version = '2.0';
+          <
+          /div>
+          < div
+          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
+          n.queue = [];
+          t = b.createElement(e);
+          t.async = !0;
+          <
+          /div>
+          < div
+          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
+          t.src = v;
+          s = b.getElementsByTagName(e)[0];
+          <
+          /div>
+          < div
+          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
+              s.parentNode.insertBefore(t, s)
+          }
+          (window, document, 'script',
+          < /div>
+          < div
+          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
+              'https://connect.facebook.net/en_US/fbevents.js'
+          )
+          ;
+          <
+          /div>
+          < div
+          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" > < /div>
+              < div
+          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" > fbq('init',
+              '649910868887814');
+          <
+          /div>
+          < div
+          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" > fbq('track',
+              'PageView');
+          <
+          /div>
+          < div
+          style = "min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;" ></script>
+    </div>
+    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;">
+        <noscript>
+    </div>
+    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;"><img height="1" width="1"
+    </div>
+    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;">
+        src="https://www.facebook.com/tr?id=649910868887814&ev=PageView
+    </div>
+    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;">&noscript=1"/></div>
+    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;"></noscript></div>
+    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;">
+        <!-- End Facebook Pixel Code --></div>
+</div>
 
 
 <?= $this->include_js(); ?>
