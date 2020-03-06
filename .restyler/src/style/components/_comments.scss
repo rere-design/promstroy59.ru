@@ -32,11 +32,16 @@
                 @include desktop {
                   min-height: 65px;
                 }
+                .company {
+                  @include desktop {
+                    font-size: 17px;
+                  }
+                }
               }
               .text {
                 height: auto;
                 padding: 20px;
-                min-height: 430px;
+                min-height: 371px;
                 .date {
                   position: relative;
                   bottom: 0;

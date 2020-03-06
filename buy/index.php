@@ -388,12 +388,12 @@ $buyouts = array (
         <div class="head2">Отзывы наших клиентов</div>
         <div class="desc">Сотрудничайте и убедитесь сами</div>
         <div class="slider">
-            <ul data-center="1" style="display: flex;">
+            <ul data-center="1">
                 <li>
                     <div class="header">
                         <div class="photo"><img
-                                src="/styles/img/comments_def_photo.jpg"
-                                alt=""></div>
+                                    src="/styles/img/comments_def_photo.jpg"
+                                    alt=""></div>
                         <div class="title">
                             <div class="name">Вепрев Ю.А.</div>
                             <div class="company">Директор ООО «Мастер»</div>
@@ -401,31 +401,17 @@ $buyouts = array (
                     </div>
                     <div class="text">
                         <div class="content">
-                            <p>
-                                ООО «Мастер» выражает благодарность компании ООО «ПромСтрой» за
-                                профессиональный подход
-                                и качественно выполненную работу по поставке
-                                компрессорного оборудования.
-                            </p>
-                            <p>
-                                Добросовестность Ваших сотрудников позволили максимально сократить
-                                время
-                                производства работ и минимизировать связанные с этим неудобства.
-                            </p>
-                            <p>
-                                Желаем Вам и Вашей компании дальнейшего роста и процветания.
-                                Искренне надеемся, что в будущем вы также останетесь в списке наших
-                                партнеров.
-                            </p>
+                            <a href="/styles/img/OOO-Master.jpg" target="_blank">
+                                <img src="/styles/img/OOO-Master.jpg" alt="">
+                            </a>
                         </div>
-                        <div class="date">07-07-2018</div>
                     </div>
                 </li>
                 <li>
                     <div class="header">
-                        <div class="photo"><img
-                                src="/styles/img/comments_def_photo.jpg"
-                                alt=""></div>
+                        <div class="photo">
+                            <img src="/styles/img/comments_def_photo.jpg"  alt="">
+                        </div>
                         <div class="title">
                             <div class="name">Красильников Н.А.</div>
                             <div class="company">Директор ООО «ПЗМИ»</div>
@@ -433,32 +419,17 @@ $buyouts = array (
                     </div>
                     <div class="text">
                         <div class="content">
-                            <p>
-
-                                Настоящим письмом ООО «Пермский Завод Металлических Изделий»
-                                выражает благодарность компании ООО «Промстрой» за своевременное соблюдение
-                                сроков поставки оборудования. <br>
-                                Особенно хотелось бы отметить качество продукции,
-                                которое на протяжении всего периода эксплуатации оборудования зарекомендовало
-                                себя с лучшей стороны. <br>
-                                Кроме того‚ ООО «Промстрой» оказывает нашему
-                                предприятию информационную поддержку,
-                                осуществляя профессиональные
-                                консультации по эксплуатации оборудования.
-
-                            </p>
-                            <p>
-                                Спасибо за сотрудничество, быструю реакцию на поставленные задачи.
-                            </p>
+                            <a href="/styles/img/PZMI.jpg" target="_blank">
+                                <img src="/styles/img/PZMI.jpg" alt="">
+                            </a>
                         </div>
-                        <div class="date"></div>
                     </div>
                 </li>
                 <li>
                     <div class="header">
                         <div class="photo"><img
-                                src="/styles/img/comments_def_photo.jpg"
-                                alt=""></div>
+                                    src="/styles/img/comments_def_photo.jpg"
+                                    alt=""></div>
                         <div class="title">
                             <div class="name">Буторин А.Б.</div>
                             <div class="company">Директор ООО «ГАВ Пермь»</div>
@@ -466,23 +437,27 @@ $buyouts = array (
                     </div>
                     <div class="text">
                         <div class="content">
-                            <p>
-                                Выражаем компании ООО «Промышленное строительство»
-                                искреннюю благодарность и глубокую признательность за поставку
-
-                                компрессорного оборудования в 2019 году.
-                            </p>
-                            <p>
-                                Мы верим в сохранение сложившихся деловых и дружеских
-
-                                отношений, надеемся на дальнейшее взаимовыгодное сотрудничество.
-                            </p>
-                            <p>
-                                <b>Желаем успешного развития и достижения новых вершин В бизнесе.</b>
-                            </p>
+                            <a href="/styles/img/GAV-Perm.jpg" target="_blank">
+                                <img src="/styles/img/GAV-Perm.jpg" alt="">
+                            </a>
                         </div>
-                        <div class="date">24-05-2019</div>
+                </li>
+                <li>
+                    <div class="header">
+                        <div class="photo"><img
+                                    src="/styles/img/comments_def_photo.jpg"
+                                    alt=""></div>
+                        <div class="title">
+                            <div class="name">Фистин К.А.</div>
+                            <div class="company">Директор ООО «ВИКОС»</div>
+                        </div>
                     </div>
+                    <div class="text">
+                        <div class="content">
+                            <a href="/styles/img/Vikos.jpg" target="_blank">
+                                <img src="/styles/img/Vikos.jpg" alt="">
+                            </a>
+                        </div>
                 </li>
             </ul>
             <div class="navigation">
@@ -491,6 +466,7 @@ $buyouts = array (
                     <span class="dot">1</span>
                     <span class="dot">2</span>
                     <span class="dot">3</span>
+                    <span class="dot">4</span>
 				</span>
                 <a href="#next" class="nav next">next</a>
             </div>
