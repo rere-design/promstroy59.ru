@@ -25,8 +25,8 @@ body {
       background-color: #f1f1f3;
       padding: 25px;
       width: auto;
-      .form-desktop{
-        @include mobile{
+      .form-desktop {
+        @include mobile {
           display: none;
         }
       }
@@ -100,7 +100,7 @@ body {
       }
     }
     .art {
-      @include desktop{
+      @include desktop {
         padding-bottom: 70px;
       }
       @include touch {
@@ -144,6 +144,7 @@ body {
         }
       }
       .desc {
+        font-size: 26px;
         @include touch {
           font-size: 15px;
         }
@@ -196,11 +197,11 @@ button[type="submit"] {
     align-items: center;
     justify-content: center;
   }
-  &__wrapper-box{
+  &__wrapper-box {
     padding: 40px 0;
     border-top: 1px solid #dedede;
     border-bottom: 1px solid #dedede;
-    @include touch{
+    @include touch {
       padding: 20px 0;
     }
   }

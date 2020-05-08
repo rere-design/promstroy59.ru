@@ -6,7 +6,8 @@ global $inc, $current, $refinfo, $cms_object, $root;
 <head>
     <!-- HEAD SECTION START -->
     <title>Продажа компрессоров</title>
-    <meta name="description" content="Наш сервис по продаже компрессоров представлен широким ассортиментом винтовых, зубчатых, центробежных, поршневых, спиральных компрессоров и компрессоров с впрыском воды.">
+    <meta name="description"
+          content="Наш сервис по продаже компрессоров представлен широким ассортиментом винтовых, зубчатых, центробежных, поршневых, спиральных компрессоров и компрессоров с впрыском воды.">
     <meta name="keywords" content="">
     <meta charset="utf-8">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -17,7 +18,8 @@ global $inc, $current, $refinfo, $cms_object, $root;
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Продажа компрессоров">
     <meta property="og:title" content="Продажа компрессоров">
-    <meta property="og:description" content="Наш сервис по продаже компрессоров представлен широким ассортиментом винтовых, зубчатых, центробежных, поршневых, спиральных компрессоров и компрессоров с впрыском воды.">
+    <meta property="og:description"
+          content="Наш сервис по продаже компрессоров представлен широким ассортиментом винтовых, зубчатых, центробежных, поршневых, спиральных компрессоров и компрессоров с впрыском воды.">
     <meta property="og:url" content="/">
 
     <script type="text/javascript" src="/js/tools/fixes/console-fix.js"></script>
@@ -30,13 +32,25 @@ global $inc, $current, $refinfo, $cms_object, $root;
     <link href="/favicon.ico" rel="icon" type="image/x-icon">
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
-    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:300,400,600,700,800&display=swap">
+    <link type="text/css" rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:300,400,600,700,800&display=swap">
     <link type="text/css" rel="stylesheet" href="/js/tools/colorbox/style/colorbox.css">
     <link type="text/css" rel="stylesheet" href="/js/tools/owl-carousel/owl.carousel.css">
     <link type="text/css" rel="stylesheet" href="/styles/style.css">
     <link type="text/css" rel="stylesheet" href="/local/templates/r-promstroy/assets/app.css">
     <script src="//code-ya.jivosite.com/widget/PuP6HpYMWx" async></script>
     <!-- /HEAD SECTION END -->
+    <style>
+        .sec_offer .banner__img:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, .4);
+        }
+    </style>
 </head>
 <body>
 <header class="header">
@@ -64,7 +78,11 @@ global $inc, $current, $refinfo, $cms_object, $root;
                     <li class="navbar-item" style="float: none; margin:0;">
                         <a href="#contacts" class="scroll">Контакты</a>
                     </li>
-                    <li class="more-item navbar-item has-dropdown is-hoverable is-hidden"><a href="javascript:void(false)">Еще</a><ul class="navbar-dropdown is-radiusless header-menu__third-level"></ul></li></ul>
+                    <li class="more-item navbar-item has-dropdown is-hoverable is-hidden"><a
+                                href="javascript:void(false)">Еще</a>
+                        <ul class="navbar-dropdown is-radiusless header-menu__third-level"></ul>
+                    </li>
+                </ul>
                 <ul class="navbar-end contacts">
                     <li class="phone navbar-item" style="float: none; margin:0;">
                         <a href="tel:+79824508490" class="clickgoal" data-goal="goal_phone">
@@ -79,7 +97,7 @@ global $inc, $current, $refinfo, $cms_object, $root;
 <div class="sev sec_offer" id="offer">
     <div class="banner">
         <div class="banner__img">
-            <img src="/styles/img/offer_bg5.jpg" width="" height="600" alt="">
+            <img src="/styles/img/rent-bg.jpg" width="" height="600" alt="">
         </div>
         <div class="art container">
             <div class="columns is-variable is-7">
@@ -160,8 +178,8 @@ global $inc, $current, $refinfo, $cms_object, $root;
                                                     </div>
                                                     <label><input type="checkbox" name="politic" value="1"
                                                                   data-focus="icon" checked><span
-                                                            class="icon"></span><span
-                                                            class="label">Я даю согласие на обработку персональных данных</span></label>
+                                                                class="icon"></span><span
+                                                                class="label">Я даю согласие на обработку персональных данных</span></label>
                                                 </form>
                                             </div>
 
@@ -215,7 +233,7 @@ global $inc, $current, $refinfo, $cms_object, $root;
 </div>
 
 
-<?/*
+<? /*
 		<div class="sec sec_equipment" id="equipment">
 <div class="art container">
     <div class="head2">Оборудование <span>PromStroy</span></div>
@@ -242,30 +260,30 @@ global $inc, $current, $refinfo, $cms_object, $root;
     </div>
 </div>
 </div>
-*/?>
+*/ ?>
 
 
 
 
 
 <?
-$buyouts = array (
-    (object) array (
+$buyouts = array(
+    (object)array(
         'title' => 'Ремонт и Сервисное обслуживание <br> дизельных компрессоров',
         'id' => 'service',
         'desc' => '<b>Выполняем ремонтные и сервисные работы</b>, проводим плановое техобслуживание винтовых, поршневых
 компрессоров. ',
         'img' => '/styles/img/L3NA84NEKP4.jpg',
-        'items' => array (
-            (object) array (
+        'items' => array(
+            (object)array(
                 'title' => 'Среднее время <br> ремонта 2 дня.',
                 'icon' => '/styles/img/buyout/icons8.png',
             ),
-            (object) array (
+            (object)array(
                 'title' => 'Подменный компрессор <br> на время ремонта',
                 'icon' => '/styles/img/buyout/icons71.png',
             ),
-            (object) array (
+            (object)array(
                 'title' => 'Выезд инженера 24/7',
                 'icon' => '/styles/img/buyout/buyout_2_img_03.png',
             ),
@@ -404,7 +422,7 @@ $buyouts = array (
                            class="callback scroll">Узнать
                             цену</a>
                     </div>
-                    <div class="card-product__title">Аренда покрасочного <br> аппарата  Graco Xtreme X70
+                    <div class="card-product__title">Аренда покрасочного <br> аппарата Graco Xtreme X70
                     </div>
                     <div class="card-product__img">
                         <img src="data/upload/equipments/list/135.jpg"
@@ -466,8 +484,8 @@ $buyouts = array (
                     </div>
                 </div>
                 <label><input type="checkbox" name="politic" value="1" data-focus="icon" checked><span
-                        class="icon"></span><span
-                        class="label">Я даю согласие на обработку персональных данных</span></label>
+                            class="icon"></span><span
+                            class="label">Я даю согласие на обработку персональных данных</span></label>
             </form>
         </div>
     </div>
@@ -501,7 +519,7 @@ $buyouts = array (
                 <li>
                     <div class="header">
                         <div class="photo">
-                            <img src="/styles/img/comments_def_photo.jpg"  alt="">
+                            <img src="/styles/img/comments_def_photo.jpg" alt="">
                         </div>
                         <div class="title">
                             <div class="name">Красильников Н.А.</div>
@@ -587,11 +605,13 @@ $buyouts = array (
                         </div>
                         <div class="phones">
                             <div class="item">
-                                <a href="tel:+73422021715" class="clickgoal" data-goal="goal_phone">+7 (342) 202-17-15</a>
+                                <a href="tel:+73422021715" class="clickgoal" data-goal="goal_phone">+7 (342)
+                                    202-17-15</a>
                             </div>
                         </div>
                         <div class="email"><a href="mailto:promstroy59@bk.ru"
-                                              target="_blank" class="clickgoal" data-goal="goal_email">promstroy59@bk.ru</a></div>
+                                              target="_blank" class="clickgoal"
+                                              data-goal="goal_email">promstroy59@bk.ru</a></div>
                         <div class="socials">
                             <div class="item"><img src="/styles/img/socials/icon_whatsapp.png" alt="WhatsApp"><a
                                         href="whatsapp://send?phone=+79082500119"
@@ -603,7 +623,14 @@ $buyouts = array (
                     </div>
                 </div>
                 <div class="column">
-                    <div class="ymap" data-coord-lat="58.003113836779114" data-coord-lon="56.265097340791336" data-zoom="17" data-dot-type="islands#dotIcon" data-dot-color="#0077e7"><span>Загрузка карты...</span><div style="display:none;" class="balloon"><img src="/styles/img/logo.png" alt=""><br>Пермский край, г. Пермь, <br>ул. 1-я Красноармейская 5, <br>оф № 7</div></div>                </div>
+                    <div class="ymap" data-coord-lat="58.003113836779114" data-coord-lon="56.265097340791336"
+                         data-zoom="17" data-dot-type="islands#dotIcon" data-dot-color="#0077e7">
+                        <span>Загрузка карты...</span>
+                        <div style="display:none;" class="balloon"><img src="/styles/img/logo.png" alt=""><br>Пермский
+                            край, г. Пермь, <br>ул. 1-я Красноармейская 5, <br>оф № 7
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -634,96 +661,15 @@ $buyouts = array (
 <script type="text/javascript" src="/js/tools/core/core.js"></script>
 <script type="text/javascript" src="/js/scripts.js"></script>
 <script type="text/javascript" src="/local/templates/r-promstroy/assets/app.js"></script>
-<div style="max-height: 0; overflow: hidden;">
-    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;">
-        <!-- Facebook Pixel Code --></div>
-    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;">
-        <script>
-          <
-          /div>
-          < div
-          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
-              !function (f, b, e, v, n, t, s)
-              < /div>
-              < div
-          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
-              {if(f.fbq
-          )
-          return;
-          n = f.fbq = function () {
-            n.callMethod ?
-          <
-            /div>
-            < div
-            style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
-                n.callMethod.apply(n, arguments)
-          :
-            n.queue.push(arguments)
-          };
-          <
-          /div>
-          < div
-          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
-          if (!f._fbq) f._fbq = n;
-          n.push = n;
-          n.loaded = !0;
-          n.version = '2.0';
-          <
-          /div>
-          < div
-          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
-          n.queue = [];
-          t = b.createElement(e);
-          t.async = !0;
-          <
-          /div>
-          < div
-          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
-          t.src = v;
-          s = b.getElementsByTagName(e)[0];
-          <
-          /div>
-          < div
-          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
-              s.parentNode.insertBefore(t, s)
-          }
-          (window, document, 'script',
-          < /div>
-          < div
-          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
-              'https://connect.facebook.net/en_US/fbevents.js'
-          )
-          ;
-          <
-          /div>
-          < div
-          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" > < /div>
-              < div
-          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" > fbq('init',
-              '649910868887814');
-          <
-          /div>
-          < div
-          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" > fbq('track',
-              'PageView');
-          <
-          /div>
-          < div
-          style = "min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;" ></script>
-    </div>
-    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;">
-        <noscript>
-    </div>
-    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;"><img height="1" width="1"
-    </div>
-    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;">
-        src="https://www.facebook.com/tr?id=649910868887814&ev=PageView
-    </div>
-    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;">&noscript=1"/></div>
-    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;"></noscript></div>
-    <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;">
-        <!-- End Facebook Pixel Code --></div>
-</div>
-
+<script>
+  var rentLink = document.querySelectorAll('a[href="#rent_form"]');
+  var rentForm = document.querySelector('#rent_form');
+  for (var item of rentLink) {
+    item.addEventListener('click', () => {
+//      console.log(rentForm);
+      rentForm.classList.add('is-active');
+    });
+  }
+</script>
 </body>
 </html>
