@@ -25,9 +25,14 @@ body {
       background-color: #f1f1f3;
       padding: 25px;
       width: auto;
+      #quizs{
+        @include mobile {
+          display: none !important;
+        }
+      }
       .form-desktop {
         @include mobile {
-          display: none;
+          //display: none;
         }
       }
       form {
