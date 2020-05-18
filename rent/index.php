@@ -104,14 +104,14 @@ global $inc, $current, $refinfo, $cms_object, $root;
                 <div class="column is-5-tablet is-7-desktop">
                     <div class="block banner__box">
                         <h1><?= $cms_object->offer->data->header; ?></h1>
-                        <div class="desc">Наша компания занимается АРЕНДОЙ новых и б/у КОМПРЕССОРОВ.</div>
+                        <div class="desc">Наша компания занимается АРЕНДА дизельных КОМПРЕССОРОВ.</div>
                     </div>
                 </div>
                 <div class="column">
                     <div class="info" style="">
                         <div class="sec sec_hook" id="hook">
                             <div class="wrap">
-                                <div class="sev sec_quiz" id="quizs">
+                                <div class="sev sec_quiz sec_quiz_rent" id="quizs">
                                     <div class="art container">
                                         <div class="head2 title">Подберите компрессор для своего бизнеса у нас,<br> со
                                             <span>скидкой в 20%!</span></div>
@@ -441,7 +441,7 @@ $buyouts = array(
 </div>
 
 <div class="sec sec_hook section" id="hook">
-    <div class="art container">
+    <div class="art sec_hook-rent container">
         <div class="wrap">
             <div class="head2">Есть вопросы, <br>мы вам перезвоним!</div>
             <form action="<?= $inc->send; ?>" method="post">

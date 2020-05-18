@@ -25,14 +25,19 @@ body {
       background-color: #f1f1f3;
       padding: 25px;
       width: auto;
-      #quizs{
+      .sec_quiz_rent{
         @include mobile {
           display: none !important;
+        }
+        & + .form-desktop{
+          @include mobile {
+            display: block !important;
+          }
         }
       }
       .form-desktop {
         @include mobile {
-          //display: none;
+          display: none;
         }
       }
       form {
@@ -149,7 +154,7 @@ body {
         }
       }
       .desc {
-        font-size: 26px;
+        font-size: 28px;
         @include touch {
           font-size: 15px;
         }

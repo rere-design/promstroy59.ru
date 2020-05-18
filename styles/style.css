@@ -557,6 +557,9 @@ header .contacts ul .phone {
     padding-top: 50px;
     height: 320px
 }
+.sec_hook .art.sec_hook-rent {
+    background: url(/styles/img/hook_bg-rent.jpg) no-repeat center center;
+}
 
 .sec_hook .wrap {
     padding-left: 60px;
