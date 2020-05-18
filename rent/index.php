@@ -161,7 +161,7 @@ global $inc, $current, $refinfo, $cms_object, $root;
 
                                             <div class="form-quiz" v-show="completed === true">
                                                 <div class="head3">Спасибо за ответы, куда выслать информацию?</div>
-                                                <form action="<?= $inc->send; ?>" method="post">
+                                                <form action="/send/form.php" method="post">
                                                     <input type="hidden" name="goalname" value="Информация">
                                                     <input type="hidden" name="goal" value="goal_info">
                                                     <input type="hidden" name="good" value="">
@@ -190,7 +190,7 @@ global $inc, $current, $refinfo, $cms_object, $root;
                                 <div class="form-desktop">
                                     <p style="color: black; text-align: center;">Пишите! Ответим на все Ваши
                                         вопросы!</p>
-                                    <form action="<?= $inc->send; ?>" method="post">
+                                    <form action="/send/form.php" method="post">
                                         <input type="hidden" name="goalname" value="Информация">
                                         <input type="hidden" name="goal" value="goal_info">
                                         <input type="hidden" name="good" value="">
@@ -444,7 +444,7 @@ $buyouts = array(
     <div class="art sec_hook-rent container">
         <div class="wrap">
             <div class="head2">Есть вопросы, <br>мы вам перезвоним!</div>
-            <form action="<?= $inc->send; ?>" method="post">
+            <form action="/send/form.php" method="post">
                 <input type="hidden" name="goalname" value="Есть вопросы">
                 <input type="hidden" name="goal" value="goal_questions">
                 <input type="hidden" name="good" value="">
@@ -472,7 +472,7 @@ $buyouts = array(
     <div class="art container">
         <div class="wrap">
             <div class="head2">Связаться с нами</div>
-            <form action="<?= $inc->send; ?>" method="post">
+            <form action="/send/form.php" method="post">
                 <input type="hidden" name="goalname" value="Связаться с нами">
                 <input type="hidden" name="goal" value="goal_contact">
                 <input type="hidden" name="choice" value="">
