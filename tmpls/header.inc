@@ -2,7 +2,7 @@
 
 <?
 $headerMenu = array(
-    ['TITLE' => 'Продажа компрессоров', 'URL'=>'compressors'],
+//    ['TITLE' => 'Продажа компрессоров', 'URL'=>'compressors'],
     ['TITLE' => 'Аренда', 'URL'=>'rent'],
     ['TITLE' => 'Ремонт', 'URL'=>'service'],
     ['TITLE' => 'Выкуп Б/У', 'URL'=>'buyback'],

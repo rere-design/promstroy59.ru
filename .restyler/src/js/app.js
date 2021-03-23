@@ -49,12 +49,13 @@ window.addEventListener('load', resizeHeaderMenu);
 
 document.addEventListener('DOMContentLoaded', () => {
   const buttonCallback = document.querySelectorAll('.callback.scroll');
-  const form = document.querySelector('#compressors_form');
-  const formRent = document.querySelector('#rent_form');
-  buttonCallback.forEach(button => button.addEventListener('click', () => {
-    if(button.getAttribute('href') === '#rent_form' && !form.classList.contains('is-active')) formRent.classList.add('is-active');
-    if (button.getAttribute('href') === '#compressors_form' && !form.classList.contains('is-active')) form.classList.add('is-active');
-  }));
+  buttonCallback.forEach((el)=>{
+    el.addEventListener('click', ()=>{
+      const valueAttr = el.getAttribute('href');
+      const formCallback = document.querySelector(valueAttr);
+      if(!formCallback.classList.contains('is-active')) formCallback.classList.add('is-active');
+    });
+  })
 });
 
 

@@ -12,14 +12,14 @@
 <div class="sev sec_offer" id="offer">
     <div class="banner">
         <div class="banner__img">
-            <img src="/styles/img/offer_bg5.jpg" width="" height="600" alt="">
+            <img src="/styles/img/offer_bg100.jpg" width="" height="600" alt="">
         </div>
         <div class="art container">
             <div class="columns is-variable is-7">
                 <div class="column is-5-tablet is-7-desktop">
                     <div class="block banner__box">
-                        <h1><?= $cms_object->offer->data->header; ?></h1>
-                        <div class="desc">Наша компания занимается ПРОДАЖЕЙ новых и б/у КОМПРЕССОРОВ.</div>
+                        <h1>Аренда компрессоров</h1>
+                        <div class="desc">Наша компания занимается сдачей в аренду КОМПРЕССОРОВ и др. техники.</div>
                     </div>
                 </div>
                 <div class="column">
@@ -223,79 +223,79 @@
     </div>
 
 </div>
-
-<div class="sev sec_compressors section" id="compressors">
-    <div class="art container">
-        <div class="head2">Вам нужен компрессор?<br><span>Тогда вы правильно обратились!</span></div>
-        <div class="columns items is-multiline">
-            <div class="column">
-                <div class="card-product">
-                    <div class="card-product__hover">
-                        <a href="#compressors_form"
-                           class="callback scroll">Связаться
-                            с нами</a>
-                    </div>
-                    <div class="card-product__title">
-                        Компрессор дизельный <br> малой мощности
-                    </div>
-                    <div class="card-product__img">
-                        <img src="data/upload/equipments/list/kmm.png"
-                             alt="Компрессор дизельный малой мощности 7-12 Бар/2-5,5 м3.мин">
-                    </div>
-                    <div class="card-product__desc">
-                        <ul>
-                            <li><b>Рабочее давление, бар:</b> 7-12</li>
-                            <li><b>Производительность, м<sup>3</sup>/мин:</b> 2-5,5</li>
-                        </ul>
-                    </div>
+<?/*
+    <div class="sev sec_compressors section" id="compressors">
+<div class="art container">
+    <div class="head2">Вам нужен компрессор?<br><span>Тогда вы правильно обратились!</span></div>
+    <div class="columns items is-multiline">
+        <div class="column">
+            <div class="card-product">
+                <div class="card-product__hover">
+                    <a href="#compressors_form"
+                       class="callback scroll">Связаться
+                        с нами</a>
+                </div>
+                <div class="card-product__title">
+                    Компрессор дизельный <br> малой мощности
+                </div>
+                <div class="card-product__img">
+                    <img src="data/upload/equipments/list/kmm.png"
+                         alt="Компрессор дизельный малой мощности 7-12 Бар/2-5,5 м3.мин">
+                </div>
+                <div class="card-product__desc">
+                    <ul>
+                        <li><b>Рабочее давление, бар:</b> 7-12</li>
+                        <li><b>Производительность, м<sup>3</sup>/мин:</b> 2-5,5</li>
+                    </ul>
                 </div>
             </div>
-            <div class="column">
-                <div class="card-product">
-                    <div class="card-product__hover">
-                        <a href="#compressors_form"
-                           class="callback scroll">Связаться
-                            с нами</a>
-                    </div>
-                    <div class="card-product__title">
-                        Компрессор дизельный <br> средней мощности
-                    </div>
-                    <div class="card-product__img">
-                        <img src="data/upload/equipments/list/kmc.png"
-                             alt="Компрессор дизельный средней мощности 7-14 Бар/7,5-12 м3.мин">
-                    </div>
-                    <div class="card-product__desc">
-                        <ul>
-                            <li><b>Рабочее давление, бар:</b> 7-14</li>
-                            <li><b>Производительность, м<sup>3</sup>/мин:</b> 5-12</li>
-                        </ul>
-                    </div>
+        </div>
+        <div class="column">
+            <div class="card-product">
+                <div class="card-product__hover">
+                    <a href="#compressors_form"
+                       class="callback scroll">Связаться
+                        с нами</a>
+                </div>
+                <div class="card-product__title">
+                    Компрессор дизельный <br> средней мощности
+                </div>
+                <div class="card-product__img">
+                    <img src="data/upload/equipments/list/kmc.png"
+                         alt="Компрессор дизельный средней мощности 7-14 Бар/7,5-12 м3.мин">
+                </div>
+                <div class="card-product__desc">
+                    <ul>
+                        <li><b>Рабочее давление, бар:</b> 7-14</li>
+                        <li><b>Производительность, м<sup>3</sup>/мин:</b> 5-12</li>
+                    </ul>
                 </div>
             </div>
-            <div class="column">
-                <div class="card-product">
-                    <div class="card-product__hover">
-                        <a href="#compressors_form"
-                           class="callback scroll">Связаться
-                            с нами</a>
-                    </div>
-                    <div class="card-product__title">
-                        Компрессор дизельный <br> высокой мощности
-                    </div>
-                    <div class="card-product__img">
-                        <img src="data/upload/equipments/list/kmv.png"
-                             alt="Компрессор дизельный средней мощности 8,6-35Бар/22-63 м3.мин">
-                    </div>
-                    <div class="card-product__desc">
-                        <ul>
-                            <li><b>Рабочее давление, бар:</b> 8,6-35</li>
-                            <li><b>Производительность, м<sup>3</sup>/мин:</b> 22-63</li>
-                        </ul>
-                    </div>
+        </div>
+        <div class="column">
+            <div class="card-product">
+                <div class="card-product__hover">
+                    <a href="#compressors_form"
+                       class="callback scroll">Связаться
+                        с нами</a>
+                </div>
+                <div class="card-product__title">
+                    Компрессор дизельный <br> высокой мощности
+                </div>
+                <div class="card-product__img">
+                    <img src="data/upload/equipments/list/kmv.png"
+                         alt="Компрессор дизельный средней мощности 8,6-35Бар/22-63 м3.мин">
+                </div>
+                <div class="card-product__desc">
+                    <ul>
+                        <li><b>Рабочее давление, бар:</b> 8,6-35</li>
+                        <li><b>Производительность, м<sup>3</sup>/мин:</b> 22-63</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <div class="sec_brand section">
@@ -350,152 +350,152 @@
         </div>
     </div>
 </div>
-</div>
+*/?>
 
 <script>
-  var quiz = {
-    questions: [
-      {
-        text: "Какой привод компрессора?",
-        responses: [
-            {text: 'Электрический'},
-            {text: 'Дизельный'},
-            {text: 'Не знаю'},
+    var quiz = {
+        questions: [
+            {
+                text: "Какой привод компрессора?",
+                responses: [
+                    {text: 'Электрический'},
+                    {text: 'Дизельный'},
+                    {text: 'Не знаю'},
+                ]
+            }, {
+                text: "Какой тип компрессора требуется?",
+                responses: [
+                    {text: 'Передвижной'},
+                    {text: 'Станционарный'},
+                    {text: 'Не знаю'},
+                ]
+            }, {
+                text: "Необходимое рабочее давление?",
+                responses: [
+                    {text: 'От 1-7 Бар'},
+                    {text: '7-14 Бар'},
+                    {text: '14-35 Бар'},
+                    {text: 'Не знаю'},
+                ]
+            }, {
+                text: "Требуемая производительность компрессора?",
+                responses: [
+                    {text: 'До 5,5 м3 в минуту'},
+                    {text: 'от 5,5 – 13 м3 в минуту'},
+                    {text: '13- 65 м3 в минуту'},
+                    {text: 'Не знаю'},
+                ]
+            }
         ]
-      }, {
-        text: "Какой тип компрессора требуется?",
-        responses: [
-            {text: 'Передвижной'},
-            {text: 'Станционарный'},
-            {text: 'Не знаю'},
-        ]
-      }, {
-        text: "Необходимое рабочее давление?",
-        responses: [
-            {text: 'От 1-7 Бар'},
-            {text: '7-14 Бар'},
-            {text: '14-35 Бар'},
-            {text: 'Не знаю'},
-        ]
-      }, {
-        text: "Требуемая производительность компрессора?",
-        responses: [
-            {text: 'До 5,5 м3 в минуту'},
-            {text: 'от 5,5 – 13 м3 в минуту'},
-            {text: '13- 65 м3 в минуту'},
-            {text: 'Не знаю'},
-        ]
-      }
-    ]
-  };
+    };
 
-  new Vue({
-    el: '#app',
-    data: {
-      quiz: quiz,
-      questionIndex: 0,
-      userResponses: Array(quiz.questions.length).fill(false),
-      answers: [],
-      completed: false
-    },
-    computed: {
-      percent: function () {
-        return ((this.questionIndex / this.quiz.questions.length) * 100) + '%'
-      },
-      percentStyle: function () {
-        return ((this.questionIndex / this.quiz.questions.length) * 100 + 5) + '%'
-      }
-    },
-    methods: {
-      next: function (e) {
-        var question = quiz.questions[this.questionIndex].text;
-        var answer = e.target.labels[0].innerText;
-        this.answers.push([question, answer]);
-        this.questionIndex++;
-      },
-      submit: function () {
-        this.completed = true;
-        $('[name=answers]').val(JSON.stringify(this.answers));
-      },
-      restart: function () {
-        this.answers = [];
-        this.questionIndex = 0;
-      }
-    }
-  });
+    new Vue({
+        el: '#app',
+        data: {
+            quiz: quiz,
+            questionIndex: 0,
+            userResponses: Array(quiz.questions.length).fill(false),
+            answers: [],
+            completed: false
+        },
+        computed: {
+            percent: function () {
+                return ((this.questionIndex / this.quiz.questions.length) * 100) + '%'
+            },
+            percentStyle: function () {
+                return ((this.questionIndex / this.quiz.questions.length) * 100 + 5) + '%'
+            }
+        },
+        methods: {
+            next: function (e) {
+                var question = quiz.questions[this.questionIndex].text;
+                var answer = e.target.labels[0].innerText;
+                this.answers.push([question, answer]);
+                this.questionIndex++;
+            },
+            submit: function () {
+                this.completed = true;
+                $('[name=answers]').val(JSON.stringify(this.answers));
+            },
+            restart: function () {
+                this.answers = [];
+                this.questionIndex = 0;
+            }
+        }
+    });
 </script>
 
 <script>
-  var quizs = {
-    questions: [
-      {
-        text: "Какой привод компрессора?",
-        responses: [
-            {text: 'Электрический'},
-            {text: 'Дизельный'},
-            {text: 'Не знаю'},
+    var quizs = {
+        questions: [
+            {
+                text: "Какой привод компрессора?",
+                responses: [
+                    {text: 'Электрический'},
+                    {text: 'Дизельный'},
+                    {text: 'Не знаю'},
+                ]
+            }, {
+                text: "Какой тип компрессора требуется?",
+                responses: [
+                    {text: 'Передвижной'},
+                    {text: 'Станционарный'},
+                    {text: 'Не знаю'},
+                ]
+            }, {
+                text: "Необходимое рабочее давление?",
+                responses: [
+                    {text: 'От 1-7 Бар'},
+                    {text: '7-14 Бар'},
+                    {text: '14-35 Бар'},
+                    {text: 'Не знаю'},
+                ]
+            }, {
+                text: "Требуемая производительность компрессора?",
+                responses: [
+                    {text: 'До 5,5 м3 в минуту'},
+                    {text: 'от 5,5 – 13 м3 в минуту'},
+                    {text: '13- 65 м3 в минуту'},
+                    {text: 'Не знаю'},
+                ]
+            }
         ]
-      }, {
-        text: "Какой тип компрессора требуется?",
-        responses: [
-            {text: 'Передвижной'},
-            {text: 'Станционарный'},
-            {text: 'Не знаю'},
-        ]
-      }, {
-        text: "Необходимое рабочее давление?",
-        responses: [
-            {text: 'От 1-7 Бар'},
-            {text: '7-14 Бар'},
-            {text: '14-35 Бар'},
-            {text: 'Не знаю'},
-        ]
-      }, {
-        text: "Требуемая производительность компрессора?",
-        responses: [
-            {text: 'До 5,5 м3 в минуту'},
-            {text: 'от 5,5 – 13 м3 в минуту'},
-            {text: '13- 65 м3 в минуту'},
-            {text: 'Не знаю'},
-        ]
-      }
-    ]
-  };
+    };
 
-  new Vue({
-    el: '#apps',
-    data: {
-      quizs: quizs,
-      questionIndex: 0,
-      userResponses: Array(quizs.questions.length).fill(false),
-      answers: [],
-      completed: false
-    },
-    computed: {
-      percent: function () {
-        return ((this.questionIndex / this.quizs.questions.length) * 100) + '%'
-      },
-      percentStyle: function () {
-        return ((this.questionIndex / this.quizs.questions.length) * 100 + 5) + '%'
-      }
-    },
-    methods: {
-      next: function (e) {
-        var question = quizs.questions[this.questionIndex].text;
-        var answer = e.target.labels[0].innerText;
-        this.answers.push([question, answer]);
-        this.questionIndex++;
-      },
-      submit: function () {
-        this.completed = true;
-        $('[name=answers]').val(JSON.stringify(this.answers));
-      },
-      restart: function () {
-        this.answers = [];
-        this.questionIndex = 0;
-      }
-    }
-  });
+    new Vue({
+        el: '#apps',
+        data: {
+            quizs: quizs,
+            questionIndex: 0,
+            userResponses: Array(quizs.questions.length).fill(false),
+            answers: [],
+            completed: false
+        },
+        computed: {
+            percent: function () {
+                return ((this.questionIndex / this.quizs.questions.length) * 100) + '%'
+            },
+            percentStyle: function () {
+                return ((this.questionIndex / this.quizs.questions.length) * 100 + 5) + '%'
+            }
+        },
+        methods: {
+            next: function (e) {
+                var question = quizs.questions[this.questionIndex].text;
+                var answer = e.target.labels[0].innerText;
+                this.answers.push([question, answer]);
+                this.questionIndex++;
+            },
+            submit: function () {
+                this.completed = true;
+                $('[name=answers]').val(JSON.stringify(this.answers));
+            },
+            restart: function () {
+                this.answers = [];
+                this.questionIndex = 0;
+            }
+        }
+    });
 </script>
 
 <?/*
@@ -527,80 +527,54 @@
 </div>
 */?>
 
+<?/*
 <div class="sec sec_buyout_long section" id="buyout_long">
-    <div class="art container">
-        <div class="items">
-            <div class="item">
-                <div class="header">
-                    <div class="head2">Как мы продаем компрессора:</div>
-                </div>
-                <div class="icons">
-                    <ul>
-                        <li>
-                            <div class="icon"><img src="/styles/img/buyout/buyout_2_img_01.png" alt="Звонок или заявка">
-                            </div>
-                            <div class="title">Звонок или заявка</div>
-                        </li>
-                        <li>
-                            <div class="icon"><img src="/styles/img/buyout/buyout_1_img_04.png"
-                                                   alt="Оцениваем ваше оборудование"></div>
-                            <div class="title">Уточняем параметры компрессора</div>
-                        </li>
-                        <li>
-                            <div class="icon"><img src="/styles/img/buyout/buyout_2_img_02.png"
-                                                   alt="Подбираем подходящую модель"></div>
-                            <div class="title">Подбираем подходящую модель</div>
-                        </li>
-                        <li>
-                            <div class="icon"><img src="/styles/img/buyout/buyout_long_img_doc.png"
-                                                   alt="Оформляем документы"></div>
-                            <div class="title">Оформляем документы</div>
-                        </li>
-                        <li>
-                            <div class="icon"><img src="/styles/img/buyout/buyout_1_img_03.png" alt="Вы оплачиваете">
-                            </div>
-                            <div class="title">Вы оплачиваете</div>
-                        </li>
-                        <li>
-                            <div class="icon"><img src="/styles/img/buyout/buyout_2_img_03.png"
-                                                   alt="Компрессор уезжает к ВАМ!!!"></div>
-                            <div class="title">Компрессор уезжает к <strong style="color: white">вам!</strong></div>
-                        </li>
-                    </ul>
-                </div>
+<div class="art container">
+    <div class="items">
+        <div class="item">
+            <div class="header">
+                <div class="head2">Как мы продаем компрессора:</div>
+            </div>
+            <div class="icons">
+                <ul>
+                    <li>
+                        <div class="icon"><img src="/styles/img/buyout/buyout_2_img_01.png" alt="Звонок или заявка">
+                        </div>
+                        <div class="title">Звонок или заявка</div>
+                    </li>
+                    <li>
+                        <div class="icon"><img src="/styles/img/buyout/buyout_1_img_04.png"
+                                               alt="Оцениваем ваше оборудование"></div>
+                        <div class="title">Уточняем параметры компрессора</div>
+                    </li>
+                    <li>
+                        <div class="icon"><img src="/styles/img/buyout/buyout_2_img_02.png"
+                                               alt="Подбираем подходящую модель"></div>
+                        <div class="title">Подбираем подходящую модель</div>
+                    </li>
+                    <li>
+                        <div class="icon"><img src="/styles/img/buyout/buyout_long_img_doc.png"
+                                               alt="Оформляем документы"></div>
+                        <div class="title">Оформляем документы</div>
+                    </li>
+                    <li>
+                        <div class="icon"><img src="/styles/img/buyout/buyout_1_img_03.png" alt="Вы оплачиваете">
+                        </div>
+                        <div class="title">Вы оплачиваете</div>
+                    </li>
+                    <li>
+                        <div class="icon"><img src="/styles/img/buyout/buyout_2_img_03.png"
+                                               alt="Компрессор уезжает к ВАМ!!!"></div>
+                        <div class="title">Компрессор уезжает к <strong style="color: white">вам!</strong></div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
-
-
-<div class="sec sec_hook section" id="hook">
-    <div class="art container">
-        <div class="wrap">
-            <div class="head2">Есть вопросы, <br>мы вам перезвоним!</div>
-            <form action="<?= $inc->send; ?>" method="post">
-                <input type="hidden" name="goalname" value="Есть вопросы">
-                <input type="hidden" name="goal" value="goal_questions">
-                <input type="hidden" name="good" value="">
-                <div class="items columns">
-                    <div class="item column"><input type="text" name="name" placeholder="Ваше имя"></div>
-                    <div class="item column"><input type="text" name="phone" placeholder="+7 (____) - ___ - ___ - _">
-                    </div>
-                </div>
-                <div class="columns items">
-                    <div class="item column"><input type="text" name="email" placeholder="E-mail"></div>
-                    <div class="item column">
-                        <button type="submit"><span>Отправить письмо</span></button>
-                    </div>
-                </div>
-                <label>
-                    <input type="checkbox" name="politic" value="1" data-focus="icon" checked>
-                    <span class="icon"></span><span class="label">Я даю согласие на обработку персональных данных</span>
-                </label>
-            </form>
-        </div>
-    </div>
 </div>
+*/?>
+
 
 <?
 			$buyouts = array (
@@ -746,7 +720,7 @@
                         Аренда компрессора <br> Atlas Copco XAHS 186
                     </div>
                     <div class="card-product__img">
-                        <img src="data/upload/equipments/list/cq5dam.web.jpg"
+                        <img src="../styles/img/xahs-186.jpg"
                              alt="">
                     </div>
                     <div class="card-product__desc">
@@ -769,7 +743,7 @@
                         Аренда компрессора <br> Atlas Copco XATS 156
                     </div>
                     <div class="card-product__img">
-                        <img src="data/upload/equipments/list/cq5dam.web.jpg"
+                        <img src="../styles/img/xats-156.jpg"
                              alt="">
                     </div>
                     <div class="card-product__desc">
@@ -811,7 +785,7 @@
                            class="callback scroll">Узнать
                             цену</a>
                     </div>
-                    <div class="card-product__title">Аренда покрасочного <br> аппарата  Graco Xtreme X70
+                    <div class="card-product__title">Аренда покрасочного <br> аппарата Graco Xtreme X70
                     </div>
                     <div class="card-product__img">
                         <img src="data/upload/equipments/list/135.jpg"
@@ -852,6 +826,8 @@
         </div>
     </div>
 </div>
+
+
 
 <div class=" sec_rent section" style="display: none;" id="">
     <div class="art container">
@@ -909,8 +885,90 @@
         </div>
     </div>
 </div>
+<div class="sec sec_hook section" id="hook">
+    <div class="art container">
+        <div class="wrap">
+            <div class="head2">Есть вопросы, <br>мы вам перезвоним!</div>
+            <form action="<?= $inc->send; ?>" method="post">
+                <input type="hidden" name="goalname" value="Есть вопросы">
+                <input type="hidden" name="goal" value="goal_questions">
+                <input type="hidden" name="good" value="">
+                <div class="items columns">
+                    <div class="item column"><input type="text" name="name" placeholder="Ваше имя"></div>
+                    <div class="item column"><input type="text" name="phone" placeholder="+7 (____) - ___ - ___ - _">
+                    </div>
+                </div>
+                <div class="columns items">
+                    <div class="item column"><input type="text" name="email" placeholder="E-mail"></div>
+                    <div class="item column">
+                        <button type="submit"><span>Отправить письмо</span></button>
+                    </div>
+                </div>
+                <label>
+                    <input type="checkbox" name="politic" value="1" data-focus="icon" checked>
+                    <span class="icon"></span><span class="label">Я даю согласие на обработку персональных данных</span>
+                </label>
+            </form>
+        </div>
+    </div>
+</div>
 
+<div class="sec section special-equipment">
+    <div class="art container">
+        <div class="head2">Аренда спец техники</div>
+        <div class="columns is-multiline is-centered">
+            <div class="column is-8-tablet is-6-desktop">
+                <div class="special-equipment__wrap">
+                    <div class="special-equipment__slider">
+                        <div class="special-equipment__slider-item">
+                            <img src="/styles/img/444.jpg" alt="">
+                        </div>
+                        <div class="special-equipment__slider-item">
+                            <img src="/styles/img/12-44-46.jpg" alt="">
+                        </div>
+                        <div class="special-equipment__slider-item">
+                            <img src="/styles/img/kb.jpeg" alt="">
+                        </div>
+                    </div>
+                    <div class="navigation">
+                        <a href="#prev" class="nav prev">prev</a>
+                        <span class="dots">
+                        <span class="dot">1</span>
+                        <span class="dot">2</span>
+                        <span class="dot">3</span>
+				        </span>
+                        <a href="#next" class="nav next">next</a>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-hidden-touch is-6-desktop">
+                <div class="sec_svyazatsa_form">
+                    <div class="art">
+                        <div class="wrap">
+                            <div class="head2">Связаться с нами</div>
+                            <form action="<?= $inc->send; ?>" method="post">
+                                <input type="hidden" name="goalname" value="Связаться с нами">
+                                <input type="hidden" name="goal" value="goal_contact">
+                                <input type="hidden" name="choice" value="">
+                                <div class="items">
+                                    <div class="item"><input type="text" name="name" placeholder="Ваше имя"></div>
+                                    <div class="item"><input type="text" name="phone" placeholder="+7 (____) - ___ - ___ - _"></div>
+                                    <div class="item">
+                                        <button type="submit"><span>Отправить письмо</span></button>
+                                    </div>
+                                </div>
+                                <label><input type="checkbox" name="politic" value="1" data-focus="icon" checked><span
+                                            class="icon"></span><span
+                                            class="label">Я даю согласие на обработку персональных данных</span></label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 
+            </div>
+        </div>
+    </div>
+</div>
 <div class="sec sec_comments section" id="comments">
     <div class="art container">
         <div class="head2">Отзывы наших клиентов</div>
@@ -938,7 +996,7 @@
                 <li>
                     <div class="header">
                         <div class="photo">
-                            <img src="/styles/img/comments_def_photo.jpg"  alt="">
+                            <img src="/styles/img/comments_def_photo.jpg" alt="">
                         </div>
                         <div class="title">
                             <div class="name">Красильников Н.А.</div>
@@ -968,7 +1026,7 @@
                             <a href="/styles/img/GAV-Perm.jpg" target="_blank">
                                 <img src="/styles/img/GAV-Perm.jpg" alt="">
                             </a>
-                    </div>
+                        </div>
                 </li>
                 <li>
                     <div class="header">
@@ -985,7 +1043,7 @@
                             <a href="/styles/img/Vikos.jpg" target="_blank">
                                 <img src="/styles/img/Vikos.jpg" alt="">
                             </a>
-                    </div>
+                        </div>
                 </li>
             </ul>
             <div class="navigation">
@@ -1024,7 +1082,8 @@
                         </div>
                         <div class="phones">
                             <div class="item">
-                                <a href="tel:+73422021715" class="clickgoal" data-goal="goal_phone">+7 (342) 202-17-15</a>
+                                <a href="tel:+73422021715" class="clickgoal" data-goal="goal_phone">+7 (342)
+                                    202-17-15</a>
                             </div>
                         </div>
                         <div class="email"><a href="<?= Landing::GetEmail($cms_object->options->contacts->email); ?>"
@@ -1059,30 +1118,34 @@
 <!-- Marquiz script start -->
 <script src="//script.marquiz.ru/v1.js" type="application/javascript"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    Marquiz.init({
-      id: '5d8dea7a9ffdf500442a7903',
-      autoOpen: 10,
-      autoOpenFreq: 'once',
-      openOnExit: false
+    document.addEventListener("DOMContentLoaded", function () {
+        Marquiz.init({
+            id: '5d8dea7a9ffdf500442a7903',
+            autoOpen: 10,
+            autoOpenFreq: 'once',
+            openOnExit: false
+        });
     });
-  });
 </script>
 <!-- Marquiz script end -->
 <!-- Pixel -->
 <script type="text/javascript">
-  (function (d, w) {
-    var n = d.getElementsByTagName("script")[0],
-        s = d.createElement("script"),
-        f = function () { n.parentNode.insertBefore(s, n); };
-    s.type = "text/javascript";
-    s.async = true;
-    s.src = "https://qoopler.ru/index.php?ref="+d.referrer+"&cookie=" + encodeURIComponent(document.cookie);
+    (function (d, w) {
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () {
+                n.parentNode.insertBefore(s, n);
+            };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://qoopler.ru/index.php?ref=" + d.referrer + "&cookie=" + encodeURIComponent(document.cookie);
 
-    if (w.opera == "[object Opera]") {
-      d.addEventListener("DOMContentLoaded", f, false);
-    } else { f(); }
-  })(document, window);
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else {
+            f();
+        }
+    })(document, window);
 </script>
 <!-- /Pixel -->
 <div class="marquiz__container">
@@ -1095,77 +1158,7 @@
         <!-- Facebook Pixel Code --></div>
     <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;">
         <script>
-          <
-          /div>
-          < div
-          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
-              !function (f, b, e, v, n, t, s)
-              < /div>
-              < div
-          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
-          {if(f.fbq
-          )
-          return;
-          n = f.fbq = function () {
-          n.callMethod ?
-          <
-          /div>
-          < div
-          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
-          n.callMethod.apply(n, arguments)
-          :
-          n.queue.push(arguments)
-          };
-          <
-          /div>
-          < div
-          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
-          if (!f._fbq) f._fbq = n;
-          n.push = n;
-          n.loaded = !0;
-          n.version = '2.0';
-          <
-          /div>
-          < div
-          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
-          n.queue = [];
-          t = b.createElement(e);
-          t.async = !0;
-          <
-          /div>
-          < div
-          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
-          t.src = v;
-          s = b.getElementsByTagName(e)[0];
-          <
-          /div>
-          < div
-          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
-              s.parentNode.insertBefore(t, s)
-          }
-          (window, document, 'script',
-          < /div>
-          < div
-          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" >
-              'https://connect.facebook.net/en_US/fbevents.js'
-          )
-          ;
-          <
-          /div>
-          < div
-          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" > < /div>
-              < div
-          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" > fbq('init',
-              '649910868887814');
-          <
-          /div>
-          < div
-          style = "min-height: 16px;margin-left:16px;white-space:pre-wrap;word-break:break-word;" > fbq('track',
-              'PageView');
-          <
-          /div>
-          < div
-          style = "min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;" ></script>
+        </script>
     </div>
     <div style="min-height: 16px;margin-left:0px;white-space:pre-wrap;word-break:break-word;">
         <noscript>

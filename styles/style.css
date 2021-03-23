@@ -1227,7 +1227,7 @@ header .contacts ul .phone {
     bottom: 20px
 }
 
-.sec_comments .slider .navigation .nav {
+.sec_comments .slider .navigation .nav, .special-equipment__wrap .navigation .nav{
     display: inline-block;
     vertical-align: middle;
     width: 11px;
@@ -1241,17 +1241,17 @@ header .contacts ul .phone {
     text-decoration: none
 }
 
-.sec_comments .slider .navigation .prev {
+.sec_comments .slider .navigation .prev, .special-equipment__wrap .navigation .prev{
     background-position: left center;
     margin-right: 20px
 }
 
-.sec_comments .slider .navigation .next {
+.sec_comments .slider .navigation .next, .special-equipment__wrap  .navigation .next{
     background-position: right center;
     margin-left: 20px
 }
 
-.sec_comments .slider .navigation .dot {
+.sec_comments .slider .navigation .dot, .special-equipment__wrap .navigation .dot {
     display: inline-block;
     vertical-align: middle;
     font-size: 20px;
@@ -1260,7 +1260,8 @@ header .contacts ul .phone {
     margin: 0 5px
 }
 
-.sec_comments .slider .navigation .dot.active {
+
+.sec_comments .slider .navigation .dot.active,.special-equipment .navigation .dot.active {
     color: #0077e7
 }
 

@@ -588,7 +588,7 @@
     });
   };
 
-  $.fn.slider = function (options) {
+  $.fn.slider = function (tabletItem = 1, mobileItem = 1 ,desktopItem = 3,options) {
     return this.each(function () {
       var $this = $(this);
       var $parent = $this.parent().parent();
@@ -602,19 +602,19 @@
       var opt;
       if ( window.innerWidth > 769 && window.innerWidth < 1024) {
         opt = $.extend({
-          items: 1,
+          items: tabletItem,
           startPosition: 0,
           dotsContainer: $parent.find(o.dots),
         }, $this.data());
       } else if (window.innerWidth < 768) {
         opt = $.extend({
-          items: 1,
+          items: mobileItem,
           startPosition: 0,
           dotsContainer: $parent.find(o.dots),
         }, $this.data());
       } else {
         opt = $.extend({
-          items: 3,
+          items: desktopItem,
           startPosition: 0,
           dotsContainer: $parent.find(o.dots),
         }, $this.data());

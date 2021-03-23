@@ -18,6 +18,7 @@ $(function(){
 	$('.gotoform').gotoForm();
 
 	$('.slider ul').slider();
+	$('.special-equipment .special-equipment__slider').slider(1,1,1);
 
 	$('.zoom').colorbox({
 		fixed: true,
