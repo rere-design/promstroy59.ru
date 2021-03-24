@@ -146,7 +146,180 @@
         </div>
     </div>
 </div>
-
+<div class=" sec_rent section" id="rent">
+    <div class="art container">
+        <div class="head2">Вам нужен компрессор в аренду?<br>
+            <span>Тогда вы по адресу,</span>
+            большой парк надежных компрессоров компании Atlas Copco:
+        </div>
+        <div style="text-align: left; margin-bottom: 25px;">
+            (аналоги Айрман,Кайзер, ЧКЗ КВ, ЗИФ Ремеза и т.д.) малой и средней мощности (7-12 бар, 5-10м3/мин). <br>
+            Мы надежный поставщик арендных компрессоров на рынке Пермского края, у нас своя сервисная служба, которая
+            ликвидирует остановку компрессора в кротчайшие сроки или разъяснит Вашим сотрудникам необходимые вопросы.
+        </div>
+        <div class="columns is-multiline">
+            <div class="column is-4">
+                <div class="card-product">
+                    <div class="card-product__hover">
+                        <a href="#rent_form"
+                           class="callback scroll">Узнать
+                            цену</a>
+                    </div>
+                    <div class="card-product__title">
+                        Аренда компрессора <br> Atlas Copco XAS 97
+                    </div>
+                    <div class="card-product__img">
+                        <img src="data/upload/equipments/list/cq5dam.web.1600.jpg"
+                             alt="">
+                    </div>
+                    <div class="card-product__desc">
+                        <ul>
+                            <li><b>Рабочее давление, бар:</b> 7</li>
+                            <li><b>Производительность, м<sup>3</sup>/мин: </b>5,3</li>
+                            <li><b>Цена:</b> от 3000 руб./сутки</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4">
+                <div class="card-product">
+                    <div class="card-product__hover">
+                        <a href="#rent_form"
+                           class="callback scroll">Узнать
+                            цену</a>
+                    </div>
+                    <div class="card-product__title">
+                        Аренда компрессора <br> Atlas Copco XAS 186
+                    </div>
+                    <div class="card-product__img">
+                        <img src="data/upload/equipments/list/cq5dam.web.jpg"
+                             alt="">
+                    </div>
+                    <div class="card-product__desc">
+                        <ul>
+                            <li><b>Рабочее давление, бар:</b> 7</li>
+                            <li><b>Производительность, м<sup>3</sup>/мин:</b> 5,3</li>
+                            <li><b>Цена:</b> узнать по запросу</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4">
+                <div class="card-product">
+                    <div class="card-product__hover">
+                        <a href="#rent_form"
+                           class="callback scroll">Узнать
+                            цену</a>
+                    </div>
+                    <div class="card-product__title">
+                        Аренда компрессора <br> Atlas Copco XAHS 186
+                    </div>
+                    <div class="card-product__img">
+                        <img src="../styles/img/xahs-186.jpg"
+                             alt="">
+                    </div>
+                    <div class="card-product__desc">
+                        <ul>
+                            <li><b>Рабочее давление, бар:</b> 12</li>
+                            <li><b>Производительность, м<sup>3</sup>/мин: </b>10,4</li>
+                            <li><b>Цена:</b> узнать по запросу</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4">
+                <div class="card-product">
+                    <div class="card-product__hover">
+                        <a href="#rent_form"
+                           class="callback scroll">Узнать
+                            цену</a>
+                    </div>
+                    <div class="card-product__title">
+                        Аренда компрессора <br> Atlas Copco XATS 156
+                    </div>
+                    <div class="card-product__img">
+                        <img src="../styles/img/xats-156.jpg"
+                             alt="">
+                    </div>
+                    <div class="card-product__desc">
+                        <ul>
+                            <li><b>Рабочее давление, бар:</b> 10,3</li>
+                            <li><b>Производительность, м<sup>3</sup>/мин: </b>10</li>
+                            <li><b>Цена:</b> узнать по запросу</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4">
+                <div class="card-product">
+                    <div class="card-product__hover">
+                        <a href="#rent_form"
+                           class="callback scroll">Узнать
+                            цену</a>
+                    </div>
+                    <div class="card-product__title">
+                        Пескоструйный Аппарат <br> Contracor DBS-200
+                    </div>
+                    <div class="card-product__img">
+                        <img src="data/upload/equipments/list/CRKT6tfQNnM.jpg"
+                             alt="">
+                    </div>
+                    <div class="card-product__desc">
+                        <ul>
+                            <li><b>Длина шланга: </b> 60м</li>
+                            <li><b>Диаметр сопла: </b>8мм</li>
+                            <li><b>Цена:</b> узнать по запросу</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-4">
+                <div class="card-product">
+                    <div class="card-product__hover">
+                        <a href="#rent_form"
+                           class="callback scroll">Узнать
+                            цену</a>
+                    </div>
+                    <div class="card-product__title">Аренда покрасочного <br> аппарата Graco Xtreme X70
+                    </div>
+                    <div class="card-product__img">
+                        <img src="data/upload/equipments/list/135.jpg"
+                             alt="">
+                    </div>
+                    <div class="card-product__desc">
+                        <ul>
+                            <li><b>Длина шланга: </b> 60м</li>
+                            <li><b>Диаметр сопла: </b>8мм</li>
+                            <li><b>Цена:</b> узнать по запросу</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sev sec_svyazatsa_form" id="rent_form">
+    <div class="art container">
+        <div class="wrap">
+            <div class="head2">Связаться с нами</div>
+            <form action="<?= $inc->send; ?>" method="post">
+                <input type="hidden" name="goalname" value="Связаться с нами">
+                <input type="hidden" name="goal" value="goal_contact">
+                <input type="hidden" name="choice" value="">
+                <div class="items">
+                    <div class="item"><input type="text" name="name" placeholder="Ваше имя"></div>
+                    <div class="item"><input type="text" name="phone" placeholder="+7 (____) - ___ - ___ - _"></div>
+                    <div class="item">
+                        <button type="submit"><span>Отправить письмо</span></button>
+                    </div>
+                </div>
+                <label><input type="checkbox" name="politic" value="1" data-focus="icon" checked><span
+                            class="icon"></span><span
+                            class="label">Я даю согласие на обработку персональных данных</span></label>
+            </form>
+        </div>
+    </div>
+</div>
 <div class="sev sec_quiz section" id="quiz">
     <div class="art container">
         <div class="head2 title">Подберите компрессор для своего бизнеса у нас,<br> со
@@ -651,182 +824,6 @@
 ?>
 
 
-<div class=" sec_rent section" id="rent">
-    <div class="art container">
-        <div class="head2">Вам нужен компрессор в аренду?<br>
-            <span>Тогда вы по адресу,</span>
-            большой парк надежных компрессоров компании Atlas Copco:
-        </div>
-        <div style="text-align: left; margin-bottom: 25px;">
-            (аналоги Айрман,Кайзер, ЧКЗ КВ, ЗИФ Ремеза и т.д.) малой и средней мощности (7-12 бар, 5-10м3/мин). <br>
-            Мы надежный поставщик арендных компрессоров на рынке Пермского края, у нас своя сервисная служба, которая
-            ликвидирует остановку компрессора в кротчайшие сроки или разъяснит Вашим сотрудникам необходимые вопросы.
-        </div>
-        <div class="columns is-multiline">
-            <div class="column is-4">
-                <div class="card-product">
-                    <div class="card-product__hover">
-                        <a href="#rent_form"
-                           class="callback scroll">Узнать
-                            цену</a>
-                    </div>
-                    <div class="card-product__title">
-                        Аренда компрессора <br> Atlas Copco XAS 97
-                    </div>
-                    <div class="card-product__img">
-                        <img src="data/upload/equipments/list/cq5dam.web.1600.jpg"
-                             alt="">
-                    </div>
-                    <div class="card-product__desc">
-                        <ul>
-                            <li><b>Рабочее давление, бар:</b> 7</li>
-                            <li><b>Производительность, м<sup>3</sup>/мин: </b>5,3</li>
-                            <li><b>Цена:</b> от 3000 руб./сутки</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-4">
-                <div class="card-product">
-                    <div class="card-product__hover">
-                        <a href="#rent_form"
-                           class="callback scroll">Узнать
-                            цену</a>
-                    </div>
-                    <div class="card-product__title">
-                        Аренда компрессора <br> Atlas Copco XAS 186
-                    </div>
-                    <div class="card-product__img">
-                        <img src="data/upload/equipments/list/cq5dam.web.jpg"
-                             alt="">
-                    </div>
-                    <div class="card-product__desc">
-                        <ul>
-                            <li><b>Рабочее давление, бар:</b> 7</li>
-                            <li><b>Производительность, м<sup>3</sup>/мин:</b> 5,3</li>
-                            <li><b>Цена:</b> узнать по запросу</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-4">
-                <div class="card-product">
-                    <div class="card-product__hover">
-                        <a href="#rent_form"
-                           class="callback scroll">Узнать
-                            цену</a>
-                    </div>
-                    <div class="card-product__title">
-                        Аренда компрессора <br> Atlas Copco XAHS 186
-                    </div>
-                    <div class="card-product__img">
-                        <img src="../styles/img/xahs-186.jpg"
-                             alt="">
-                    </div>
-                    <div class="card-product__desc">
-                        <ul>
-                            <li><b>Рабочее давление, бар:</b> 12</li>
-                            <li><b>Производительность, м<sup>3</sup>/мин: </b>10,4</li>
-                            <li><b>Цена:</b> узнать по запросу</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-4">
-                <div class="card-product">
-                    <div class="card-product__hover">
-                        <a href="#rent_form"
-                           class="callback scroll">Узнать
-                            цену</a>
-                    </div>
-                    <div class="card-product__title">
-                        Аренда компрессора <br> Atlas Copco XATS 156
-                    </div>
-                    <div class="card-product__img">
-                        <img src="../styles/img/xats-156.jpg"
-                             alt="">
-                    </div>
-                    <div class="card-product__desc">
-                        <ul>
-                            <li><b>Рабочее давление, бар:</b> 10,3</li>
-                            <li><b>Производительность, м<sup>3</sup>/мин: </b>10</li>
-                            <li><b>Цена:</b> узнать по запросу</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-4">
-                <div class="card-product">
-                    <div class="card-product__hover">
-                        <a href="#rent_form"
-                           class="callback scroll">Узнать
-                            цену</a>
-                    </div>
-                    <div class="card-product__title">
-                        Пескоструйный Аппарат <br> Contracor DBS-200
-                    </div>
-                    <div class="card-product__img">
-                        <img src="data/upload/equipments/list/CRKT6tfQNnM.jpg"
-                             alt="">
-                    </div>
-                    <div class="card-product__desc">
-                        <ul>
-                            <li><b>Длина шланга: </b> 60м</li>
-                            <li><b>Диаметр сопла: </b>8мм</li>
-                            <li><b>Цена:</b> узнать по запросу</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-4">
-                <div class="card-product">
-                    <div class="card-product__hover">
-                        <a href="#rent_form"
-                           class="callback scroll">Узнать
-                            цену</a>
-                    </div>
-                    <div class="card-product__title">Аренда покрасочного <br> аппарата Graco Xtreme X70
-                    </div>
-                    <div class="card-product__img">
-                        <img src="data/upload/equipments/list/135.jpg"
-                             alt="">
-                    </div>
-                    <div class="card-product__desc">
-                        <ul>
-                            <li><b>Длина шланга: </b> 60м</li>
-                            <li><b>Диаметр сопла: </b>8мм</li>
-                            <li><b>Цена:</b> узнать по запросу</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="sev sec_svyazatsa_form" id="rent_form">
-    <div class="art container">
-        <div class="wrap">
-            <div class="head2">Связаться с нами</div>
-            <form action="<?= $inc->send; ?>" method="post">
-                <input type="hidden" name="goalname" value="Связаться с нами">
-                <input type="hidden" name="goal" value="goal_contact">
-                <input type="hidden" name="choice" value="">
-                <div class="items">
-                    <div class="item"><input type="text" name="name" placeholder="Ваше имя"></div>
-                    <div class="item"><input type="text" name="phone" placeholder="+7 (____) - ___ - ___ - _"></div>
-                    <div class="item">
-                        <button type="submit"><span>Отправить письмо</span></button>
-                    </div>
-                </div>
-                <label><input type="checkbox" name="politic" value="1" data-focus="icon" checked><span
-                            class="icon"></span><span
-                            class="label">Я даю согласие на обработку персональных данных</span></label>
-            </form>
-        </div>
-    </div>
-</div>
-
 
 
 <div class=" sec_rent section" style="display: none;" id="">
@@ -915,60 +912,97 @@
 
 <div class="sec section special-equipment">
     <div class="art container">
-        <div class="head2">Аренда спец техники</div>
-        <div class="columns is-multiline is-centered">
-            <div class="column is-8-tablet is-6-desktop">
-                <div class="special-equipment__wrap">
-                    <div class="special-equipment__slider">
-                        <div class="special-equipment__slider-item">
-                            <img src="/styles/img/444.jpg" alt="">
-                        </div>
-                        <div class="special-equipment__slider-item">
-                            <img src="/styles/img/12-44-46.jpg" alt="">
-                        </div>
-                        <div class="special-equipment__slider-item">
-                            <img src="/styles/img/kb.jpeg" alt="">
-                        </div>
+        <div class="head2">Аренда оборудования и спец техники</div>
+        <div class="columns is-multiline">
+            <div class="column is-4">
+                <div class="card-product">
+                    <div class="card-product__hover">
+                        <a href="#special_form" class="callback scroll">Узнать
+                            цену</a>
                     </div>
-                    <div class="navigation">
-                        <a href="#prev" class="nav prev">prev</a>
-                        <span class="dots">
-                        <span class="dot">1</span>
-                        <span class="dot">2</span>
-                        <span class="dot">3</span>
-				        </span>
-                        <a href="#next" class="nav next">next</a>
+                    <div class="card-product__title">Кран борт <br> Daewoo Novus</div>
+                    <div class="card-product__img">
+                        <img src="/styles/img/444.jpg" alt="">
+                    </div>
+                    <div class="card-product__desc">
+                        <ul>
+                            <li><b>Г/подъёмность : </b> 25.0 т</li>
+                            <li><b>Кузов: </b>Бортовой грузовик</li>
+                            <li><b>Цена:</b> узнать по запросу</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="column is-hidden-touch is-6-desktop">
-                <div class="sec_svyazatsa_form">
-                    <div class="art">
-                        <div class="wrap">
-                            <div class="head2">Связаться с нами</div>
-                            <form action="<?= $inc->send; ?>" method="post">
-                                <input type="hidden" name="goalname" value="Связаться с нами">
-                                <input type="hidden" name="goal" value="goal_contact">
-                                <input type="hidden" name="choice" value="">
-                                <div class="items">
-                                    <div class="item"><input type="text" name="name" placeholder="Ваше имя"></div>
-                                    <div class="item"><input type="text" name="phone" placeholder="+7 (____) - ___ - ___ - _"></div>
-                                    <div class="item">
-                                        <button type="submit"><span>Отправить письмо</span></button>
-                                    </div>
-                                </div>
-                                <label><input type="checkbox" name="politic" value="1" data-focus="icon" checked><span
-                                            class="icon"></span><span
-                                            class="label">Я даю согласие на обработку персональных данных</span></label>
-                            </form>
-                        </div>
+            <div class="column is-4">
+                <div class="card-product">
+                    <div class="card-product__hover">
+                        <a href="#special_form" class="callback scroll">Узнать
+                            цену</a>
+                    </div>
+                    <div class="card-product__title">
+                        Пескоструйный Аппарат <br> Contracor DBS-200
+                    </div>
+                    <div class="card-product__img">
+                        <img src="data/upload/equipments/list/CRKT6tfQNnM.jpg" alt="">
+                    </div>
+                    <div class="card-product__desc">
+                        <ul>
+                            <li><b>Длина шланга: </b> 60м</li>
+                            <li><b>Диаметр сопла: </b>8мм</li>
+                            <li><b>Цена:</b> узнать по запросу</li>
+                        </ul>
                     </div>
                 </div>
-
+            </div>
+            <div class="column is-4">
+                <div class="card-product">
+                    <div class="card-product__hover">
+                        <a href="#special_form" class="callback scroll">Узнать
+                            цену</a>
+                    </div>
+                    <div class="card-product__title">Аренда покрасочного <br> аппарата Graco Xtreme X70
+                    </div>
+                    <div class="card-product__img">
+                        <img src="data/upload/equipments/list/135.jpg" alt="">
+                    </div>
+                    <div class="card-product__desc">
+                        <ul>
+                            <li><b>Длина шланга: </b> 60м</li>
+                            <li><b>Диаметр сопла: </b>8мм</li>
+                            <li><b>Цена:</b> узнать по запросу</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<div class="sev sec_svyazatsa_form" id="special_form">
+    <div class="art container">
+        <div class="wrap">
+            <div class="head2">Связаться с нами</div>
+            <form action="<?= $inc->send; ?>" method="post">
+                <input type="hidden" name="goalname" value="Связаться с нами">
+                <input type="hidden" name="goal" value="goal_contact">
+                <input type="hidden" name="choice" value="">
+                <div class="items">
+                    <div class="item"><input type="text" name="name" placeholder="Ваше имя"></div>
+                    <div class="item"><input type="text" name="phone" placeholder="+7 (____) - ___ - ___ - _"></div>
+                    <div class="item">
+                        <button type="submit"><span>Отправить письмо</span></button>
+                    </div>
+                </div>
+                <label><input type="checkbox" name="politic" value="1" data-focus="icon" checked><span
+                            class="icon"></span><span
+                            class="label">Я даю согласие на обработку персональных данных</span></label>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="sec sec_comments section" id="comments">
     <div class="art container">
         <div class="head2">Отзывы наших клиентов</div>
