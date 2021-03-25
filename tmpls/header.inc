@@ -4,8 +4,8 @@
 $headerMenu = array(
 //    ['TITLE' => 'Продажа компрессоров', 'URL'=>'compressors'],
     ['TITLE' => 'Аренда', 'URL'=>'rent'],
-    ['TITLE' => 'Ремонт', 'URL'=>'service'],
-    ['TITLE' => 'Выкуп Б/У', 'URL'=>'buyback'],
+//    ['TITLE' => 'Ремонт', 'URL'=>'service'],
+//    ['TITLE' => 'Выкуп Б/У', 'URL'=>'buyback'],
     ['TITLE' => 'Отзывы', 'URL'=>'comments'],
     ['TITLE' => 'Контакты', 'URL'=>'contacts'],
 )
