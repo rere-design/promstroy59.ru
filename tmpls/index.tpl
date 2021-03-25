@@ -28,8 +28,7 @@
                             <div class="wrap">
                                 <div class="sev sec_quiz" id="quizs">
                                     <div class="art container">
-                                        <div class="head2 title">Подберите компрессор для своего бизнеса у нас,<br> со
-                                            <span>скидкой в 20%!</span></div>
+                                        <div class="head2 title">Подберите компрессор для своих задач:</div>
 
                                         <div id="apps">
                                             <div class="info" v-show="completed === false">
@@ -148,9 +147,8 @@
 </div>
 <div class=" sec_rent section" id="rent">
     <div class="art container">
-        <div class="head2">Вам нужен компрессор в аренду?<br>
-            <span>Тогда вы по адресу,</span>
-            большой парк надежных компрессоров компании Atlas Copco:
+        <div class="head2">Нужен компрессор в аренду?<br>
+            большой парк надежных компрессоров компании Atlas Copco: Kaeser
         </div>
         <div style="text-align: left; margin-bottom: 25px;">
             (аналоги Айрман,Кайзер, ЧКЗ КВ, ЗИФ Ремеза и т.д.) малой и средней мощности (7-12 бар, 5-10м3/мин). <br>
@@ -166,16 +164,16 @@
                             цену</a>
                     </div>
                     <div class="card-product__title">
-                        Аренда компрессора <br> Atlas Copco XAS 97
+                        Аренда компрессора <br> Kaeser M50
                     </div>
                     <div class="card-product__img">
-                        <img src="data/upload/equipments/list/cq5dam.web.1600.jpg"
+                        <img src="/styles/img/m50.jpg"
                              alt="">
                     </div>
                     <div class="card-product__desc">
                         <ul>
                             <li><b>Рабочее давление, бар:</b> 7</li>
-                            <li><b>Производительность, м<sup>3</sup>/мин: </b>5,3</li>
+                            <li><b>Производительность, м<sup>3</sup>/мин: </b>5</li>
                             <li><b>Цена:</b> от 3000 руб./сутки</li>
                         </ul>
                     </div>
@@ -189,16 +187,16 @@
                             цену</a>
                     </div>
                     <div class="card-product__title">
-                        Аренда компрессора <br> Atlas Copco XAS 186
+                        Аренда компрессора <br> Kaeser M100
                     </div>
                     <div class="card-product__img">
-                        <img src="data/upload/equipments/list/cq5dam.web.jpg"
+                        <img src="/styles/img/m100.jpg"
                              alt="">
                     </div>
                     <div class="card-product__desc">
                         <ul>
                             <li><b>Рабочее давление, бар:</b> 7</li>
-                            <li><b>Производительность, м<sup>3</sup>/мин:</b> 5,3</li>
+                            <li><b>Производительность, м<sup>3</sup>/мин:</b>10</li>
                             <li><b>Цена:</b> узнать по запросу</li>
                         </ul>
                     </div>
@@ -258,7 +256,7 @@
                             цену</a>
                     </div>
                     <div class="card-product__title">
-                        Пескоструйный Аппарат <br> Contracor DBS-200
+                        Пескоструйный Аппарат <br> Contracor DBS 200
                     </div>
                     <div class="card-product__img">
                         <img src="data/upload/equipments/list/CRKT6tfQNnM.jpg"
@@ -273,28 +271,7 @@
                     </div>
                 </div>
             </div>
-            <div class="column is-4">
-                <div class="card-product">
-                    <div class="card-product__hover">
-                        <a href="#rent_form"
-                           class="callback scroll">Узнать
-                            цену</a>
-                    </div>
-                    <div class="card-product__title">Аренда покрасочного <br> аппарата Graco Xtreme X70
-                    </div>
-                    <div class="card-product__img">
-                        <img src="data/upload/equipments/list/135.jpg"
-                             alt="">
-                    </div>
-                    <div class="card-product__desc">
-                        <ul>
-                            <li><b>Длина шланга: </b> 60м</li>
-                            <li><b>Диаметр сопла: </b>8мм</li>
-                            <li><b>Цена:</b> узнать по запросу</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
@@ -322,8 +299,7 @@
 </div>
 <div class="sev sec_quiz section" id="quiz">
     <div class="art container">
-        <div class="head2 title">Подберите компрессор для своего бизнеса у нас,<br> со
-            <span>скидкой в 20%!</span></div>
+        <div class="head2 title">Подберите компрессор для своих задач:</div>
 
         <div id="app">
             <div class="info" v-show="completed === false">
@@ -749,83 +725,6 @@
 */?>
 
 
-<?
-			$buyouts = array (
-(object) array (
-'title' => 'Ремонт и Сервисное обслуживание <br> дизельных компрессоров',
-'id' => 'service',
-'desc' => '<b>Выполняем ремонтные и сервисные работы</b>, проводим плановое техобслуживание винтовых, поршневых
-компрессоров. ',
-'img' => '/styles/img/L3NA84NEKP4.jpg',
-'items' => array (
-(object) array (
-'title' => 'Среднее время <br> ремонта 2 дня.',
-'icon' => '/styles/img/buyout/icons8.png',
-),
-(object) array (
-'title' => 'Подменный компрессор <br> на время ремонта',
-'icon' => '/styles/img/buyout/icons71.png',
-),
-(object) array (
-'title' => 'Выезд инженера 24/7',
-'icon' => '/styles/img/buyout/buyout_2_img_03.png',
-),
-),
-),
-(object) array (
-'title' => 'Выкуп Б/У: Компрессоров и Комплектующих',
-'id' => 'buyback',
-'desc' => 'Купим Ваш компрессор <b>ДОРОГО</b> и в любом состоянии',
-'img' => '/styles/img/buyout_1_bg.jpg',
-'items' => array (
-(object) array (
-'title' => 'Работаем 24/7',
-'icon' => '/styles/img/buyout/buyout_1_img_01.png',
-),
-(object) array (
-'title' => 'Выезд в любую <br>точку страны',
-'icon' => '/styles/img/buyout/buyout_1_img_02.png',
-),
-(object) array (
-'title' => 'Деньги в день <br>сделки',
-'icon' => '/styles/img/buyout/buyout_1_img_03.png',
-),
-(object) array (
-'title' => 'Консультация по любым <br>вопросам сделки',
-'icon' => '/styles/img/buyout/buyout_1_img_04.png',
-),
-),
-),
-(object) array (
-'title' => 'Процесс выкупа оборудование',
-'id' => 'vykup',
-'desc' => '',
-'img' => '/styles/img/buyout_2_bg.jpg',
-'items' => array (
-(object) array (
-'title' => 'Звонок или заявка',
-'icon' => '/styles/img/buyout/buyout_2_img_01.png',
-),
-(object) array (
-'title' => 'Оцениваем ваше <br>оборудование',
-'icon' => '/styles/img/buyout/buyout_2_img_02.png',
-),
-(object) array (
-'title' => 'Выезжаем к вам',
-'icon' => '/styles/img/buyout/buyout_2_img_03.png',
-),
-(object) array (
-'title' => 'Вы получаете деньги',
-'icon' => '/styles/img/buyout/buyout_2_img_04.png',
-),
-),
-),
-);
-?>
-
-
-
-
 <div class=" sec_rent section" style="display: none;" id="">
     <div class="art container">
         <div class="head2"><span>Ремонт и Сервисное обслуживание</span> дизельных компрессоров<br>
@@ -847,7 +746,7 @@
 </div>
 
 
-<div class="sec sec_buyout section" id="buyout">
+<div style="display: none" class="sec sec_buyout section" id="buyout">
     <div class="art container">
         <div class="items columns is-multiline">
             <? foreach ($buyouts as $buyout): ?>
@@ -877,7 +776,7 @@
             </div>
             <? endforeach; ?>
         </div>
-        <div class="notice">
+        <div class="notice" style="display: none">
             Возможна продажа по программе по <span>Trade In</span>, в зачет возьмем Ваш старый компрессор!
         </div>
     </div>
@@ -885,7 +784,7 @@
 <div class="sec sec_hook section" id="hook">
     <div class="art container">
         <div class="wrap">
-            <div class="head2">Есть вопросы, <br>мы вам перезвоним!</div>
+            <div class="head2">Есть вопросы, <br>перезвоним!</div>
             <form action="<?= $inc->send; ?>" method="post">
                 <input type="hidden" name="goalname" value="Есть вопросы">
                 <input type="hidden" name="goal" value="goal_questions">
@@ -912,7 +811,7 @@
 
 <div class="sec section special-equipment">
     <div class="art container">
-        <div class="head2">Аренда оборудования и спец техники</div>
+        <div class="head2">Аренда кран борта, манипулятора</div>
         <div class="columns is-multiline">
             <div class="column is-4">
                 <div class="card-product">
@@ -926,81 +825,41 @@
                     </div>
                     <div class="card-product__desc">
                         <ul>
-                            <li><b>Г/подъёмность : </b> 25.0 т</li>
-                            <li><b>Кузов: </b>Бортовой грузовик</li>
+                            <li><b>Г/подъёмность : </b> 7 т</li>
+                            <li><b>Кузов: </b>6,3м 8т</li>
                             <li><b>Цена:</b> узнать по запросу</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="column is-4">
-                <div class="card-product">
-                    <div class="card-product__hover">
-                        <a href="#special_form" class="callback scroll">Узнать
-                            цену</a>
-                    </div>
-                    <div class="card-product__title">
-                        Пескоструйный Аппарат <br> Contracor DBS-200
-                    </div>
-                    <div class="card-product__img">
-                        <img src="data/upload/equipments/list/CRKT6tfQNnM.jpg" alt="">
-                    </div>
-                    <div class="card-product__desc">
-                        <ul>
-                            <li><b>Длина шланга: </b> 60м</li>
-                            <li><b>Диаметр сопла: </b>8мм</li>
-                            <li><b>Цена:</b> узнать по запросу</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-4">
-                <div class="card-product">
-                    <div class="card-product__hover">
-                        <a href="#special_form" class="callback scroll">Узнать
-                            цену</a>
-                    </div>
-                    <div class="card-product__title">Аренда покрасочного <br> аппарата Graco Xtreme X70
-                    </div>
-                    <div class="card-product__img">
-                        <img src="data/upload/equipments/list/135.jpg" alt="">
-                    </div>
-                    <div class="card-product__desc">
-                        <ul>
-                            <li><b>Длина шланга: </b> 60м</li>
-                            <li><b>Диаметр сопла: </b>8мм</li>
-                            <li><b>Цена:</b> узнать по запросу</li>
-                        </ul>
+            <div class="column is-8">
+                <div class="sev sec_svyazatsa_form" id="special_form">
+                    <div class="art">
+                        <div class="wrap">
+                            <div class="head2">Связаться с нами</div>
+                            <form action="<?= $inc->send; ?>" method="post">
+                                <input type="hidden" name="goalname" value="Связаться с нами">
+                                <input type="hidden" name="goal" value="goal_contact">
+                                <input type="hidden" name="choice" value="">
+                                <div class="items">
+                                    <div class="item"><input type="text" name="name" placeholder="Ваше имя"></div>
+                                    <div class="item"><input type="text" name="phone"
+                                                             placeholder="+7 (____) - ___ - ___ - _"></div>
+                                    <div class="item">
+                                        <button type="submit"><span>Отправить письмо</span></button>
+                                    </div>
+                                </div>
+                                <label><input type="checkbox" name="politic" value="1" data-focus="icon" checked><span
+                                            class="icon"></span><span
+                                            class="label">Я даю согласие на обработку персональных данных</span></label>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<div class="sev sec_svyazatsa_form" id="special_form">
-    <div class="art container">
-        <div class="wrap">
-            <div class="head2">Связаться с нами</div>
-            <form action="<?= $inc->send; ?>" method="post">
-                <input type="hidden" name="goalname" value="Связаться с нами">
-                <input type="hidden" name="goal" value="goal_contact">
-                <input type="hidden" name="choice" value="">
-                <div class="items">
-                    <div class="item"><input type="text" name="name" placeholder="Ваше имя"></div>
-                    <div class="item"><input type="text" name="phone" placeholder="+7 (____) - ___ - ___ - _"></div>
-                    <div class="item">
-                        <button type="submit"><span>Отправить письмо</span></button>
-                    </div>
-                </div>
-                <label><input type="checkbox" name="politic" value="1" data-focus="icon" checked><span
-                            class="icon"></span><span
-                            class="label">Я даю согласие на обработку персональных данных</span></label>
-            </form>
-        </div>
-    </div>
-</div>
-
 
 
 <div class="sec sec_comments section" id="comments">
