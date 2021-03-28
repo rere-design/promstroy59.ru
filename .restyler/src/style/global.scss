@@ -100,6 +100,7 @@ body {
       left: 0;
       top: 0;
       bottom: 0;
+      right: 0;
       @include tablet-only {
         right: 0;
       }
@@ -263,7 +264,9 @@ button[type="submit"] {
 
 #special_form{
   display: block;
-
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 0;
   &.is-active{
     max-height: 1000px;
     margin-top: 40px;
