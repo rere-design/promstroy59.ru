@@ -956,6 +956,40 @@
                             </a>
                         </div>
                 </li>
+                <li>
+                    <div class="header">
+                        <div class="photo"><img
+                                    src="/styles/img/comments_def_photo.jpg"
+                                    alt=""></div>
+                        <div class="title">
+                            <div class="name">Ерогов К.Г.</div>
+                            <div class="company">Директор ООО «ATLANT GROUP»</div>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <div class="content">
+                            <a href="/styles/img/feedback_1.jpg" target="_blank">
+                                <img src="/styles/img/feedback_1.jpg" alt="">
+                            </a>
+                        </div>
+                </li>
+                <li>
+                    <div class="header">
+                        <div class="photo"><img
+                                    src="/styles/img/comments_def_photo.jpg"
+                                    alt=""></div>
+                        <div class="title">
+                            <div class="name">Шефер A.Г.</div>
+                            <div class="company">Директор ООО «ЦТС»</div>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <div class="content">
+                            <a href="/styles/img/feedback_2.jpg" target="_blank">
+                                <img src="/styles/img/feedback_2.jpg" alt="">
+                            </a>
+                        </div>
+                </li>
             </ul>
             <div class="navigation">
                 <a href="#prev" class="nav prev">prev</a>
@@ -964,6 +998,8 @@
                     <span class="dot">2</span>
                     <span class="dot">3</span>
                     <span class="dot">4</span>
+                    <span class="dot">5</span>
+                    <span class="dot">6</span>
 				</span>
                 <a href="#next" class="nav next">next</a>
             </div>
