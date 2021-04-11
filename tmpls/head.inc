@@ -35,15 +35,17 @@
 		<meta http-equiv="x-rim-auto-match" content="none">
 
 		<meta property="og:type" content="article">
-		<meta property="og:site_name" content="<?= $current->title; ?>">
+		<meta property="og:site_name" content="Аренда компрессоров">
 		<meta property="og:title" content="<?= $current->title; ?>">
-		<meta property="og:description" content="<?= $current->desc; ?>">
+		<meta property="og:description" content="Аренда компрессоров">
 		<meta property="og:url" content="<?= $current->url; ?>">
-		<? if (isset($current->img) && !empty($current->img->url)): ?>
-			<meta property="og:image" content="<?= $current->img->url; ?>">
-			<meta property="og:image:width" content="<?= $current->img->width; ?>">
-			<meta property="og:image:height" content="<?= $current->img->height; ?>">
-		<? endif; ?>
+        <meta property="og:image" content="../styles/img/xats-156.jpg">
+
+		<?/* if (isset($current->img) && !empty($current->img->url)): */?><!--
+			<meta property="og:image" content="<?/*= $current->img->url; */?>">
+			<meta property="og:image:width" content="<?/*= $current->img->width; */?>">
+			<meta property="og:image:height" content="<?/*= $current->img->height; */?>">
+		--><?/* endif; */?>
 
 		<script type="text/javascript" src="/js/tools/fixes/console-fix.js"></script>
 		<!--[if lt IE 9]>

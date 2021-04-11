@@ -9,7 +9,7 @@
 <body>
 <? include($root . '/tmpls/header.inc'); ?>
 
-<div class="sev sec_offer" id="offer">
+<div class="sev sec_offer" id="offer">title
     <div class="banner">
         <div class="banner__img">
             <img src="/styles/img/offer_bg100.jpg" width="" height="600" alt="">
